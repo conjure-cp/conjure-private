@@ -12,7 +12,8 @@ setExplicit :: forall m . (MonadFailDoc m, NameGen m) => Representation m
 setExplicit = Representation chck downD structuralCons downC up symmetryOrdering
 
     where
-
+        
+        -- | We can represent any inner domain but set must be fixed size
         chck :: TypeOf_ReprCheck m
         chck f (DomainSet _ attrs@(SetAttr SizeAttr_Size{}) innerDomain) =
             map (DomainSet Set_Explicit attrs) <$> f innerDomain
@@ -21,6 +22,7 @@ setExplicit = Representation chck downD structuralCons downC up symmetryOrdering
         outName :: Domain HasRepresentation x -> Name -> Name
         outName = mkOutName Nothing
 
+        -- | A 1D matrix of size of set containing innerDomain objects 
         downD :: TypeOf_DownD m
         downD (name, domain@(DomainSet Set_Explicit (SetAttr (SizeAttr_Size size)) innerDomain)) = return $ Just
             [ ( outName domain name
@@ -30,9 +32,13 @@ setExplicit = Representation chck downD structuralCons downC up symmetryOrdering
               ) ]
         downD _ = na "{downD} Explicit"
 
+        -- | Enforce lex ordering of matrix (symmetry breaking) and inner structural constraints of
+        -- 'active' elements of inner domain
         structuralCons :: TypeOf_Structural m
         structuralCons f downX1 (DomainSet Set_Explicit (SetAttr (SizeAttr_Size size)) innerDomain) = do
             let
+                -- | Makes sure i'th value is lex less than (i+1)'th value
+                -- a symmetry breaking structural constraint
                 ordering m = do
                     (iPat, i) <- quantifiedVar
                     return $ return -- for list
@@ -41,6 +47,8 @@ setExplicit = Representation chck downD structuralCons downC up symmetryOrdering
                                 &m[&i] .< &m[&i+1]
                         |]
 
+                -- | Enforces structural constraints for the elements of the inner domain
+                -- that are in the set. 
                 innerStructuralCons m = do
                     (iPat, i) <- quantifiedVarOverDomain [essenceDomain| int(1..&size) |]
                     let activeZone b = [essence| forAll &iPat : int(1..&size) . &b |]
@@ -103,4 +111,3 @@ setExplicit = Representation chck downD structuralCons downC up symmetryOrdering
             [inner] <- downX1 inp
             Just [(_, innerDomain)] <- downD ("SO", domain)
             innerSO downX1 inner innerDomain
- 

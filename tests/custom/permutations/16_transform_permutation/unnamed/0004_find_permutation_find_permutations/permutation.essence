@@ -1,0 +1,11 @@
+letting n be new type of size 4 
+
+find p : permutation of n 
+
+find s : permutation of n 
+
+find sn : permutation of n 
+
+
+such that sn = transform([p],s) /\ |p| > 0
+

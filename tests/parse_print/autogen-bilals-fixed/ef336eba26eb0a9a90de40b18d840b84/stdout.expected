@@ -5,14 +5,14 @@ find var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags: matrix indexe
 find var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Values: matrix indexed by [int(1..3), bool] of bool
 such that
     and([var3_ExplicitVarSizeWithFlags_Flags[q1 + 1] ->
-         var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q1, ..] <lex
+         var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q1, ..] .<
          var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q1 + 1, ..]
          \/
          and([var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q1, q11] =
               var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q1 + 1, q11]
                   | q11 : bool])
          /\
-         var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Values[q1, ..] <lex
+         var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Values[q1, ..] .<
          var3_ExplicitVarSizeWithFlags_Values_Function1DPartial_Values[q1 + 1, ..]
              | q1 : int(1..2)]),
     and([var3_ExplicitVarSizeWithFlags_Flags[q2] = false ->

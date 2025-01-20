@@ -1,0 +1,11 @@
+letting i be 1
+
+given p : permutation of int(1..4)
+
+find j : int(0..10)
+
+such that j = image(p, i) 
+
+
+
+

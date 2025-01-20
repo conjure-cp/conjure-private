@@ -36,7 +36,7 @@ such that
          >= 1
              | q26 : int(1..2)]),
     2 <= var2_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Marker ->
-    var2_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Values_ExplicitVarSizeWithDummy[1, ..] <lex
+    var2_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Values_ExplicitVarSizeWithDummy[1, ..] .<
     var2_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Values_ExplicitVarSizeWithDummy[2, ..],
     and([q10 > var2_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Marker ->
          and([var2_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Values_ExplicitVarSizeWithDummy[q10, q19] = 2

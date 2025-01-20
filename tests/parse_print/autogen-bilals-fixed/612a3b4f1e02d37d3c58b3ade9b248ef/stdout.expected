@@ -5,7 +5,7 @@ such that
     3 - 5 > var1,
     false,
     (function() : `function bool --> int`) = function(true --> 0, true --> 4, true --> 0),
-    [false, true, true, false; int(6..9)] <=lex [true, true, false, false, false; int(10..11, 1..3)],
+    [false, true, true, false; int(6..9)] .<= [true, true, false, false, false; int(10..11, 1..3)],
     image(function(5 --> true), 3 / var1),
     true in mset(false),
     false

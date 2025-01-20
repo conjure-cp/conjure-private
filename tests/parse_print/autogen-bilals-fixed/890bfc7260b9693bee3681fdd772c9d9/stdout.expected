@@ -9,13 +9,13 @@ such that
     together(({} : `set of set of relation of (bool * bool * bool)`),
              (partition() : `partition from set of relation of (bool * bool * bool)`)),
     and([l_2 | l_1 : bool, l_2 : bool, l_1, l_1]),
-    image(function({{true}} --> [false, false, true, false; int(2, 4..6)] <=lex [true, false, true; int(2..3, 8)],
+    image(function({{true}} --> [false, false, true, false; int(2, 4..6)] .<= [true, false, true; int(2..3, 8)],
                    ({} : `set of set of bool`) --> apart({false}, partition({true, false})),
                    {({} : `set of bool`), {true}} --> {false, false} subset {true, false}),
           {{true} intersect {true, false, true}, party(false >= true, partition({false, false}))}),
     and([l_3 | l_3 : bool, l_4 : bool, l_3]),
     (function(mset(2, 0, 3) --> mset(0, 4), mset(4) --> mset(4), mset(1, 3, 4) --> (mset() : `mset of int`)) supset
      function(mset(3, 3, 1) --> (mset() : `mset of int`), (mset() : `mset of int`) --> mset(1, 2, 2)))
-    < (flatten([true, false, true, false; int(3..6)]) <=lex [false < true, true <= true; int(4..5)]),
+    < (flatten([true, false, true, false; int(3..6)]) .<= [false < true, true <= true; int(4..5)]),
     [tuple (false), tuple (true), tuple (false), tuple (true); int(4, 10, 11, 9)]
         [([] : `matrix indexed by [int] of int`)[factorial(4)], 1]

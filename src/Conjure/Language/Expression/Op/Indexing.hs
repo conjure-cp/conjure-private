@@ -29,7 +29,7 @@ instance (TypeOf x, Pretty x, ExpressionLike x, ReferenceContainer x) => TypeOf 
         case tyM of
             TypeMatrix tyIndex inn
                 | typesUnify [tyIndex, tyI] -> return inn
-                | otherwise -> failDoc $ "Indexing with inappropriate type:" <++> vcat
+                | otherwise -> failDoc $ "Indexing with inappropriate type, matrix:" <++> vcat
                     [ "The expression:"  <+> pretty p
                     , "Indexing:"        <+> pretty m
                     , "Expected type of index:" <+> pretty tyIndex
@@ -37,7 +37,7 @@ instance (TypeOf x, Pretty x, ExpressionLike x, ReferenceContainer x) => TypeOf 
                     ]
             TypeList inn
                 | typesUnify [TypeInt TagInt, tyI] -> return inn
-                | otherwise -> failDoc $ "Indexing with inappropriate type:" <++> vcat
+                | otherwise -> failDoc $ "Indexing with inappropriate type, list:" <++> vcat
                     [ "The expression:"  <+> pretty p
                     , "Indexing:"        <+> pretty m
                     , "Expected type of index:" <+> pretty (TypeInt TagInt)

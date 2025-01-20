@@ -10,7 +10,7 @@ find var2_3_2: bool
 find var3: matrix indexed by [int(2, 0..5)] of int(0..3, 2..3)
 find var4: int(5, 4)
 such that
-    [true; int(1..1)] <lex
+    [true; int(1..1)] .<
     [[true; int(0..0)], [true, true; int(1..1, 5..5)]; int(2..2, 5..5)][0, ..],
     false,
     allDiff(var2_1_Function1D),

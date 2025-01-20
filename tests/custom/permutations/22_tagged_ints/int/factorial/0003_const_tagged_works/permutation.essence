@@ -1,0 +1,4 @@
+find x : int:A(1..6)
+such that x = (3:A)!
+
+

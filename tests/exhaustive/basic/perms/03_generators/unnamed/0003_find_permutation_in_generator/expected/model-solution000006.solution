@@ -1,0 +1,10 @@
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3, n_4))
+letting s be {(n_1, n_3), (n_3, n_4), (n_4, n_1)}
+$ Visualisation for s
+$ n_1 n_3
+$ n_3 n_4
+$ n_4 n_1
+

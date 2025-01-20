@@ -39,7 +39,7 @@ such that
          var2_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Marker[q6] =
          var2_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Marker[q6 + 1]
          /\
-         var2_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values[q6, ..] <lex
+         var2_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values[q6, ..] .<
          var2_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values[q6 + 1, ..]
              | q6 : int(1..2)]),
     and([q7 > var2_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Marker ->

@@ -1,0 +1,9 @@
+letting n be new type of size 4 
+find p : permutation of n 
+find q : permutation of n 
+find i : n
+
+such that 
+  i = image(compose(p,q),i) 
+  /\ sum([toInt(l != r) | (l,r) <- p]) = 4
+  /\ sum([toInt(l != r) | (l,r) <- q]) = 3

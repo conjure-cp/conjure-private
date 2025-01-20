@@ -16,7 +16,7 @@ find var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_3:
 such that
     false,
     and([q1 + 1 <= var1_RelationAsSetR15_ExplicitVarSizeWithMarkerR15_Marker ->
-         flatten(var1_RelationAsSetR15_ExplicitVarSizeWithMarkerR15_Values_1_RelationAsMatrix[q1, .., ..]) <lex
+         flatten(var1_RelationAsSetR15_ExplicitVarSizeWithMarkerR15_Values_1_RelationAsMatrix[q1, .., ..]) .<
          flatten(var1_RelationAsSetR15_ExplicitVarSizeWithMarkerR15_Values_1_RelationAsMatrix[q1 + 1, .., ..])
              | q1 : int(1..2)]),
     and([q2 > var1_RelationAsSetR15_ExplicitVarSizeWithMarkerR15_Marker ->
@@ -54,7 +54,7 @@ such that
           var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_2[q8] =
           var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_2[q8 + 1]
           /\
-          var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_3[q8, ..] <lex
+          var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_3[q8, ..] .<
           var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_3[q8 + 1, ..])
              | q8 : int(1..2047)]),
     and([q9 > var2_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->

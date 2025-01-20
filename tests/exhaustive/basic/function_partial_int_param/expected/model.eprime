@@ -1,0 +1,23 @@
+language ESSENCE' 1.0
+
+find x_Function1DPartial_Flags: matrix indexed by [int(1..3)] of bool
+find x_Function1DPartial_Values: matrix indexed by [int(1..3)] of int(13..15)
+given fin1: int
+given p_FunctionAsRelation_RelationAsSet_Explicit_1: matrix indexed by [int(1..fin1)] of int(1..3)
+given p_FunctionAsRelation_RelationAsSet_Explicit_2: matrix indexed by [int(1..fin1)] of int(13..15)
+branching on [x_Function1DPartial_Flags, x_Function1DPartial_Values]
+such that
+    and([x_Function1DPartial_Values[p_FunctionAsRelation_RelationAsSet_Explicit_1[q7]] =
+         p_FunctionAsRelation_RelationAsSet_Explicit_2[q7]
+         /\ x_Function1DPartial_Flags[p_FunctionAsRelation_RelationAsSet_Explicit_1[q7]]
+             | q7 : int(1..fin1)]),
+    and([x_Function1DPartial_Flags[q8] ->
+         or([p_FunctionAsRelation_RelationAsSet_Explicit_1[q10] = q8 /\
+             p_FunctionAsRelation_RelationAsSet_Explicit_2[q10] = x_Function1DPartial_Values[q8]
+                 | q10 : int(1..fin1)])
+             | q8 : int(1..3)]),
+    and([x_Function1DPartial_Flags[q1] /\ x_Function1DPartial_Flags[q2] ->
+         x_Function1DPartial_Values[q1] != x_Function1DPartial_Values[q2]
+             | q1 : int(1..3), q2 : int(1..3), [q1; int(1)] <lex [q2; int(1)]]),
+    and([x_Function1DPartial_Flags[q3] = false -> x_Function1DPartial_Values[q3] = 13 | q3 : int(1..3)])
+

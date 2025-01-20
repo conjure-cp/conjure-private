@@ -20,7 +20,7 @@ such that
              (mset() : `mset of mset of int`) --> mset(true)),
     image(function([1, 0; int(3, 0)] --> [false, true, false, false, false; int(3, 15, 0, 4, 2)]),
           [5, 2 - 5; int(2, 5)])
-    <=lex [l_2 | l_1 : bool, l_2 : bool, and(([] : `matrix indexed by [int] of bool`)), l_2],
+    .<= [l_2 | l_1 : bool, l_2 : bool, and(([] : `matrix indexed by [int] of bool`)), l_2],
     image(function((tuple (0), false, false, partition({true}, {false})) --> true,
                    (tuple (4), true = false, true, partition({false, true, true})) --> true > false,
                    (tuple (1), false, false,

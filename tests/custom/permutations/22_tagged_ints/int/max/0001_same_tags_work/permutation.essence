@@ -1,0 +1,5 @@
+find t : set of int:A(1..6)
+find x : int:A(2..4)
+such that x = max(t) 
+
+

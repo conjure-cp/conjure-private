@@ -124,7 +124,7 @@
                                                   {"Reference":
                                                        [{"Name": "var1_ExplicitVarSizeWithMarker_Marker"}, null]}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":
@@ -849,7 +849,7 @@
                                                                               {"ConstantInt":
                                                                                    [{"TagInt": []}, 2]}}]}]]},
                                                             [{"Op":
-                                                                  {"MkOpLexLt":
+                                                                  {"MkOpDotLt":
                                                                        [{"Op":
                                                                              {"MkOpFlatten":
                                                                                   [null,
@@ -1022,7 +1022,7 @@
                                                                                                                                             []},
                                                                                                                                        5]}}]}]]}]}}]]}}},
                                                                                    {"Op":
-                                                                                        {"MkOpLexLt":
+                                                                                        {"MkOpDotLt":
                                                                                              [{"Op":
                                                                                                    {"MkOpFlatten":
                                                                                                         [null,

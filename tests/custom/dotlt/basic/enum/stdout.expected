@@ -1,0 +1,14 @@
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"i": "e1", "j": "e1"}
+{"i": "e1", "j": "e2"}
+{"i": "e1", "j": "e3"}
+{"i": "e2", "j": "e2"}
+{"i": "e2", "j": "e3"}
+{"i": "e3", "j": "e3"}

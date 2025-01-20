@@ -1,0 +1,9 @@
+letting n be new type enum {E1,E2,E3,E4} 
+
+given p : permutation of n
+given q : permutation of n 
+
+find b : bool
+
+such that b = inverse(p,q)
+

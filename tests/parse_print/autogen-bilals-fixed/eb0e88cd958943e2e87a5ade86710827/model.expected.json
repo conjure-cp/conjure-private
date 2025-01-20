@@ -542,7 +542,7 @@
                                    {"AbstractLiteral":
                                         {"AbsLitRelation":
                                              [[{"Op":
-                                                    {"MkOpLexLeq":
+                                                    {"MkOpDotLeq":
                                                          [{"Constant":
                                                                {"ConstantAbstract":
                                                                     {"AbsLitMatrix":

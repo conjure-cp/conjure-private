@@ -109,4 +109,4 @@
        {"answer": 32,
         "description":
             "set {ExplicitVarSizeWithFlags} (maxSize 1) of set {ExplicitVarSizeWithFlags} (maxSize 1) of set {ExplicitVarSizeWithFlags} (maxSize 1) of set {ExplicitVarSizeWithFlags} (maxSize 1) of int(1..n)"}]},
- {"name": "c_EnumSize", "representations": [{"answer": 1, "description": "int"}]}]
+ {"name": "c_EnumSize", "representations": [{"answer": 1, "description": "int:c"}]}]

@@ -15,14 +15,14 @@ find var6: int(1..4, 4..5)
 maximising var4
 such that
     and([var1_ExplicitVarSizeWithFlags_Flags[q1 + 1] ->
-         var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Flags[q1, ..] <lex
+         var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Flags[q1, ..] .<
          var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Flags[q1 + 1, ..]
          \/
          and([var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Flags[q1, q35] =
               var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Flags[q1 + 1, q35]
                   | q35 : int(1..4)])
          /\
-         var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Values[q1, ..] <lex
+         var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Values[q1, ..] .<
          var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Values[q1 + 1, ..]
              | q1 : int(1..80)]),
     and([var1_ExplicitVarSizeWithFlags_Flags[q2] = false ->
@@ -54,7 +54,7 @@ such that
          4 = sum([var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Flags[q5, q10] | q10 : int(1..4)])
              | q5 : int(1..81)]),
     and([var2_ExplicitVarSizeWithFlags_Flags[q12 + 1] ->
-         flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q12, .., ..]) <lex
+         flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q12, .., ..]) .<
          flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q12 + 1, .., ..])
              | q12 : int(1..4)]),
     and([var2_ExplicitVarSizeWithFlags_Flags[q13] = false ->

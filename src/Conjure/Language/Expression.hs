@@ -15,6 +15,7 @@ module Conjure.Language.Expression
     , patternToExpr
     , emptyCollectionX
     , nbUses
+    , reDomExp
     , isDomainExpr
     ) where
 
@@ -169,6 +170,15 @@ instance SimpleJSON Declaration where
                 return $ JSON.Object $ KM.fromList [(fromString (renderNormal nm), JSON.Array (V.fromList xs'))]
             _ -> noToSimpleJSON d
     fromSimpleJSON = noFromSimpleJSON "Declaration"
+
+instance SimpleJSON Name where
+    toSimpleJSON n =
+        case n of
+            Name nm -> do
+             return $ JSON.String nm
+            _ -> noToSimpleJSON n
+    
+    fromSimpleJSON = noFromSimpleJSON "Name"
 
 instance ToFromMiniZinc Declaration where
     toMiniZinc st =
@@ -931,6 +941,11 @@ emptyCollectionX (AbstractLiteral x) = emptyCollectionAbsLit x
 emptyCollectionX (Typed x _) = emptyCollectionX x
 emptyCollectionX _ = False
 
+
+reDomExp :: Domain () Expression -> Domain () Expression 
+reDomExp exp = case exp of
+                 DomainInt t _ -> reTag t exp
+                 _ -> exp
 
 isDomainExpr :: MonadFailDoc m => Expression -> m ()
 isDomainExpr Domain{} = return ()

@@ -1,0 +1,7 @@
+find p : permutation of int(1..4)
+
+find s : set of (int(1..4),int(1..4))
+
+such that p(4) != 4
+such that and(transform([p],[sj > si | (si,sj) <- s]))
+

@@ -7,7 +7,7 @@ such that
       (partition() : `partition from int`))
      != (relation((false, false, true, false)), mset(true), partition({5, 2, 1, 2})))
     !=
-    (([true, false; int(5, 4..4)] <lex [true, false, false, true; int(2..5)]) <
+    (([true, false; int(5, 4..4)] .< [true, false, false, true; int(2..5)]) <
      (({} : `set of bool`) subsetEq ({} : `set of bool`))),
     allDiff([function(partition({false, true, true, true, false}, {false, true},
                                 {false}, {false, false, false, false}) --> relation((true, false, true),
@@ -42,7 +42,7 @@ such that
     true,
     [[true, true; int(0..1)], [true, true, true; int(1..2, 8..8)],
      [true; int(1..1)]; int(2, 4..5)][freq(mset(false), false <= true)]
-    <lex [l_1 | l_1 : bool, l_2 : bool, l_2],
+    .< [l_1 | l_1 : bool, l_2 : bool, l_2],
     together({{(partition() : `partition from bool`),
                partition({false, true}, {true, false, false, false}, {true, true, true},
                          {false}),

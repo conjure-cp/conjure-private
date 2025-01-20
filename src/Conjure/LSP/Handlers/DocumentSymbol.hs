@@ -88,6 +88,7 @@ symbolKindFromDeclaration (LiteralDecl t) = Just $ case t of
   Kind _ ty -> case ty of
     TypeBool -> SkBoolean
     TypeInt it -> case it of
+      TaggedInt {} -> SkNumber
       TagInt -> SkNumber
       TagEnum _ -> SkEnumMember
       TagUnnamed _ -> SkNumber

@@ -20,7 +20,7 @@ such that
          /\
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Values
              [q1, ..]
-         <lex
+         .<
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Values
              [q1 + 1, ..]
          \/
@@ -56,7 +56,7 @@ such that
                       | q27 : int(1..2)])
                   | q25 : int(1..2)])
          /\
-         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2[q1, ..] <lex
+         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2[q1, ..] .<
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2[q1 + 1, ..]
              | q1 : int(1..4)]),
     and([q2 > var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->

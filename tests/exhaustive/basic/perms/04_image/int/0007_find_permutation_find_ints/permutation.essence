@@ -1,0 +1,16 @@
+letting n be domain int(1..4) 
+
+find i : n 
+
+find p : permutation of n 
+
+find j : n 
+
+such that
+  i >= 2 /\ i <= 3,
+  j >= 3 /\ j <= 4,
+  j = image(p, i)
+
+
+
+

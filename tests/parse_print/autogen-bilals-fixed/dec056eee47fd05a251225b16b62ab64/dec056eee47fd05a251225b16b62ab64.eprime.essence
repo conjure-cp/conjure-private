@@ -51,7 +51,7 @@ such that
          /\
          flatten(var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q4,
                                                                                           .., ..])
-         <lex
+         .<
          flatten(var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q4
                                                                                           + 1,
                                                                                           .., ..])
@@ -61,7 +61,7 @@ such that
               ->
               var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q5, q6,
                                                                                        ..]
-              <lex
+              .<
               var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q5,
                                                                                        q6 + 1, ..]
                   | q6 : int(1..5)])
@@ -91,7 +91,7 @@ such that
                   | q51 : int(1..5)])
              | q30 : bool]),
     and([q35 + 1 <= var4_2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
-         var4_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit[q35, ..] <lex
+         var4_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit[q35, ..] .<
          var4_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit[q35 + 1, ..]
              | q35 : int(1..4)]),
     and([q36 > var4_2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
@@ -112,7 +112,7 @@ such that
          var4_3_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[q43] =
          var4_3_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[q43 + 1]
          /\
-         var4_3_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values[q43, ..] <lex
+         var4_3_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values[q43, ..] .<
          var4_3_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values[q43 + 1, ..]
              | q43 : int(1..4)]),
     and([1 > var4_3_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[q44] ->

@@ -1,0 +1,10 @@
+letting n be new type of size 6 
+find p : permutation (numMoved 4) of n
+
+find i : int(0..10)
+
+such that i = |p| 
+
+
+
+

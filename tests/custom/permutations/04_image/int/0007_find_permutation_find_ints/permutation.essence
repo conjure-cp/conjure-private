@@ -1,0 +1,14 @@
+letting n be domain int(1..5) 
+
+find i : n 
+
+find p : permutation of n 
+
+find j : n 
+
+such that
+  j = image(p, i) /\ sum([toInt(l!=r)|(l,r)<-p]) = 3 
+
+
+
+

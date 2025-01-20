@@ -1,0 +1,5 @@
+find t : int:A(1..6)
+find x : int:A(1..6)
+such that x = t * 3
+
+

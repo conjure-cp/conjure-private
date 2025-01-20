@@ -24,6 +24,7 @@ instance (TypeOf x, Pretty x) => TypeOf (OpNegate x) where
         TypeInt t <- typeOf a
         case t of
             TagInt -> return ()
+            TaggedInt{} -> return ()
             _ -> raiseTypeError p
         return (TypeInt t)
 

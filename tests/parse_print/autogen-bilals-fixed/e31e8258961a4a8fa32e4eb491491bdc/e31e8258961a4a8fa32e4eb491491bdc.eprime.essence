@@ -13,7 +13,7 @@ find var2_RelationAsMatrix:
 such that
     2 <= var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->
     var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[1, ..]
-    <lex
+    .<
     var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[2, ..]
     \/
     and([var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[1,
@@ -24,13 +24,13 @@ such that
     /\
     (var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Flags[1,
                                                                                                              ..]
-     <lex
+     .<
      var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Flags[2,
                                                                                                              ..]
      \/
      var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Values[1,
                                                                                                               ..]
-     <lex
+     .<
      var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Values[2,
                                                                                                               ..]),
     and([q2 > var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker

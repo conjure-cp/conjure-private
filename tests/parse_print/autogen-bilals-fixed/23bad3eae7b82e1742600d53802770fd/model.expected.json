@@ -1059,7 +1059,7 @@
                                                                               {"ConstantInt":
                                                                                    [{"TagInt": []}, 2]}}]}]]},
                                                             [{"Op":
-                                                                  {"MkOpLexLt":
+                                                                  {"MkOpDotLt":
                                                                        [{"Op":
                                                                              {"MkOpSlicing":
                                                                                   [{"Op":
@@ -1233,7 +1233,7 @@
                                                                                                                                             []},
                                                                                                                                        8]}}]}]]}]}}]]}}},
                                                                                    {"Op":
-                                                                                        {"MkOpLexLt":
+                                                                                        {"MkOpDotLt":
                                                                                              [{"Op":
                                                                                                    {"MkOpSlicing":
                                                                                                         [{"Op":

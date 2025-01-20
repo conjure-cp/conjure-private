@@ -18,7 +18,7 @@ maximising var4
 such that
     and([q1 + 1 <= var1_ExplicitVarSizeWithMarker_Marker ->
          var1_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q1, ..]
-         <lex
+         .<
          var1_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q1 + 1, ..]
          \/
          and([var1_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q1,
@@ -29,7 +29,7 @@ such that
                   | q33 : int(1..4)])
          /\
          var1_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q1, ..]
-         <lex
+         .<
          var1_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q1 + 1,
                                                                                ..]
              | q1 : int(1..80)]),
@@ -84,7 +84,7 @@ such that
                   | q8 : int(1..4)])
              | q3 : int(1..81)]),
     and([var2_ExplicitVarSizeWithFlags_Flags[q10 + 1] ->
-         flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q10, .., ..]) <lex
+         flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q10, .., ..]) .<
          flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q10 + 1, .., ..])
              | q10 : int(1..4)]),
     and([var2_ExplicitVarSizeWithFlags_Flags[q11] = false ->

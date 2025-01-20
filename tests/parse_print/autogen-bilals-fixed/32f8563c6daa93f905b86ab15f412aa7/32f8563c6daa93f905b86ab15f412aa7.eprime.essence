@@ -4,4 +4,4 @@ find var1: int(2, 3..5)
 such that
     [[true ; int(3..3,11)],
      [true, true; int(0..0, 5..5)]; int(1..2)][var1, ..]
-    <=lex [true; int(1)]
+    .<= [true; int(1)]

@@ -1,0 +1,5 @@
+letting X be new type enum {e1,e2,e3,e4,e5,e6}
+find x : X 
+such that x = e6 / e3
+
+

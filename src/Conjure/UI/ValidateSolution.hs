@@ -5,6 +5,7 @@ import Conjure.Bug
 import Conjure.Prelude
 import Conjure.UserError
 import Conjure.Language.Definition
+import Conjure.Language.Constant
 import Conjure.Language.Domain
 import Conjure.Language.Pretty
 import Conjure.Language.Type
@@ -128,8 +129,9 @@ validateSolution essenceModel essenceParam essenceSolution = flip evalStateT [] 
             vals     <- gets id
             forM_ xs $ \ x -> do
                 constant <- instantiateExpression vals x
-                case constant of
-                    ConstantBool True -> return ()
+                case (constant, viewConstantMatrix constant) of
+                    (ConstantBool True, _) -> return ()
+                    (_, Just (_, bools)) | all (== ConstantBool True) bools -> return ()
                     _ -> userErr1 $ "Invalid." <++> vcat [ "Statement evaluates to:" <+> pretty constant
                                                          , "Original statement was:" <+> pretty x
                                                          , "Relevant values:" <++> vcat
@@ -143,8 +145,9 @@ validateSolution essenceModel essenceParam essenceSolution = flip evalStateT [] 
             vals     <- gets id
             forM_ xs $ \ x -> do
                 constant <- instantiateExpression vals x
-                case constant of
-                    ConstantBool True -> return ()
+                case (constant, viewConstantMatrix constant) of
+                    (ConstantBool True, _) -> return ()
+                    (_, Just (_, bools)) | all (== ConstantBool True) bools -> return ()
                     _ -> userErr1 $ "Invalid." <++> vcat [ "Statement evaluates to:" <+> pretty constant
                                                          , "Original statement was:" <+> pretty x
                                                          , "Relevant values:" <++> vcat

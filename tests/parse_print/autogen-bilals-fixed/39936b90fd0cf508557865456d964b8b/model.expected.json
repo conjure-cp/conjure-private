@@ -94,7 +94,7 @@
                                          {"DomainMatrix": [{"DomainBool": []}, {"DomainBool": []}]}]}]}]}]}]}},
       {"SuchThat":
            [{"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Op":
                             {"MkOpSlicing":
                                  [{"Op":
@@ -208,7 +208,7 @@
                                                                               {"ConstantInt":
                                                                                    [{"TagInt": []}, 2]}}]}]]},
                                                             [{"Op":
-                                                                  {"MkOpLexLt":
+                                                                  {"MkOpDotLt":
                                                                        [{"Op":
                                                                              {"MkOpSlicing":
                                                                                   [{"Op":
@@ -354,7 +354,7 @@
                                                                                                                                             []},
                                                                                                                                        2]}}]}]]}]}}]]}}},
                                                                                    {"Op":
-                                                                                        {"MkOpLexLt":
+                                                                                        {"MkOpDotLt":
                                                                                              [{"Op":
                                                                                                    {"MkOpSlicing":
                                                                                                         [{"Op":
@@ -1567,7 +1567,7 @@
                                                                                                                                                []},
                                                                                                                                           1]}}]]}}}}]}}]}},
                                                                                    {"Op":
-                                                                                        {"MkOpLexLt":
+                                                                                        {"MkOpDotLt":
                                                                                              [{"Op":
                                                                                                    {"MkOpFlatten":
                                                                                                         [null,
@@ -1844,7 +1844,7 @@
                                                                                              [{"Name": "q18"},
                                                                                               null]}]}}]}},
                                                                   {"Op":
-                                                                       {"MkOpLexLt":
+                                                                       {"MkOpDotLt":
                                                                             [{"Op":
                                                                                   {"MkOpFlatten":
                                                                                        [null,

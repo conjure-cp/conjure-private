@@ -1,0 +1,37 @@
+Generating models for 00.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+[
+{"A": ["A_1", "A_2", "A_3"],
+ "p": [["A_1", "A_2", "A_3"]],
+ "x": {"1": false, "2": true, "3": true},
+ "y": {"1": true, "2": false, "3": true}}
+,
+{"A": ["A_1", "A_2", "A_3"],
+ "p": [["A_1", "A_2", "A_3"]],
+ "x": {"1": true, "2": false, "3": true},
+ "y": {"1": true, "2": true, "3": false}}
+,
+{"A": ["A_1", "A_2", "A_3"],
+ "p": [["A_1", "A_2", "A_3"]],
+ "x": {"1": true, "2": true, "3": false},
+ "y": {"1": false, "2": true, "3": true}}
+,
+{"A": ["A_1", "A_2", "A_3"],
+ "p": [["A_1", "A_3", "A_2"]],
+ "x": {"1": false, "2": true, "3": true},
+ "y": {"1": true, "2": true, "3": false}}
+,
+{"A": ["A_1", "A_2", "A_3"],
+ "p": [["A_1", "A_3", "A_2"]],
+ "x": {"1": true, "2": false, "3": true},
+ "y": {"1": false, "2": true, "3": true}}
+,
+{"A": ["A_1", "A_2", "A_3"],
+ "p": [["A_1", "A_3", "A_2"]],
+ "x": {"1": true, "2": true, "3": false},
+ "y": {"1": true, "2": false, "3": true}}
+]

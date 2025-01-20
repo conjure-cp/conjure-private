@@ -1,0 +1,9 @@
+find p : permutation (numMoved 4) of int(1..6)
+
+find i : int(0..10)
+
+such that i = |p| 
+
+
+
+

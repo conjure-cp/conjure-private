@@ -17,7 +17,7 @@ such that
     image(function(mset(1, 4) --> [0, 1, 0; int(3, 5, 1..1)], (mset() : `mset of int`) --> [1, 4; int(5, 0..0)],
                    mset(1, 5, 2) --> [4, 4, 2, 4, 1; int(8..10, 4, 14..14)]),
           toMSet({0, 1}))
-    <=lex [l_3 | l_2 : int(0..3, 5), l_3 : int(5..5, 4)],
+    .<= [l_3 | l_2 : int(0..3, 5), l_3 : int(5..5, 4)],
     true,
     or([l_4 | l_4 : bool, l_5 : bool, l_4]),
     mset(mset([2, 1, 3, 5, 4; int(0, 2..3, 15, 4..4)], [1, 1, 5, 1, 4; int(2..6)],

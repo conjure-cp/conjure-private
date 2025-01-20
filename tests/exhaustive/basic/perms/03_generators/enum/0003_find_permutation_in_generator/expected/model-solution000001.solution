@@ -1,0 +1,9 @@
+language Essence 1.3
+
+letting p be permutation((E2, E3, E4))
+letting s be {(E2, E3), (E3, E4), (E4, E2)}
+$ Visualisation for s
+$ E2 E3
+$ E3 E4
+$ E4 E2
+

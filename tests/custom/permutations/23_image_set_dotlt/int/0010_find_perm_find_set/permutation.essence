@@ -1,0 +1,7 @@
+find p : permutation of int(1..4)
+
+find s : set of int(1..4)
+
+
+such that s .< transform([p],s)
+

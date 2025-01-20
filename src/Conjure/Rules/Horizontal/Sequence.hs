@@ -128,7 +128,7 @@ rule_Eq = "sequence-eq" `namedRule` theRule where
                              /\
                          (forAll &iPat in &y . &x(&i[1]) = &i[2])
                              /\
-                         defined(&x) = defined(&y)
+                         |&x| = |&y|
                      |]
             )
 

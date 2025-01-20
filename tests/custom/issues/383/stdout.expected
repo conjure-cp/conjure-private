@@ -59,6 +59,6 @@ Error:
 10 | find c : colours such that c = |toSet([ f(u) | u : vertices ])|
    |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Type error:
-	Expected: colours
+	Expected: unnamed:colours
 	Got: int
 

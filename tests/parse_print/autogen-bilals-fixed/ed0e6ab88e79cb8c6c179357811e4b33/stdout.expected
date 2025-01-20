@@ -7,14 +7,14 @@ find var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Fu
         matrix indexed by [int(1..256), bool] of bool
 such that
     and([q1 + 1 <= var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->
-         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q1, ..] <lex
+         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q1, ..] .<
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q1 + 1, ..]
          \/
          and([var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q1, q11] =
               var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q1 + 1, q11]
                   | q11 : int(4, 3)])
          /\
-         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Function1D[q1, ..] <lex
+         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Function1D[q1, ..] .<
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Function1D[q1 + 1, ..]
              | q1 : int(1..255)]),
     and([q2 > var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->

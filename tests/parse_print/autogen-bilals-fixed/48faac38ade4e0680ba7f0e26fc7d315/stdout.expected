@@ -27,7 +27,7 @@ such that
          /\
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Values
              [q1, ..]
-         <lex
+         .<
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Values
              [q1 + 1, ..]
          \/
@@ -144,7 +144,7 @@ such that
          var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q13] =
          var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q13 + 1]
          /\
-         var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q13, ..] <lex
+         var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q13, ..] .<
          var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q13 + 1, ..]
              | q13 : int(1..3)]),
     and([q14 > var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->

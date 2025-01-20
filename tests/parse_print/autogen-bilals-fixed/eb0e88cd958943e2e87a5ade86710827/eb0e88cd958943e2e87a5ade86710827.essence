@@ -83,7 +83,7 @@ such that
              flatten([mset(true), mset(true), mset(false); int(2..3,
                                                                6..6)]) --> relation(([false, true, false, false,
                                                                                       true; int(3, 7..10)]
-                                                                                     <=lex [false; int(2..2)],
+                                                                                     .<= [false; int(2..2)],
                                                                                      partition({relation(tuple (false),
                                                                                                          tuple (false),
                                                                                                          tuple (true)),

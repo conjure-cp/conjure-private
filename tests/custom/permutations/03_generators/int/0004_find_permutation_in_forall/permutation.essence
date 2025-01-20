@@ -1,0 +1,7 @@
+find p : permutation (numMoved 3) of int(1..4)
+find s : set (size 3) of (int(1..4),int(1..4))
+
+such that 
+  forAll e in p .
+    e in s
+

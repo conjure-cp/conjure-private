@@ -68,7 +68,7 @@
                                              {"AbsLitSet":
                                                   [{"ConstantAbstract": {"AbsLitSet": [{"ConstantBool": true}]}}]}}},
                                    {"Op":
-                                        {"MkOpLexLeq":
+                                        {"MkOpDotLeq":
                                              [{"Constant":
                                                    {"ConstantAbstract":
                                                         {"AbsLitMatrix":
@@ -205,7 +205,7 @@
                                                               {"ConstantInt": [{"TagInt": []}, 2]},
                                                               {"ConstantInt": [{"TagInt": []}, 2]}]}}}]]}}]}},
                        {"Op":
-                            {"MkOpLexLeq":
+                            {"MkOpDotLeq":
                                  [{"Op":
                                        {"MkOpFlatten":
                                             [null,

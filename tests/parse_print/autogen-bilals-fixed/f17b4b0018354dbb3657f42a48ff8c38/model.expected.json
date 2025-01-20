@@ -35,7 +35,7 @@
                                       [{"ConstantInt": [{"TagInt": []}, 5]}, {"ConstantInt": [{"TagInt": []}, 2]},
                                        {"ConstantInt": [{"TagInt": []}, 4]}]}}}]}},
             {"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Typed":
                             [{"Constant":
                                   {"ConstantAbstract":

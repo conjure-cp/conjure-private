@@ -104,4 +104,4 @@ such that
     [l_2 | l_1 : bool, l_2 : bool, true][freq(mset(mset(true),
                                                    (mset() : `mset of bool`), (mset() : `mset of bool`)),
                                               (mset() : `mset of bool`))],
-    [l_4 | l_3 : bool, l_4 : bool, l_4] <lex [l_5 | l_5 : bool, l_6 : bool, l_5]
+    [l_4 | l_3 : bool, l_4 : bool, l_4] .< [l_5 | l_5 : bool, l_6 : bool, l_5]

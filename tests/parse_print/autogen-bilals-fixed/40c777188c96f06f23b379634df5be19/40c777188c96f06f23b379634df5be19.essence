@@ -4,4 +4,4 @@ find var1: set (maxSize -0) of partition (numParts 5, partSize 3) from bool
 such that
     {true, false} = {false, true, true},
     true,
-    [false, false, true, false; int(6..9)] <lex [false, true; int(0, 4..4)]
+    [false, false, true, false; int(6..9)] .< [false, true; int(0, 4..4)]

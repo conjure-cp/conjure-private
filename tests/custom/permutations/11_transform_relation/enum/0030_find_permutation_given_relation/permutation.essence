@@ -1,0 +1,10 @@
+letting n be new type enum {E1,E2,E3,E4} 
+
+find p : permutation of n 
+given s : relation of (n * n)
+
+find sn : relation of (n * n)
+
+
+
+such that sn = transform([p],s) /\ (3 = sum([ toInt(l!=r) | (l,r) <- p]))

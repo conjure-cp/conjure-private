@@ -9,6 +9,6 @@ find var2:
 find var3: relation (minSize 0, maxSize 0) of (relation (minSize 2, maxSize 3) of (int(1..4, 0)))
 such that
     or([true, true, false, true; int(2..3, 8..9)]) <-> or([false, false, false, true, false; int(11..12, 3, 0, 8)]),
-    flatten([0, 2, 0, 2, 1; int(12..13, 7, 6, 8)]) <lex [2 % 2, 3 ** 0, -2; int(0..2)],
-    [false; int(0)] <lex [false; int(1)] ->
+    flatten([0, 2, 0, 2, 1; int(12..13, 7, 6, 8)]) .< [2 % 2, 3 ** 0, -2; int(0..2)],
+    [false; int(0)] .< [false; int(1)] ->
     together({false, true, false}, partition({false}, {true}, {false, true, false}, {false, false, true, false, true}))

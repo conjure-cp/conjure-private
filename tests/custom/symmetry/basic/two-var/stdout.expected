@@ -1,0 +1,180 @@
+Quick-Consecutive-Independently
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([quickPermutationOrder((i, j),
+                                   [permutation((q1, succ(q1))); int(1)])
+                 | q1 : e, q1 < 4])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Quick-Consecutive-Altogether
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([quickPermutationOrder((i, j),
+                                   [permutation((q1, succ(q1))); int(1)])
+                 | q1 : e, q1 < 4])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Quick-AllPairs-Independently
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([quickPermutationOrder((i, j), [permutation((q1, q2)); int(1)])
+                 | q1 : e, q2 : e, q1 < q2])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Quick-AllPairs-Altogether
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([quickPermutationOrder((i, j), [permutation((q1, q2)); int(1)])
+                 | q1 : e, q2 : e, q1 < q2])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Quick-AllPermutations-Independently
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([quickPermutationOrder((i, j), [q1; int(1)])
+                 | q1 : permutation of e])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Quick-AllPermutations-Altogether
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([quickPermutationOrder((i, j), [q1; int(1)])
+                 | q1 : permutation of e])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Complete-Consecutive-Independently
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([(i, j) .<= transform(permutation((q1, succ(q1))), (i, j))
+                 | q1 : e, q1 < 4])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Complete-Consecutive-Altogether
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([(i, j) .<= transform(permutation((q1, succ(q1))), (i, j))
+                 | q1 : e, q1 < 4])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Complete-AllPairs-Independently
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([(i, j) .<= transform(permutation((q1, q2)), (i, j))
+                 | q1 : e, q2 : e, q1 < q2])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Complete-AllPairs-Altogether
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([(i, j) .<= transform(permutation((q1, q2)), (i, j))
+                 | q1 : e, q2 : e, q1 < q2])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Complete-AllPermutations-Independently
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([(i, j) .<= transform(q1, (i, j)) | q1 : permutation of e])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}
+Complete-AllPermutations-Altogether
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([(i, j) .<= transform(q1, (i, j)) | q1 : permutation of e])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_1"}
+{"e": ["e_1", "e_2", "e_3", "e_4"], "i": "e_1", "j": "e_2"}

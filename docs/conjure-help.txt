@@ -80,6 +80,10 @@
       --representation-levels                 Whether to use built-in precedence levels when choosing representations.
                                               Used to cut down the number of generated models.
                                               Default: true
+      --unnamed-symmetry-breaking=ITEM        Level to use for breaking symmetries arising from unnamed types.
+                                              Options: none / fast-consecutive / fast-allpairs / complete-independently
+                                              / complete.
+                                              Default: none
       --follow-model=ITEM                     Provide a Conjure-generated Essence Prime model to be used as a guide
                                               during model generation. Conjure will try to imitate the modelling
                                               decisions from this file.
@@ -252,6 +256,10 @@
       --representation-levels                 Whether to use built-in precedence levels when choosing representations.
                                               Used to cut down the number of generated models.
                                               Default: true
+      --unnamed-symmetry-breaking=ITEM        Level to use for breaking symmetries arising from unnamed types.
+                                              Options: none / fast-consecutive / fast-allpairs / complete-independently
+                                              / complete.
+                                              Default: none
       --follow-model=ITEM                     Provide a Conjure-generated Essence Prime model to be used as a guide
                                               during model generation. Conjure will try to imitate the modelling
                                               decisions from this file.

@@ -2,14 +2,16 @@ module Conjure.Language.EvaluateOp ( EvaluateOp(..) ) where
 
 import Conjure.Prelude
 import Conjure.Bug
+import Conjure.Util.Permutation
 import Conjure.Language
-import Conjure.Process.Enumerate ( EnumerateDomain )
+import Conjure.Process.Enumerate ( EnumerateDomain, enumerateInConstant )
 import Conjure.Compute.DomainOf ( domainOf )
 import Conjure.Language.DomainSizeOf ( domainSizeOf )
 import Conjure.Process.AttributeAsConstraints ( mkAttributeToConstraint )
 import {-# SOURCE #-} Conjure.Language.Instantiate ( instantiateExpression )    
 import {-# SOURCE #-} Conjure.Process.ValidateConstantForDomain ( validateConstantForDomain )
 
+import qualified Data.Semigroup as SG
 
 -- | Assume: the input is already normalised.
 --   Make sure the output is normalised.
@@ -95,6 +97,17 @@ instance EvaluateOp OpEq where
     evaluateOp (OpEq x (TypedConstant y _)) = evaluateOp (OpEq x y)
     evaluateOp (OpEq x y) = return $ ConstantBool $ x == y
 
+instance EvaluateOp OpCompose where
+    evaluateOp (OpCompose (viewConstantPermutation -> Just gss)
+                             (viewConstantPermutation -> Just hss)) = do
+       case (fromCycles gss, fromCycles hss) of
+         (Right g, Right h) ->
+           return $ ConstantAbstract $ AbsLitPermutation $ toCycles $ g SG.<> h
+         (Left e, _) -> failDoc $ "evaluateOp{OpCompose}" <++> pretty (show e)
+         (_, Left e) -> failDoc $ "evaluateOp{OpCompose}" <++> pretty (show e)
+    evaluateOp op = na $ "evaluateOp{OpCompose}:" <++> pretty (show op)
+
+
 instance EvaluateOp OpFactorial where
     evaluateOp p | any isUndef (childrenBi p) =
         return $ mkUndef (TypeInt TagInt) $ "Has undefined children:" <+> pretty p
@@ -172,6 +185,17 @@ instance EvaluateOp OpImage where
                     [ "Sequence is multiply defined at this point:" <+> pretty a
                     , "Sequence value:" <+> pretty f
                     ]
+    evaluateOp (OpImage f@(viewConstantPermutation -> Just _) a) = do
+        permVals <- enumerateInConstant f
+        case [ y | ConstantAbstract (AbsLitTuple [x,y]) <- permVals, a == x ] of
+            [y] -> return y
+            []  -> return a -- permutations map things to themselves by default
+            _   -> do
+                TypePermutation tyTo <- typeOf f
+                return $ mkUndef tyTo $ vcat
+                    [ "Permutation is multiply defined at this point:" <+> pretty a
+                    , "Permutation value:" <+> pretty f
+                    ]
     evaluateOp op = na $ "evaluateOp{OpImage}:" <++> pretty (show op)
 
 instance EvaluateOp OpImageSet where
@@ -195,6 +219,12 @@ instance EvaluateOp OpIn where
     evaluateOp (OpIn c (viewConstantMSet     -> Just cs)) = return $ ConstantBool $ elem c cs
     evaluateOp (OpIn c (viewConstantFunction -> Just cs)) =
         return $ ConstantBool $ elem c $ map (\ (i,j) -> ConstantAbstract $ AbsLitTuple [i,j] ) cs
+    evaluateOp op@(OpIn (viewConstantTuple -> Just [a,b]) (viewConstantPermutation -> Just xss)) =
+        case fromCycles xss of
+            Right p -> do
+                let f = toFunction p
+                return $ ConstantBool $ f a == b
+            _ -> na $ "evaluateOp{OpIn}:" <++> pretty (show op)
     evaluateOp (OpIn c (viewConstantRelation -> Just cs)) =
         return $ ConstantBool $ elem c $ map (ConstantAbstract . AbsLitTuple) cs
     evaluateOp op = na $ "evaluateOp{OpIn}:" <++> pretty (show op)
@@ -275,6 +305,10 @@ instance EvaluateOp OpInverse where
         return $ ConstantBool $ and $ concat [ [ (j,i) `elem` ys | (i,j) <- xs ]
                                              , [ (j,i) `elem` xs | (i,j) <- ys ]
                                              ]
+    evaluateOp op@(OpInverse (viewConstantPermutation -> Just xss) (viewConstantPermutation -> Just yss)) =
+        case (fromCycles xss, fromCycles yss) of
+            (Right px, Right py) -> return $ ConstantBool $ px == inverse py
+            _ -> na $ "evaluateOp{OpInverse}:" <++> pretty (show op)
     evaluateOp op = na $ "evaluateOp{OpInverse}:" <++> pretty (show op)
 
 instance EvaluateOp OpLeq where
@@ -487,6 +521,12 @@ instance EvaluateOp OpParty where
             _   -> return $ mkUndef (TypeSet tyInner) $ "Element found in multiple parts of the partition:"
                                                                                                 <++> pretty op
     evaluateOp op = na $ "evaluateOp{OpParty}:" <++> pretty (show op)
+
+instance EvaluateOp OpPermInverse where
+    evaluateOp (OpPermInverse (viewConstantPermutation -> Just xss))
+        | Right perm <- fromCycles xss
+        = return $ ConstantAbstract $ AbsLitPermutation $ toCyclesCanonical $ inverse perm
+    evaluateOp op = na $ "evaluateOp{OpPermInverse}:" <++> pretty (show op)
 
 instance EvaluateOp OpPow where
     evaluateOp p | any isUndef (childrenBi p) =
@@ -742,6 +782,10 @@ instance EvaluateOp OpToSet where
         return $ ConstantAbstract $ AbsLitSet $ sortNub [ConstantAbstract $ AbsLitTuple [a,b] | (a,b) <- xs]
     evaluateOp (OpToSet _ (viewConstantRelation -> Just xs)) =
         return $ ConstantAbstract $ AbsLitSet $ sortNub $ map (ConstantAbstract . AbsLitTuple) xs
+    evaluateOp (OpToSet _ (viewConstantPermutation -> Just xs)) =
+        case toFunction <$> fromCycles xs of
+           Left (PermutationError e) -> na $ "evaluateOp{OpToSet}:" <++> pretty e 
+           Right fn -> return $ ConstantAbstract $ AbsLitSet $ (ConstantAbstract . AbsLitTuple) <$> ((\x -> [x, fn x]) <$> join xs)
     evaluateOp op = na $ "evaluateOp{OpToSet}:" <++> pretty (show op)
 
 instance EvaluateOp OpTransform where
@@ -764,6 +808,7 @@ instance EvaluateOp OpTwoBars where
             (viewConstantSequence  -> Just xs)      -> return $ ConstantInt TagInt $ genericLength                    xs
             (viewConstantRelation  -> Just xs)      -> return $ ConstantInt TagInt $ genericLength $ sortNub          xs
             (viewConstantPartition -> Just xs)      -> return $ ConstantInt TagInt $ genericLength $ sortNub $ concat xs
+            (viewConstantPermutation -> Just xs)    -> return $ ConstantInt TagInt $ genericLength $ sortNub $ concat xs
 
             -- cardinality of a domain
             DomainInConstant (DomainInt _ rs) -> ConstantInt TagInt . genericLength <$> rangesInts rs
@@ -798,6 +843,8 @@ instance EvaluateOp OpXor where
     evaluateOp (OpXor x) = ConstantBool . xor <$> boolsOut x
         where xor xs = odd (length [ () | True <- xs ])
 
+instance EvaluateOp OpQuickPermutationOrder where
+    evaluateOp op = na $ "evaluateOp{OpQuickPermutationOrder}:" <++> pretty (show op)
 
 boolsOut :: MonadFailDoc m => Constant -> m [Bool]
 boolsOut (viewConstantMatrix -> Just (_, cs)) = concatMapM boolsOut cs
@@ -915,6 +962,7 @@ ordTildeLt x y =
 
 instance EvaluateOp Op where
     evaluateOp (MkOpActive x) = evaluateOp x
+    evaluateOp (MkOpCompose x) = evaluateOp x
     evaluateOp (MkOpAllDiff x) = evaluateOp x
     evaluateOp (MkOpAllDiffExcept x) = evaluateOp x
     evaluateOp (MkOpAnd x) = evaluateOp x
@@ -960,6 +1008,7 @@ instance EvaluateOp Op where
     evaluateOp (MkOpParticipants x) = evaluateOp x
     evaluateOp (MkOpParts x) = evaluateOp x
     evaluateOp (MkOpParty x) = evaluateOp x
+    evaluateOp (MkOpPermInverse x) = evaluateOp x
     evaluateOp (MkOpPow x) = evaluateOp x
     evaluateOp (MkOpPowerSet x) = evaluateOp x
     evaluateOp (MkOpPred x) = evaluateOp x
@@ -990,4 +1039,4 @@ instance EvaluateOp Op where
     evaluateOp (MkOpTwoBars x) = evaluateOp x
     evaluateOp (MkOpUnion x) = evaluateOp x
     evaluateOp (MkOpXor x) = evaluateOp x
-
+    evaluateOp (MkOpQuickPermutationOrder x) = evaluateOp x

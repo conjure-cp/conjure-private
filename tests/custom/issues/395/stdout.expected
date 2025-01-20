@@ -9,15 +9,23 @@ find conjure_aux1_ExplicitBounded_Values:
         matrix indexed by [int(m), matrix indexed by [int(1..m)] of int(0..m), int(1..m)] of int(1..m)
 branching on [Cs_ExplicitBounded_Length, Cs_ExplicitBounded_Values]
 such that
-    and([and([conjure_aux1_ExplicitBounded_Values[q3 - 1] < conjure_aux1_ExplicitBounded_Values[q3] /\ q3 <= m /\
-              q3 - 1 <= m
+    and([and([conjure_aux1_ExplicitBounded_Values[m, Cz_ExplicitBounded_Values, q3 - 1] <
+              conjure_aux1_ExplicitBounded_Values[m, Cz_ExplicitBounded_Values, q3]
+              /\ q3 <= m
+              /\ q3 - 1 <= m
                   | q3 : int(2..m), q3 <= m])
              | Cz_ExplicitBounded_Values : matrix indexed by [int(1..m)] of int(0..m)]),
     and([true | Cz_ExplicitBounded_Values : matrix indexed by [int(1..m)] of int(0..m)]),
-    or([and([Cz_ExplicitBounded_Values[q5] = Cs_ExplicitBounded_Values[conjure_aux1_ExplicitBounded_Values[q5]] /\
-             q5 <= m
-             /\ (conjure_aux1_ExplicitBounded_Values[q5] <= m /\ q5 <= m)
+    or([and([Cz_ExplicitBounded_Values[q5] =
+             Cs_ExplicitBounded_Values[conjure_aux1_ExplicitBounded_Values[m, Cz_ExplicitBounded_Values, q5]]
+             /\ q5 <= m
+             /\ (conjure_aux1_ExplicitBounded_Values[m, Cz_ExplicitBounded_Values, q5] <= m /\ q5 <= m)
                  | q5 : int(1..m), q5 <= m])
+            | Cz_ExplicitBounded_Values : matrix indexed by [int(1..m)] of int(0..m)])
+    \/
+    or([and([dontCare(conjure_aux1_ExplicitBounded_Length[m, q7]) | q7 : matrix indexed by [int(1..m)] of int(0..m)]) /\
+        and([dontCare(conjure_aux1_ExplicitBounded_Values[m, q10, q11])
+                 | q10 : matrix indexed by [int(1..m)] of int(0..m), q11 : int(1..m)])
             | Cz_ExplicitBounded_Values : matrix indexed by [int(1..m)] of int(0..m)])
 
 language ESSENCE' 1.0
@@ -38,10 +46,16 @@ such that
                   | q3 : int(2..m), q3 <= m])
              | Cs_ExplicitBounded_Values : matrix indexed by [int(1..m)] of int(0..m)]),
     and([true | Cs_ExplicitBounded_Values : matrix indexed by [int(1..m)] of int(0..m)]),
-    or([and([Cz_ExplicitBounded_Values[q5] = Cs_ExplicitBounded_Values[conjure_aux1_ExplicitBounded_Values[q5]] /\
-             q5 <= m
-             /\ (conjure_aux1_ExplicitBounded_Values[q5] <= m /\ q5 <= m)
+    or([and([Cz_ExplicitBounded_Values[q5] =
+             Cs_ExplicitBounded_Values[conjure_aux1_ExplicitBounded_Values[m, Cs_ExplicitBounded_Values, q5]]
+             /\ q5 <= m
+             /\ (conjure_aux1_ExplicitBounded_Values[m, Cs_ExplicitBounded_Values, q5] <= m /\ q5 <= m)
                  | q5 : int(1..m), q5 <= m])
+            | Cs_ExplicitBounded_Values : matrix indexed by [int(1..m)] of int(0..m)])
+    \/
+    or([and([dontCare(conjure_aux1_ExplicitBounded_Length[m, q7]) | q7 : matrix indexed by [int(1..m)] of int(0..m)]) /\
+        and([dontCare(conjure_aux1_ExplicitBounded_Values[m, q10, q11])
+                 | q10 : matrix indexed by [int(1..m)] of int(0..m), q11 : int(1..m)])
             | Cs_ExplicitBounded_Values : matrix indexed by [int(1..m)] of int(0..m)])
 
 language ESSENCE' 1.0

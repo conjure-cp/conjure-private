@@ -1,0 +1,7 @@
+letting n be new type enum {e_5,e_6,e_7,e_8} 
+
+find p : permutation of n
+letting s be [e_5,e_6,e_7,e_8] 
+
+such that e_8 = transform([p],s)[2]
+

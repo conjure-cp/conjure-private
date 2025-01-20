@@ -1,0 +1,7 @@
+
+find p : permutation of int(1..3)
+
+find x, y, z : int(1..3)
+
+such that y = image(p, x)
+such that z = image(permInverse(p), x)

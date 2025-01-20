@@ -14,7 +14,7 @@ find var6_ExplicitVarSizeWithMarker_Values: matrix indexed by [int(1..3), int(0,
 such that
     var4,
     and([q10 + 1 <= var2_ExplicitVarSizeWithMarker_Marker ->
-         var2_ExplicitVarSizeWithMarker_Values[q10, ..] <lex var2_ExplicitVarSizeWithMarker_Values[q10 + 1, ..]
+         var2_ExplicitVarSizeWithMarker_Values[q10, ..] .< var2_ExplicitVarSizeWithMarker_Values[q10 + 1, ..]
              | q10 : int(1..3)]),
     and([q11 > var2_ExplicitVarSizeWithMarker_Marker ->
          and([var2_ExplicitVarSizeWithMarker_Values[q11, q27] = false | q27 : int(4, 5)])
@@ -25,7 +25,7 @@ such that
     var5_ExplicitVarSizeWithFlags_Flags[1] >= -4,
     1 = var5_ExplicitVarSizeWithFlags_Flags[1],
     and([q23 + 1 <= var6_ExplicitVarSizeWithMarker_Marker ->
-         var6_ExplicitVarSizeWithMarker_Values[q23, ..] <lex var6_ExplicitVarSizeWithMarker_Values[q23 + 1, ..]
+         var6_ExplicitVarSizeWithMarker_Values[q23, ..] .< var6_ExplicitVarSizeWithMarker_Values[q23 + 1, ..]
              | q23 : int(1..2)]),
     and([q24 > var6_ExplicitVarSizeWithMarker_Marker ->
          and([var6_ExplicitVarSizeWithMarker_Values[q24, q28] = false | q28 : int(0, 1)])

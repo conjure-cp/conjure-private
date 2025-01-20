@@ -131,7 +131,7 @@ such that
          (flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q5,
                                                                                                                                 ..,
                                                                                                                                 ..])
-          <lex
+          .<
           flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q5
                                                                                                                                 +
                                                                                                                                 1,
@@ -153,7 +153,7 @@ such that
           flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q5,
                                                                                                                                  ..,
                                                                                                                                  ..])
-          <lex
+          .<
           flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q5
                                                                                                                                  +
                                                                                                                                  1,
@@ -183,7 +183,7 @@ such that
               var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q7,
                                                                                                                             q8,
                                                                                                                             ..]
-              <lex
+              .<
               var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q7,
                                                                                                                             q8
                                                                                                                             +
@@ -204,7 +204,7 @@ such that
               var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q7,
                                                                                                                              q8,
                                                                                                                              ..]
-              <lex
+              .<
               var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q7,
                                                                                                                              q8
                                                                                                                              +

@@ -1,0 +1,5 @@
+letting n be new type enum {E1,E2,E3} 
+
+given p : permutation of n 
+
+such that true

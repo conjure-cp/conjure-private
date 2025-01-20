@@ -54,7 +54,7 @@ such that
          /\
          var3_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q2,
                                                                                                  ..]
-         <lex
+         .<
          var3_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q2
                                                                                                  + 1,
                                                                                                  ..]
@@ -113,7 +113,7 @@ such that
          /\
          var3_4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q2,
                                                                                                  ..]
-         <lex
+         .<
          var3_4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q2
                                                                                                  + 1,
                                                                                                  ..]

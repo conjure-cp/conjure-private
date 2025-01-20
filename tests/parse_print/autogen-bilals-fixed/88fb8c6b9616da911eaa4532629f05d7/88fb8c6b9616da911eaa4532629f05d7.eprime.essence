@@ -35,7 +35,7 @@ such that
          /\
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q4,
                                                                                                        .., ..])
-         <lex
+         .<
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q4
                                                                                                        + 1,
                                                                                                        .., ..])
@@ -55,7 +55,7 @@ such that
               ->
               var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q6,
                                                                                                     q7, ..]
-              <lex
+              .<
               var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q6,
                                                                                                     q7 + 1, ..]
                   | q7 : int(1..3)])

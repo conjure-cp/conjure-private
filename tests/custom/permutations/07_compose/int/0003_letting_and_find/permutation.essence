@@ -1,0 +1,9 @@
+letting n be 4
+
+find p : permutation of int(1..n)
+letting q be permutation((1,2,4))
+given i : int(0..5)
+given j : int(0..5)
+
+such that j = image(compose(p,q),i)
+

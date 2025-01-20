@@ -4,7 +4,7 @@ import Conjure.Language.Domain (BinaryRelationAttr (..))
 import Conjure.Language.Expression.Op.Internal.Common (Lexeme (..))
 import Conjure.Prelude
 import Data.Map (Map)
-import qualified Data.Map.Strict as M
+import Data.Map.Strict qualified as M
 
 type Attr = (Lexeme, Bool)
 
@@ -17,6 +17,9 @@ setValidAttrs = mapFrom [sizeyAttrs]
 msetValidAttrs :: Map Lexeme Bool
 msetValidAttrs = mapFrom [sizeyAttrs, occursAttrs]
 
+permValidAttrs :: Map Lexeme Bool
+permValidAttrs = mapFrom [permAttrs]
+
 funAttrs :: Map Lexeme Bool
 funAttrs = mapFrom [sizeyAttrs, jectivityAttrs, totalityAttrs]
 
@@ -27,64 +30,71 @@ relAttrs :: Map Lexeme Bool
 relAttrs = mapFrom [sizeyAttrs, binRelAttrs, totalityAttrs]
 
 partitionAttrs :: Map Lexeme Bool
-partitionAttrs = mapFrom [sizeyAttrs, partSizeAttrs,partNumAttrs, regularity]
+partitionAttrs = mapFrom [sizeyAttrs, partSizeAttrs, partNumAttrs, regularity]
 
 sizeyAttrs :: [Attr]
 sizeyAttrs =
-    [ (L_size, True)
-    , (L_maxSize, True)
-    , (L_minSize, True)
-    ]
+  [ (L_size, True),
+    (L_maxSize, True),
+    (L_minSize, True)
+  ]
+
+permAttrs :: [Attr]
+permAttrs =
+  [ (L_numMoved, True),
+    (L_minNumMoved, True),
+    (L_maxNumMoved, True)
+  ]
 
 occursAttrs :: [Attr]
 occursAttrs =
-    [ (L_minOccur, True)
-    , (L_maxOccur, True)
-    ]
+  [ (L_minOccur, True),
+    (L_maxOccur, True)
+  ]
 
 partNumAttrs :: [Attr]
 partNumAttrs =
-    [ (L_numParts, True)
-    , (L_maxNumParts, True)
-    , (L_minNumParts, True)
-    ]
+  [ (L_numParts, True),
+    (L_maxNumParts, True),
+    (L_minNumParts, True)
+  ]
 
 partSizeAttrs :: [(Lexeme, Bool)]
 partSizeAttrs =
-    [ (L_partSize, True)
-    , (L_minPartSize, True)
-    , (L_maxPartSize, True)
-    ]
+  [ (L_partSize, True),
+    (L_minPartSize, True),
+    (L_maxPartSize, True)
+  ]
 
 jectivityAttrs :: [(Lexeme, Bool)]
 jectivityAttrs =
-    [ (L_injective, False)
-    , (L_bijective, False)
-    , (L_surjective, False)
-    ]
+  [ (L_injective, False),
+    (L_bijective, False),
+    (L_surjective, False)
+  ]
 
 binRelAttrs :: [(Lexeme, Bool)]
 binRelAttrs =
-    [ (L_reflexive, False)
-    , (L_irreflexive, False)
-    , (L_coreflexive, False)
-    , (L_symmetric, False)
-    , (L_antiSymmetric, False)
-    , (L_aSymmetric, False)
-    , (L_transitive, False)
-    , (L_total,False)
-    , (L_connex, False)
-    , (L_Euclidean, False)
-    , (L_serial, False)
-    , (L_equivalence, False)
-    , (L_partialOrder, False)
-    , (L_linearOrder, False)
-    , (L_weakOrder, False)
-    , (L_preOrder, False)
-    , (L_strictPartialOrder, False)
-    , (L_leftTotal, False)
-    , (L_rightTotal, False)
-    ]
+  [ (L_reflexive, False),
+    (L_irreflexive, False),
+    (L_coreflexive, False),
+    (L_symmetric, False),
+    (L_antiSymmetric, False),
+    (L_aSymmetric, False),
+    (L_transitive, False),
+    (L_total, False),
+    (L_connex, False),
+    (L_Euclidean, False),
+    (L_serial, False),
+    (L_equivalence, False),
+    (L_partialOrder, False),
+    (L_linearOrder, False),
+    (L_weakOrder, False),
+    (L_preOrder, False),
+    (L_strictPartialOrder, False),
+    (L_leftTotal, False),
+    (L_rightTotal, False)
+  ]
 
 lexemeToBinRel :: Lexeme -> Maybe BinaryRelationAttr
 lexemeToBinRel L_reflexive = Just BinRelAttr_Reflexive
@@ -116,14 +126,15 @@ regularity = [(L_regular, False)]
 
 allAttributLexemes :: [Lexeme]
 allAttributLexemes =
-    concatMap
-        (map fst)
-        [ sizeyAttrs
-        , jectivityAttrs
-        , occursAttrs
-        , partNumAttrs
-        , partSizeAttrs
-        , binRelAttrs
-        , totalityAttrs
-        , regularity
-        ]
+  concatMap
+    (map fst)
+    [ sizeyAttrs,
+      jectivityAttrs,
+      occursAttrs,
+      partNumAttrs,
+      partSizeAttrs,
+      binRelAttrs,
+      totalityAttrs,
+      regularity,
+      permAttrs
+    ]

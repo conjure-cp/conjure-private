@@ -8,7 +8,7 @@
      [{"Declaration": {"FindOrGiven": ["Find", {"Name": "unused"}, {"DomainBool": []}]}},
       {"SuchThat":
            [{"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Op":
                             {"MkOpSlicing":
                                  [{"Op":

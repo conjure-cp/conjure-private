@@ -71,7 +71,7 @@ such that
          ->
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Function1DPartial_Flags[q1,
                                                                                                           ..]
-         <lex
+         .<
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Function1DPartial_Flags[q1
                                                                                                           + 1,
                                                                                                           ..]
@@ -86,7 +86,7 @@ such that
          /\
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Function1DPartial_Values[q1,
                                                                                                            ..]
-         <lex
+         .<
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Function1DPartial_Values[q1
                                                                                                            + 1,
                                                                                                            ..]

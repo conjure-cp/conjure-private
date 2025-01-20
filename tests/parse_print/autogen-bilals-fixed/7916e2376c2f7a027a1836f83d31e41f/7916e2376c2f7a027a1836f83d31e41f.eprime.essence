@@ -24,7 +24,7 @@ such that
          ->
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1, q6,
                                                                                   ..]
-         <lex
+         .<
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1,
                                                                                   q6 + 1, ..]
              | q6 : int(1..255)]),

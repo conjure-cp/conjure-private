@@ -228,7 +228,7 @@
                                                                                                                                                                      []},
                                                                                                                                                                 1]}}]]}}}}]}}]}},
                                                                                                          {"Op":
-                                                                                                              {"MkOpLexLt":
+                                                                                                              {"MkOpDotLt":
                                                                                                                    [{"Op":
                                                                                                                          {"MkOpSlicing":
                                                                                                                               [{"Op":

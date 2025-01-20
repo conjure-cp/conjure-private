@@ -1,0 +1,10 @@
+letting n be 4
+
+find p : permutation of int(1..n) 
+given s : relation of (int(1..n) * int(1..n))
+
+find sn : relation of (int(1..n) * int(1..n))
+
+
+
+such that sn = transform([p],s) /\ (3 = sum([ toInt(l!=r) | (l,r) <- p]))

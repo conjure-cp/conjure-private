@@ -22,7 +22,7 @@ such that
                  | q12 : int(1..nrings)])
              | q11 : int(1..fin1)]),
     and([network_ExplicitWithFlagsR2_Flags[q1 + 1] > 0 ->
-         network_ExplicitWithFlagsR2_Values_Occurrence[q1, ..] <lex
+         network_ExplicitWithFlagsR2_Values_Occurrence[q1, ..] .<
          network_ExplicitWithFlagsR2_Values_Occurrence[q1 + 1, ..]
              | q1 : int(1..nrings - 1)]),
     and([network_ExplicitWithFlagsR2_Flags[q2] = 0 ->

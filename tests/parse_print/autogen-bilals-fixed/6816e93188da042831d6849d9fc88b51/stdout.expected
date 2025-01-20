@@ -8,7 +8,7 @@ find var3: bool
 such that
     var3,
     and([var2_ExplicitVarSizeWithFlags_Flags[q8 + 1] ->
-         flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q8, .., ..]) <lex
+         flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q8, .., ..]) .<
          flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q8 + 1, .., ..])
              | q8 : int(1..15)]),
     and([var2_ExplicitVarSizeWithFlags_Flags[q9] = false ->

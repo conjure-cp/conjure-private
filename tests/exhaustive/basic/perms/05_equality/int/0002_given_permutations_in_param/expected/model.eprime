@@ -1,0 +1,18 @@
+language ESSENCE' 1.0
+
+given p_PermutationAsFunction_PermutationFunction_forwards_Function1D: matrix indexed by [int(1..4)] of int(1..4)
+given p_PermutationAsFunction_PermutationFunction_backwards_Function1D: matrix indexed by [int(1..4)] of int(1..4)
+given q_PermutationAsFunction_PermutationFunction_forwards_Function1D: matrix indexed by [int(1..4)] of int(1..4)
+given q_PermutationAsFunction_PermutationFunction_backwards_Function1D: matrix indexed by [int(1..4)] of int(1..4)
+find b: bool
+branching on [b]
+such that
+    b =
+    (and([p_PermutationAsFunction_PermutationFunction_forwards_Function1D[q1] =
+          q_PermutationAsFunction_PermutationFunction_forwards_Function1D[q1]
+              | q1 : int(1..4)])
+     /\
+     and([p_PermutationAsFunction_PermutationFunction_backwards_Function1D[q3] =
+          q_PermutationAsFunction_PermutationFunction_backwards_Function1D[q3]
+              | q3 : int(1..4)]))
+

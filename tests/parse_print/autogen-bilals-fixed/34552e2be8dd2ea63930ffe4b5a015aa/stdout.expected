@@ -30,13 +30,13 @@ such that
          /\
          (flatten(var2_PartitionAsSetR4_ExplicitVarSizeWithMarkerR5R4_Values_ExplicitVarSizeWithMarkerR4_Values_ExplicitVarSizeWithFlags_Flags
                       [q4, .., ..])
-          <lex
+          .<
           flatten(var2_PartitionAsSetR4_ExplicitVarSizeWithMarkerR5R4_Values_ExplicitVarSizeWithMarkerR4_Values_ExplicitVarSizeWithFlags_Flags
                       [q4 + 1, .., ..])
           \/
           flatten(var2_PartitionAsSetR4_ExplicitVarSizeWithMarkerR5R4_Values_ExplicitVarSizeWithMarkerR4_Values_ExplicitVarSizeWithFlags_Values
                       [q4, .., ..])
-          <lex
+          .<
           flatten(var2_PartitionAsSetR4_ExplicitVarSizeWithMarkerR5R4_Values_ExplicitVarSizeWithMarkerR4_Values_ExplicitVarSizeWithFlags_Values
                       [q4 + 1, .., ..]))
              | q4 : int(1..15)]),

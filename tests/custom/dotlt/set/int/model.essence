@@ -1,0 +1,7 @@
+find i: set of int(1..3)
+find j: set of int(1..3)
+
+such that
+
+i .<= j
+

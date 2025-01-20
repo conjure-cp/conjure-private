@@ -4,6 +4,6 @@ Error:
 2 | such that s = range(5)
   |                     ^
 Type error:
-	Expected: "Function or Sequence"
+	Expected: "function, sequence or permutation"
 	Got: int
 

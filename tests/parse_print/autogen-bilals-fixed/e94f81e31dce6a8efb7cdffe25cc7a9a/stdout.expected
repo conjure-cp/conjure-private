@@ -13,10 +13,10 @@ find var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMar
 such that
     false,
     and([var1_ExplicitVarSizeWithFlags_Flags[q1 + 1] > 0 ->
-         var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Flags[q1, ..] <lex
+         var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Flags[q1, ..] .<
          var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Flags[q1 + 1, ..]
          \/
-         var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Values[q1, ..] <lex
+         var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Values[q1, ..] .<
          var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithFlags_Values[q1 + 1, ..]
              | q1 : int(1..2)]),
     and([var1_ExplicitVarSizeWithFlags_Flags[q3 + 1] > 0 -> var1_ExplicitVarSizeWithFlags_Flags[q3] > 0
@@ -48,7 +48,7 @@ such that
     var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[1] =
     var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[2]
     /\
-    flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[1, .., ..]) <lex
+    flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[1, .., ..]) .<
     flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[2, .., ..]),
     and([q19 > var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
          var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q19] = 0 /\
@@ -59,7 +59,7 @@ such that
     var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker <= 2,
     and([q20 <= var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
          and([q21 + 1 <= var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q20] ->
-              var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q20, q21, ..] <lex
+              var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q20, q21, ..] .<
               var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q20, q21 + 1, ..]
                   | q21 : int(1..4)])
              | q20 : int(1..2)]),

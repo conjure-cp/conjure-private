@@ -3,6 +3,6 @@ letting R be domain partition (numParts 2) from A
 find m : R 
 find n : R 
 find f : function (total, bijective) int(1..2) --> int(1..2)
-such that m = transform(f,n)
+such that m = transform([f],n)
 such that m != n
 

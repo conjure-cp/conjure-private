@@ -1,0 +1,11 @@
+letting n be new type enum {E1,E2,E3,E4} 
+
+given p : permutation of n
+
+find i : int(0..10)
+
+such that i = |p| 
+
+
+
+

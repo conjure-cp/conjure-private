@@ -47,6 +47,7 @@ data UI
         , representationsCuts        :: Maybe String        -- (def: representations)
         , channelling                :: Bool
         , representationLevels       :: Bool                -- (def: True)
+        , unnamedSymmetryBreaking    :: String
         , followModel                :: FilePath            -- this is a model to be followed
         , seed                       :: Maybe Int
         , limitModels                :: Maybe Int
@@ -122,6 +123,7 @@ data UI
         , representationsCuts        :: Maybe String
         , channelling                :: Bool
         , representationLevels       :: Bool                -- (def: True)
+        , unnamedSymmetryBreaking    :: String
         , followModel                :: FilePath            -- this is a model to be followed
         , seed                       :: Maybe Int
         , limitModels                :: Maybe Int
@@ -439,6 +441,14 @@ ui = modes
             &= help "Whether to use built-in precedence levels when choosing representations. \
                     \Used to cut down the number of generated models.\n\
                     \Default: true"
+        , unnamedSymmetryBreaking
+            = "none"
+            &= name "unnamed-symmetry-breaking"
+            &= groupname "Model generation"
+            &= explicit
+            &= help "Level to use for breaking symmetries arising from unnamed types. \
+                    \Options: none / fast-consecutive / fast-allpairs / complete-independently / complete.\n\
+                    \Default: none"
         , followModel
             = ""
             &= name "follow-model"
@@ -898,6 +908,14 @@ ui = modes
             &= help "Whether to use built-in precedence levels when choosing representations. \
                     \Used to cut down the number of generated models.\n\
                     \Default: true"
+        , unnamedSymmetryBreaking
+            = "none"
+            &= name "unnamed-symmetry-breaking"
+            &= groupname "Model generation"
+            &= explicit
+            &= help "Level to use for breaking symmetries arising from unnamed types. \
+                    \Options: none / fast-consecutive / fast-allpairs / complete-independently / complete.\n\
+                    \Default: none"
         , followModel
             = ""
             &= name "follow-model"

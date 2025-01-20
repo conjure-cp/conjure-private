@@ -1,0 +1,4 @@
+find x : int:A(-6..6)
+such that x = -2:A
+
+

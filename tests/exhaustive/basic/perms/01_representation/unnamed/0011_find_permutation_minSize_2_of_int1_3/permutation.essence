@@ -1,0 +1,5 @@
+letting n be new type of size 3 
+
+find p : permutation (minNumMoved 2) of n 
+
+such that true

@@ -108,7 +108,7 @@
                                                                                     {"ConstantBool": false},
                                                                                     {"ConstantBool": false}]}}]}}]]}}},
                                              {"Op":
-                                                  {"MkOpLexLeq":
+                                                  {"MkOpDotLeq":
                                                        [{"Comprehension":
                                                              [{"Constant": {"ConstantInt": [{"TagInt": []}, 4]}},
                                                               [{"Generator":

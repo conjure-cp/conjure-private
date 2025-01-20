@@ -1,5 +1,5 @@
 letting R be domain partition (numParts 2) from int(1..4) 
 find m : R 
 find f : function (total, bijective) int(1..4) --> int(1..4)
-such that m = transform(f,partition({1,3},{2,4}))
+such that m = transform([f],partition({1,3},{2,4}))
 

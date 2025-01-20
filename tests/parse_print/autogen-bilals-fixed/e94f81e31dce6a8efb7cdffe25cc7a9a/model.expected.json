@@ -165,7 +165,7 @@
                                                                               {"ConstantInt":
                                                                                    [{"TagInt": []}, 2]}}]}]]},
                                                             [{"Op":
-                                                                  {"MkOpLexLt":
+                                                                  {"MkOpDotLt":
                                                                        [{"Op":
                                                                              {"MkOpSlicing":
                                                                                   [{"Op":
@@ -215,7 +215,7 @@
                                                                                                                                1]}}]]}}}}]}},
                                                                                    null, null]}}]}},
                                                              {"Op":
-                                                                  {"MkOpLexLt":
+                                                                  {"MkOpDotLt":
                                                                        [{"Op":
                                                                              {"MkOpSlicing":
                                                                                   [{"Op":
@@ -698,7 +698,7 @@
                                                                                                    [{"TagInt": []},
                                                                                                     2]}}]}}]}},
                                                                    {"Op":
-                                                                        {"MkOpLexLt":
+                                                                        {"MkOpDotLt":
                                                                              [{"Op":
                                                                                    {"MkOpFlatten":
                                                                                         [null,
@@ -926,7 +926,7 @@
                                                                                              [{"Name": "q20"},
                                                                                               null]}]}}]}},
                                                                   {"Op":
-                                                                       {"MkOpLexLt":
+                                                                       {"MkOpDotLt":
                                                                             [{"Op":
                                                                                   {"MkOpSlicing":
                                                                                        [{"Op":

@@ -27,7 +27,7 @@ find var5_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMar
 find var6: int(-1..1)
 such that
     and([q1 + 1 <= var2_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->
-         var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1, ..] <lex
+         var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1, ..] .<
          var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1 + 1, ..]
          \/
          and([var2_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1, q35]
@@ -84,7 +84,7 @@ such that
          /\
          var4_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q9,
                                                                                                  ..]
-         <lex
+         .<
          var4_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q9
                                                                                                  + 1,
                                                                                                  ..]
@@ -171,7 +171,7 @@ such that
          /\
          (var5_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q19,
                                                                                                                                  ..]
-          <lex
+          .<
           var5_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q19
                                                                                                                                  +
                                                                                                                                  1,
@@ -189,7 +189,7 @@ such that
           flatten(var5_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q19,
                                                                                                                                          ..,
                                                                                                                                          ..])
-          <lex
+          .<
           flatten(var5_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q19
                                                                                                                                          +
                                                                                                                                          1,
@@ -233,7 +233,7 @@ such that
               var5_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q21,
                                                                                                                                      q22,
                                                                                                                                      ..]
-              <lex
+              .<
               var5_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q21,
                                                                                                                                      q22
                                                                                                                                      +

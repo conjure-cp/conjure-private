@@ -1,0 +1,5 @@
+find t : int:A(-6..6)
+find x : int(-6..6)
+such that x = -t
+
+

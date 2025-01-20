@@ -26,6 +26,7 @@ instance (TypeOf x, Pretty x) => TypeOf (OpToSet x) where
         tx <- typeOf x
         case tx of
             TypeRelation is  -> return (TypeSet (TypeTuple is))
+            TypePermutation is -> return (TypeSet (TypeTuple [is, is]))
             TypeMSet i       -> return (TypeSet i)
             TypeFunction i j -> return (TypeSet (TypeTuple [i,j]))
             TypeMatrix _ i   -> return (TypeSet i)

@@ -1,0 +1,32 @@
+language ESSENCE' 1.0
+
+find i: int(1..4)
+find p_PermutationAsFunction_PermutationFunction_forwards_Function1D: matrix indexed by [int(1..4)] of int(1..4)
+find p_PermutationAsFunction_PermutationFunction_backwards_Function1D: matrix indexed by [int(1..4)] of int(1..4)
+find j: int(1..4)
+branching on
+    [i, p_PermutationAsFunction_PermutationFunction_forwards_Function1D,
+     p_PermutationAsFunction_PermutationFunction_backwards_Function1D, j]
+such that
+    i >= 2,
+    i <= 3,
+    j >= 3,
+    j <= 4,
+    j =
+    [i, catchUndef(p_PermutationAsFunction_PermutationFunction_forwards_Function1D[i], 0); int(1..2)]
+        [toInt(or([q9 = i | q9 : int(1..4)])) + 1],
+    allDiff(p_PermutationAsFunction_PermutationFunction_forwards_Function1D),
+    and([or([p_PermutationAsFunction_PermutationFunction_forwards_Function1D[q3] = q2 | q3 : int(1..4)])
+             | q2 : int(1..4)]),
+    allDiff(p_PermutationAsFunction_PermutationFunction_backwards_Function1D),
+    and([or([p_PermutationAsFunction_PermutationFunction_backwards_Function1D[q6] = q5 | q6 : int(1..4)])
+             | q5 : int(1..4)]),
+    and([p_PermutationAsFunction_PermutationFunction_backwards_Function1D
+             [p_PermutationAsFunction_PermutationFunction_forwards_Function1D[q1]]
+         = q1
+             | q1 : int(1..4)]),
+    and([p_PermutationAsFunction_PermutationFunction_forwards_Function1D
+             [p_PermutationAsFunction_PermutationFunction_backwards_Function1D[q1]]
+         = q1
+             | q1 : int(1..4)])
+

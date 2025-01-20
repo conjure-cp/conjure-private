@@ -172,7 +172,7 @@
                                                                              {"ConstantInt":
                                                                                   [{"TagInt": []}, 1]}}]]}}}}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":
@@ -424,7 +424,7 @@
                                                                              {"ConstantInt":
                                                                                   [{"TagInt": []}, 1]}}]]}}}}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":

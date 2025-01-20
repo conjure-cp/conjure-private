@@ -31,6 +31,7 @@ instance (TypeOf x, Pretty x) => TypeOf (OpMinus x) where
         ]
         (\ ty -> case (?typeCheckerMode, ty) of
                     (StronglyTyped, TypeInt TagInt) -> True
+                    (StronglyTyped, TypeInt TaggedInt{}) -> True
                     (RelaxedIntegerTags, TypeInt{}) -> True
                     _ -> False
         )

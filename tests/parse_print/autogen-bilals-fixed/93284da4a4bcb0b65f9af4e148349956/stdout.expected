@@ -34,7 +34,7 @@ such that
          /\
          (var4_ExplicitVarSizeWithFlagsR17R5R5_Values_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Marker
               [q3, ..]
-          <lex
+          .<
           var4_ExplicitVarSizeWithFlagsR17R5R5_Values_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Marker
               [q3 + 1, ..]
           \/
@@ -47,7 +47,7 @@ such that
           /\
           flatten(var4_ExplicitVarSizeWithFlagsR17R5R5_Values_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values
                       [q3, .., ..])
-          <lex
+          .<
           flatten(var4_ExplicitVarSizeWithFlagsR17R5R5_Values_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values
                       [q3 + 1, .., ..]))
              | q3 : int(1..15)]),
@@ -121,7 +121,7 @@ such that
               /\
               var4_ExplicitVarSizeWithFlagsR17R5R5_Values_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values
                   [q7, q13, ..]
-              <lex
+              .<
               var4_ExplicitVarSizeWithFlagsR17R5R5_Values_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values
                   [q7, q13 + 1, ..]
                   | q13 : int(1..2)])

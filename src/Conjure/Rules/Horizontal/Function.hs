@@ -692,6 +692,7 @@ rule_Image_Matrix_LexLhs = "function-image-matrix-lexlhs" `namedRule` theRule wh
     theRule p = do
         (mkLex, (lhs,rhs)) <- match opLex p
         (func, arg) <- match opImage lhs
+        TypeFunction{} <- typeOf func
         return
             ( "Function image, matrix as an argument to a lex operator."
             , do
@@ -711,6 +712,7 @@ rule_Image_Matrix_LexRhs = "function-image-matrix-lexrhs" `namedRule` theRule wh
     theRule p = do
         (mkLex, (lhs,rhs)) <- match opLex p
         (func, arg) <- match opImage rhs
+        TypeFunction{} <- typeOf func
         return
             ( "Function image, matrix as an argument to a lex operator."
             , do

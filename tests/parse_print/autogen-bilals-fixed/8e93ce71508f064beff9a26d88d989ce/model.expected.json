@@ -193,7 +193,7 @@
                                                               [{"ConstantBool": false},
                                                                {"ConstantBool": false}]]}}}]]}}]}}]}},
             {"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Op":
                             {"MkOpFlatten":
                                  [null,

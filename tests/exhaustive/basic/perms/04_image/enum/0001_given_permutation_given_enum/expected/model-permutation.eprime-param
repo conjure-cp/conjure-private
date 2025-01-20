@@ -1,0 +1,5 @@
+language ESSENCE' 1.0
+
+letting p_PermutationAsFunction_PermutationFunction_forwards_Function1D be [1, 4, 3, 5, 2, 6, 7; int(1..7)]
+letting p_PermutationAsFunction_PermutationFunction_backwards_Function1D be [1, 5, 3, 2, 4, 6, 7; int(1..7)]
+letting i be 2

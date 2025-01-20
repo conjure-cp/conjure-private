@@ -73,14 +73,14 @@ msetExplicitWithRepetition = Representation chck downD structuralCons downC up s
             let
                 orderingUpToFlag flag values = do
                     (iPat, i) <- quantifiedVar
-                    return $ return $ -- list
+                    return $ return -- list
                         [essence|
                             forAll &iPat : int(1..&maxIndex-1) , &i+1 <= &flag . &values[&i] .<= &values[&i+1]
                         |]
 
                 dontCareAfterFlag flag values = do
                     (iPat, i) <- quantifiedVar
-                    return $ return $ -- list
+                    return $ return -- list
                         [essence|
                             forAll &iPat : int(1..&maxIndex) , &i > &flag . dontCare(&values[&i])
                         |]

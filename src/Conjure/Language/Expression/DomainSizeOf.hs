@@ -27,7 +27,7 @@ instance DomainSizeOf Expression Expression where
     domainSizeOf (DomainInt _ [] ) = failDoc "domainSizeOf infinite integer domain"
     domainSizeOf (DomainInt _ [r]) = domainSizeOfRange r
     domainSizeOf (DomainInt _ rs ) = make opSum . fromList <$> mapM domainSizeOfRange rs
-    domainSizeOf (DomainIntE x) = do
+    domainSizeOf (DomainIntE _ x) = do
         let
             go (Reference _ (Just (Alias y))) = go y
             go (Comprehension _body gocs) = return $ make opSum $ Comprehension 1 gocs
@@ -86,6 +86,8 @@ instance DomainSizeOf Expression Expression where
     domainSizeOf (DomainPartition _ a inner) =
         domainSizeOf $ DomainSet def (SetAttr (partsNum  a))
                       $ DomainSet def (SetAttr (partsSize a)) inner
+    domainSizeOf (DomainPermutation _ (PermutationAttr sizeAttr) inner) =
+        domainSizeOf $ DomainSet def (SetAttr sizeAttr) inner
     domainSizeOf d = bug ("not implemented: domainSizeOf:" <+> vcat [pretty d, pretty (show d)])
 
 

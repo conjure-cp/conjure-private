@@ -1,6 +1,6 @@
 letting R be domain sequence (size 4) of int(1..4) 
 find m : R 
 find f : function (total, bijective) int(1..4) --> int(1..4)
-such that m = transform(f,sequence(4,3,2,1))
+such that m = transform([f],sequence(4,3,2,1))
 
 

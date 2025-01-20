@@ -27,7 +27,7 @@ such that
     and([q13 + 1 <= var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Flags
                      [q13, .., ..])
-         <lex
+         .<
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Flags
                      [q13 + 1, .., ..])
          \/
@@ -39,7 +39,7 @@ such that
          /\
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Values
                      [q13, .., ..])
-         <lex
+         .<
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Values
                      [q13 + 1, .., ..])
              | q13 : int(1..2)]),

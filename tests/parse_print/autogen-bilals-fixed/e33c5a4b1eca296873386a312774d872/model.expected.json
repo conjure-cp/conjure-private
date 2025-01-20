@@ -57,7 +57,7 @@
                                           {"Constant": {"ConstantInt": [{"TagInt": []}, 5]}}]}]]}]}]}]}},
       {"SuchThat":
            [{"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Comprehension":
                             [{"Reference": [{"Name": "l_1"}, null]},
                              [{"Generator": {"GenDomainNoRepr": [{"Single": {"Name": "l_1"}}, {"DomainBool": []}]}}]]},

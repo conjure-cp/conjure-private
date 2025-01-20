@@ -15,7 +15,7 @@ find var2_2_Function1DPartial_Values: matrix indexed by [int(0, 4..5)] of int(0)
 find var2_3: bool
 such that
     and([q1 + 1 <= var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->
-         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1, ..] <lex
+         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1, ..] .<
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1 + 1, ..]
          \/
          and([var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1, q28] ->
@@ -71,7 +71,7 @@ such that
          var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q11] =
          var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q11 + 1]
          /\
-         var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q11, ..] <lex
+         var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q11, ..] .<
          var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q11 + 1, ..]
              | q11 : int(1..3)]),
     and([q12 > var2_1_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->

@@ -1,0 +1,10 @@
+letting n be 4
+
+given p : permutation of int(1..n)
+given s : set of int(1..n)
+
+find b : bool
+
+
+such that b = (s = defined(p)) 
+

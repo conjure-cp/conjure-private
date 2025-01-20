@@ -1,0 +1,6 @@
+find x : int:A(1..6)
+find y : int(1..6)
+
+such that x <= y
+
+

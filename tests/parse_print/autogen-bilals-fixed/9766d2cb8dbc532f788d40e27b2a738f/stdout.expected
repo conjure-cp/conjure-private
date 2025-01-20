@@ -20,5 +20,4 @@ such that
     or([l_1 | l_1 : bool, l_1]),
     max(var2) in party(4 / 2, partition({1, 2, 1, 1, 4}, {2, 1, 5, 5}, {2, 3, 0, 3}, {3, 1})),
     true,
-    ((false -> true) <-> false <= false) ->
-    [true; int(2)] <=lex [false, true, false, true, false; int(11..12, 7, 13, 14)]
+    ((false -> true) <-> false <= false) -> [true; int(2)] .<= [false, true, false, true, false; int(11..12, 7, 13, 14)]

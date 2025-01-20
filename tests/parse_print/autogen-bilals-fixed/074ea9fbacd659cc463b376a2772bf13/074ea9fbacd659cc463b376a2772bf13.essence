@@ -2,5 +2,5 @@ language Essence 1.3
 
 find unused: bool
 such that
-    [4 | l_1 : int(5, 0..0)] <=lex
+    [4 | l_1 : int(5, 0..0)] .<=
     image((function() : `function mset of bool --> matrix indexed by [int] of int`), mset(false))

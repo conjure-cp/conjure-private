@@ -1,0 +1,7 @@
+letting n be new type enum {E1,E2,E3,E4} 
+
+letting p be permutation((E1,E3,E4))
+find b : n
+
+such that and([i = b | i <- transform([p], [E4,E4,E4,E4])])
+

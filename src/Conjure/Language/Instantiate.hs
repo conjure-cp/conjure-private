@@ -237,14 +237,14 @@ instantiateD ::
     Domain r Expression -> m (Domain r Constant)
 instantiateD (DomainAny t ty) = return (DomainAny t ty)
 instantiateD DomainBool = return DomainBool
-instantiateD (DomainIntE x) = do
+instantiateD (DomainIntE maybe_tag x) = do
     x' <- instantiateE x
     let vals = case (x', viewConstantMatrix x', viewConstantSet x') of
                 (ConstantInt{}, _, _) -> [x']
                 (_, Just (_, xs), _) -> xs
                 (_, _, Just xs) -> xs
                 _ -> []
-    return (DomainInt TagInt (map RangeSingle vals))
+    return (DomainInt maybe_tag (map RangeSingle vals))
 instantiateD (DomainInt t ranges) = DomainInt t <$> mapM instantiateR ranges
 instantiateD (DomainEnum nm Nothing _) = do
     st <- gets id
@@ -279,6 +279,7 @@ instantiateD (DomainFunction  r attrs innerFr innerTo) = DomainFunction r <$> in
 instantiateD (DomainSequence  r attrs inner) = DomainSequence r <$> instantiateSequenceAttr attrs <*> instantiateD inner
 instantiateD (DomainRelation  r attrs inners) = DomainRelation r <$> instantiateRelationAttr attrs <*> mapM instantiateD inners
 instantiateD (DomainPartition r attrs inner) = DomainPartition r <$> instantiatePartitionAttr attrs <*> instantiateD inner
+instantiateD (DomainPermutation r attrs inner) = DomainPermutation r <$> instantiatePermutationAttr attrs <*> instantiateD inner
 instantiateD (DomainOp nm ds) = DomainOp nm <$> mapM instantiateD ds
 instantiateD (DomainReference _ (Just d)) = instantiateD d
 instantiateD (DomainReference name Nothing) = do
@@ -388,6 +389,16 @@ instantiatePartitionAttr (PartitionAttr a b r) =
     PartitionAttr <$> instantiateSizeAttr a
                   <*> instantiateSizeAttr b
                   <*> pure r
+
+
+instantiatePermutationAttr ::
+    MonadFailDoc m =>
+    MonadState [(Name, Expression)] m =>
+    EnumerateDomain m =>
+    NameGen m =>
+    (?typeCheckerMode :: TypeCheckerMode) =>
+    PermutationAttr Expression -> m (PermutationAttr Constant)
+instantiatePermutationAttr (PermutationAttr x) = PermutationAttr <$> instantiateSizeAttr x
 
 
 instantiateR ::

@@ -1,0 +1,5 @@
+language Essence 1.3
+
+letting i be E4
+letting j be E4
+letting p be permutation((E0, E1, E3))

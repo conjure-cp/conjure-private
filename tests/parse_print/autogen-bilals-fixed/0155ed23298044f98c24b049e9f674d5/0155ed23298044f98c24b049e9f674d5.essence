@@ -7,7 +7,7 @@ find var2:
 find var3: matrix indexed by [int(2, 0..5)] of int(0..3, 2..3)
 find var4: int(5, 4)
 such that
-    [l_1 | l_1 : bool, l_1] <lex
+    [l_1 | l_1 : bool, l_1] .<
     [[true; int(0..0)], [true, true; int(1, 5..5)]; int(5, 2..2)][0],
     true,
     false

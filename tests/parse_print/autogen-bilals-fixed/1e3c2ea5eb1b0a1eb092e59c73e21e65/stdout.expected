@@ -27,7 +27,7 @@ such that
     var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1],
     var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1] >= 1,
     and([q8 + 1 <= var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1] ->
-         var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Values[1, q8, ..] <lex
+         var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Values[1, q8, ..] .<
          var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Values[1, q8 + 1, ..]
              | q8 : int(1..23)]),
     and([q9 > var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1] ->
@@ -35,14 +35,14 @@ such that
              | q9 : int(1..24)]),
     var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1] <= 24,
     and([var2_ExplicitVarSizeWithFlagsR10_Flags[q13 + 1] ->
-         var2_ExplicitVarSizeWithFlagsR10_Values_Function1DPartial_Flags[q13, ..] <lex
+         var2_ExplicitVarSizeWithFlagsR10_Values_Function1DPartial_Flags[q13, ..] .<
          var2_ExplicitVarSizeWithFlagsR10_Values_Function1DPartial_Flags[q13 + 1, ..]
          \/
          and([var2_ExplicitVarSizeWithFlagsR10_Values_Function1DPartial_Flags[q13, q23] =
               var2_ExplicitVarSizeWithFlagsR10_Values_Function1DPartial_Flags[q13 + 1, q23]
                   | q23 : bool])
          /\
-         var2_ExplicitVarSizeWithFlagsR10_Values_Function1DPartial_Values[q13, ..] <lex
+         var2_ExplicitVarSizeWithFlagsR10_Values_Function1DPartial_Values[q13, ..] .<
          var2_ExplicitVarSizeWithFlagsR10_Values_Function1DPartial_Values[q13 + 1, ..]
              | q13 : int(1..119)]),
     and([var2_ExplicitVarSizeWithFlagsR10_Flags[q14] = false ->

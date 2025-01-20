@@ -22,7 +22,7 @@ such that
                        {false}),
              partition({false, true, false, true}, {false});
                  int(4..6)]),
-    image(function(true --> false), var1 <=lex [true, true, true; int(2, 4, 0)]),
+    image(function(true --> false), var1 .<= [true, true, true; int(2, 4, 0)]),
     image(function({true} --> false, {true} --> false), {true <-> false}),
     together({relation((true, true))},
              partition({relation((true, false), (false, true), (false, false), (false, false), (true, true)),

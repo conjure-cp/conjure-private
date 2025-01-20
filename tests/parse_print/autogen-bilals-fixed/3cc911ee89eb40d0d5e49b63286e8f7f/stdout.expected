@@ -17,7 +17,7 @@ such that
          var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Marker[q1] =
          var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Marker[q1 + 1]
          /\
-         var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Values[q1, ..] <lex
+         var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Values[q1, ..] .<
          var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Values[q1 + 1, ..]
          \/
          and([q14 <= var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithMarker_Marker[q1] ->
@@ -35,10 +35,10 @@ such that
                       | q20 : int(1..2)])
                   | q18 : int(1..2)])
          /\
-         (var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Flags[q1, ..] <lex
+         (var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Flags[q1, ..] .<
           var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Flags[q1 + 1, ..]
           \/
-          var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Values[q1, ..] <lex
+          var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Values[q1, ..] .<
           var1_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Values[q1 + 1, ..])
              | q1 : int(1..3)]),
     and([q2 > var1_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->

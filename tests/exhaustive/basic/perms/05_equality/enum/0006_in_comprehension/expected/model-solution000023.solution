@@ -1,0 +1,4 @@
+language Essence 1.3
+
+letting p be permutation((E1, E4), (E2, E3))
+letting q be permutation((E1, E3, E4, E2))

@@ -41,7 +41,7 @@ such that
                         ([true; int(2..2)], partition({true, false, true, true}),
                          mset(false))); int(0..0)]))
     subsetEq
-    relation(([l_2 | l_2 : bool, l_3 : bool, l_3 <= false, l_2] <=lex
+    relation(([l_2 | l_2 : bool, l_3 : bool, l_3 <= false, l_2] .<=
               [5 >= 0 | l_4 : bool, l_5 : bool],
               ([] : `matrix indexed by [int] of relation of (matrix indexed by [int] of bool *
                                                              partition from bool * mset of bool)`)),

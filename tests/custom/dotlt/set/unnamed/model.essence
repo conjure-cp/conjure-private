@@ -1,0 +1,9 @@
+letting e be new type of size 4
+
+find i: set of e
+find j: set of e
+
+such that
+
+i .<= j
+

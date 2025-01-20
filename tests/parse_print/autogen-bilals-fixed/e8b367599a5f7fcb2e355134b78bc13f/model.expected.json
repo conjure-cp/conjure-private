@@ -157,7 +157,7 @@
                                                   {"ConstantBool": false}, {"ConstantBool": true},
                                                   {"ConstantBool": false}]]}}}}}]}},
             {"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Op":
                             {"MkOpFlatten":
                                  [null,
@@ -198,7 +198,7 @@
             {"Op":
                  {"MkOpImply":
                       [{"Op":
-                            {"MkOpLexLt":
+                            {"MkOpDotLt":
                                  [{"Constant":
                                        {"ConstantAbstract":
                                             {"AbsLitMatrix":

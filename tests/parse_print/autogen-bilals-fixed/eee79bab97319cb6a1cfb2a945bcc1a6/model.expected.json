@@ -271,7 +271,7 @@
                                                                               {"ConstantInt":
                                                                                    [{"TagInt": []}, 2]}}]}]]},
                                                             [{"Op":
-                                                                  {"MkOpLexLt":
+                                                                  {"MkOpDotLt":
                                                                        [{"Op":
                                                                              {"MkOpSlicing":
                                                                                   [{"Op":
@@ -652,7 +652,7 @@
                                                                                                                                                                                            []},
                                                                                                                                                                                       1]}}]]}}}}]}}]}},
                                                                                                                                {"Op":
-                                                                                                                                    {"MkOpLexLt":
+                                                                                                                                    {"MkOpDotLt":
                                                                                                                                          [{"Op":
                                                                                                                                                {"MkOpSlicing":
                                                                                                                                                     [{"Op":
@@ -1342,7 +1342,7 @@
                                        {"Op":
                                             {"MkOpImply":
                                                  [{"Op":
-                                                       {"MkOpLexLt":
+                                                       {"MkOpDotLt":
                                                             [{"Op":
                                                                   {"MkOpSlicing":
                                                                        [{"Op":

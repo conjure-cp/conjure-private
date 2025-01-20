@@ -2,6 +2,6 @@
 find m : matrix indexed by [int(1..4)] of int(1..4)
 find n : matrix indexed by [int(1..4)] of int(1..4)
 find f : function (total, bijective) int(1..4) --> int(1..4)
-such that m = transform(f,n)
+such that m = transform([f],n)
 such that m != n
 such that allDiff(m)

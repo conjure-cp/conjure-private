@@ -69,7 +69,7 @@ functionAsRelation dispatch reprOptions = Representation chck downD structuralCo
                         PartialityAttr_Partial -> do
                             (iPat, i) <- quantifiedVar
                             (jPat, j) <- quantifiedVar
-                            return $ return $ -- list
+                            return $ return
                                 [essence|
                                     $ enforcing that it is indeed a function
                                     forAll {&iPat, &jPat} subsetEq toSet(&rel) .
@@ -78,7 +78,7 @@ functionAsRelation dispatch reprOptions = Representation chck downD structuralCo
                         PartialityAttr_Total -> do
                             (iPat, i) <- quantifiedVar
                             (jPat, j) <- quantifiedVar
-                            return $ return $ -- list
+                            return $ return
                                 [essence|
                                     forAll &iPat : &innerDomainFr .
                                         1 =  sum([ 1
@@ -96,7 +96,7 @@ functionAsRelation dispatch reprOptions = Representation chck downD structuralCo
                 injectiveCons rel = do
                     (iPat, i) <- quantifiedVar
                     (jPat, j) <- quantifiedVar
-                    return $ return $ -- list
+                    return $ return
                         [essence|
                             and([ &i[1] .< &j[1] -> &i[2] != &j[2]
                                 | &iPat <- &rel
@@ -107,7 +107,7 @@ functionAsRelation dispatch reprOptions = Representation chck downD structuralCo
                 surjectiveCons rel = do
                     (iPat, i) <- quantifiedVar
                     (jPat, j) <- quantifiedVar
-                    return $ return $ -- list
+                    return $ return
                         [essence|
                             forAll &iPat : &innerDomainTo .
                                 exists &jPat in &rel .

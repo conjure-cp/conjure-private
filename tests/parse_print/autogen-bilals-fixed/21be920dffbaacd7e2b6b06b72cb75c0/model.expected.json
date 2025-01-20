@@ -909,7 +909,7 @@
                              {"Condition": {"Reference": [{"Name": "l_2"}, null]}},
                              {"Condition": {"Reference": [{"Name": "l_2"}, null]}}]]}}},
             {"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Comprehension":
                             [{"Reference": [{"Name": "l_4"}, null]},
                              [{"Generator":

@@ -36,7 +36,7 @@ such that
     /\
     var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_1[1,
                                                                                             ..]
-    <lex
+    .<
     var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_1[2,
                                                                                             ..],
     and([q1 > var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->

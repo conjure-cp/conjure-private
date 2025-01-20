@@ -5,14 +5,14 @@ find var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Values: matrix index
 find var1_RelationAsSet_Explicit_2_ExplicitVarSizeWithFlags_Flags: matrix indexed by [int(1..2), int(1..0)] of int(0)
 find var1_RelationAsSet_Explicit_2_ExplicitVarSizeWithFlags_Values: matrix indexed by [int(1..2), int(1..0)] of bool
 such that
-    var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Flags[1, ..] <lex
+    var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Flags[1, ..] .<
     var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Flags[2, ..]
     \/
     and([var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Flags[1, q14] =
          var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Flags[2, q14]
              | q14 : int(1..2)])
     /\
-    var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Values[1, ..] <lex
+    var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Values[1, ..] .<
     var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Values[2, ..]
     \/
     and([var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Flags[1, q17] ->
@@ -29,10 +29,10 @@ such that
                  | q23 : int(1..2)])
              | q21 : int(1..2)])
     /\
-    (var1_RelationAsSet_Explicit_2_ExplicitVarSizeWithFlags_Flags[1, ..] <lex
+    (var1_RelationAsSet_Explicit_2_ExplicitVarSizeWithFlags_Flags[1, ..] .<
      var1_RelationAsSet_Explicit_2_ExplicitVarSizeWithFlags_Flags[2, ..]
      \/
-     var1_RelationAsSet_Explicit_2_ExplicitVarSizeWithFlags_Values[1, ..] <lex
+     var1_RelationAsSet_Explicit_2_ExplicitVarSizeWithFlags_Values[1, ..] .<
      var1_RelationAsSet_Explicit_2_ExplicitVarSizeWithFlags_Values[2, ..]),
     and([var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Flags[q2, 2] ->
          var1_RelationAsSet_Explicit_1_ExplicitVarSizeWithFlags_Values[q2, 1] <

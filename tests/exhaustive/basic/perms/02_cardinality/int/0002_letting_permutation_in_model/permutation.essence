@@ -1,0 +1,9 @@
+letting p be permutation((1,3,4))
+
+find i : int(0..10)
+
+such that i = |p| 
+
+
+
+

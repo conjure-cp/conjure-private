@@ -1103,7 +1103,7 @@
                                                              "var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Marker"},
                                                         null]}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":
@@ -1744,7 +1744,7 @@
                                                                               {"ConstantInt":
                                                                                    [{"TagInt": []}, 2]}}]}]]},
                                                             [{"Op":
-                                                                  {"MkOpLexLt":
+                                                                  {"MkOpDotLt":
                                                                        [{"Op":
                                                                              {"MkOpSlicing":
                                                                                   [{"Op":
@@ -1878,7 +1878,7 @@
                                                                                                                {"DomainBool":
                                                                                                                     []}]}}]]}}},
                                                                                    {"Op":
-                                                                                        {"MkOpLexLt":
+                                                                                        {"MkOpDotLt":
                                                                                              [{"Op":
                                                                                                    {"MkOpSlicing":
                                                                                                         [{"Op":

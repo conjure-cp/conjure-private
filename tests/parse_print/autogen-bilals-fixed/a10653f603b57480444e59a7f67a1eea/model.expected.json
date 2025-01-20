@@ -178,7 +178,7 @@
                                                              "var1_RelationAsSetR15_ExplicitVarSizeWithMarkerR15_Marker"},
                                                         null]}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpFlatten":
                                                             [null,
@@ -860,7 +860,7 @@
                                                                                                                                                                                            []},
                                                                                                                                                                                       1]}}]]}}}}]}}]}},
                                                                                                                                {"Op":
-                                                                                                                                    {"MkOpLexLt":
+                                                                                                                                    {"MkOpDotLt":
                                                                                                                                          [{"Op":
                                                                                                                                                {"MkOpSlicing":
                                                                                                                                                     [{"Op":

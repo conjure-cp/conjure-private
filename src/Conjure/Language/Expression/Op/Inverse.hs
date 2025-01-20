@@ -11,6 +11,8 @@ import qualified Data.Aeson.KeyMap as KM
 import qualified Data.Vector as V               -- vector
 
 
+
+
 data OpInverse x = OpInverse x x
     deriving (Eq, Ord, Show, Data, Functor, Traversable, Foldable, Typeable, Generic)
 
@@ -21,11 +23,19 @@ instance FromJSON  x => FromJSON  (OpInverse x) where parseJSON = genericParseJS
 
 instance (TypeOf x, Pretty x) => TypeOf (OpInverse x) where
     typeOf p@(OpInverse f g) = do
-        TypeFunction fFrom fTo <- typeOf f
-        TypeFunction gFrom gTo <- typeOf g
-        if typesUnify [fFrom, gTo] && typesUnify [fTo, gFrom]
-            then return TypeBool
-            else raiseTypeError p
+        ft <- typeOf f
+        case ft of
+          TypeFunction fFrom fTo -> do
+            TypeFunction gFrom gTo <- typeOf g
+            if typesUnify [fFrom, gTo] && typesUnify [fTo, gFrom]
+                then return TypeBool
+                else raiseTypeError p
+          TypePermutation fi -> do
+            TypePermutation gi <- typeOf g
+            if typesUnify [fi,gi]
+              then return TypeBool
+              else raiseTypeError p
+          _ -> raiseTypeError p 
 
 instance SimplifyOp OpInverse x where
     simplifyOp _ = na "simplifyOp{OpInverse}"

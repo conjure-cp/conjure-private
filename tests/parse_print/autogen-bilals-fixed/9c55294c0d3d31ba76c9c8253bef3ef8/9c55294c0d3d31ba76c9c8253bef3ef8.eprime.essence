@@ -28,7 +28,7 @@ such that
     var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1],
     var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1] >= 1,
     and([q8 + 1 <= var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1] ->
-         var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Values[1, q8, ..] <lex
+         var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Values[1, q8, ..] .<
          var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Values[1, q8 + 1, ..]
              | q8 : int(1..23)]),
     and([q9 > var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1] ->
@@ -36,14 +36,14 @@ such that
              | q9 : int(1..24)]),
     var1_PartitionAsSet_ExplicitR5_ExplicitVarSizeWithMarker_Marker[1] <= 24,
     and([q13 + 1 <= var2_ExplicitVarSizeWithMarkerR10_Marker ->
-         var2_ExplicitVarSizeWithMarkerR10_Values_Function1DPartial_Flags[q13, ..] <lex
+         var2_ExplicitVarSizeWithMarkerR10_Values_Function1DPartial_Flags[q13, ..] .<
          var2_ExplicitVarSizeWithMarkerR10_Values_Function1DPartial_Flags[q13 + 1, ..]
          \/
          and([var2_ExplicitVarSizeWithMarkerR10_Values_Function1DPartial_Flags[q13, q21] =
               var2_ExplicitVarSizeWithMarkerR10_Values_Function1DPartial_Flags[q13 + 1, q21]
                   | q21 : bool])
          /\
-         var2_ExplicitVarSizeWithMarkerR10_Values_Function1DPartial_Values[q13, ..] <lex
+         var2_ExplicitVarSizeWithMarkerR10_Values_Function1DPartial_Values[q13, ..] .<
          var2_ExplicitVarSizeWithMarkerR10_Values_Function1DPartial_Values[q13 + 1, ..]
              | q13 : int(1..119)]),
     and([q14 > var2_ExplicitVarSizeWithMarkerR10_Marker ->
@@ -85,7 +85,7 @@ such that
          var4_1_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Marker[q36] =
          var4_1_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Marker[q36 + 1]
          /\
-         var4_1_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values[q36, ..] <lex
+         var4_1_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values[q36, ..] .<
          var4_1_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values[q36 + 1, ..]
              | q36 : int(1..4)]),
     and([q37 > var4_1_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Marker ->

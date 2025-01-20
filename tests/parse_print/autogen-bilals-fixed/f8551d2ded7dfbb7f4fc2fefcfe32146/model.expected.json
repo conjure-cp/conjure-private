@@ -18,7 +18,7 @@
            [{"Constant": {"ConstantBool": false}}, {"Constant": {"ConstantBool": false}},
             {"Constant": {"ConstantBool": false}},
             {"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Op":
                             {"MkOpImage":
                                  [{"AbstractLiteral":

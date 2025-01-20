@@ -1,0 +1,6 @@
+Error:
+    In a 'such that' statement: x = t / 3
+    Error:
+        When type checking: t / 3
+        First argument expected to be an int, but it is: int:A
+cat: conjure-output/*.solution: No such file or directory

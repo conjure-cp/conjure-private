@@ -28,7 +28,7 @@ such that
          /\
          flatten(var2_PartitionAsSetR6_ExplicitVarSizeWithMarkerR5R6_Values_ExplicitVarSizeWithMarkerR6_Values_ExplicitVarSizeWithDummy
                      [q4, .., ..])
-         <lex
+         .<
          flatten(var2_PartitionAsSetR6_ExplicitVarSizeWithMarkerR5R6_Values_ExplicitVarSizeWithMarkerR6_Values_ExplicitVarSizeWithDummy
                      [q4 + 1, .., ..])
              | q4 : int(1..15)]),

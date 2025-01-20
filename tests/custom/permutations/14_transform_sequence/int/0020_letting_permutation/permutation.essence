@@ -1,0 +1,8 @@
+letting n be 4
+
+letting p be permutation((2,3))
+letting f be sequence(1,2,3,4) 
+find g : sequence (size 4) of int(1..4) 
+
+such that g = transform([p],f) 
+

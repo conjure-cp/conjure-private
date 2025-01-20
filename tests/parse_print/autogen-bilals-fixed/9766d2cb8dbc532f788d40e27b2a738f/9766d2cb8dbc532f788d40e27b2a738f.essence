@@ -30,5 +30,5 @@ such that
     party(4 / 2, partition({1, 2, 1, 1, 4}, {2, 1, 5, 5}, {2, 3, 0, 3}, {3, 1})),
     true,
     ((false -> true) <-> false <= false) ->
-    [true; int(2..2)] <=lex
+    [true; int(2..2)] .<=
     [false, true, false, true, false; int(11..12, 7, 13, 14..14)]

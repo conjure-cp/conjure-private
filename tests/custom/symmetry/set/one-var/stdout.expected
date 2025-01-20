@@ -1,0 +1,26 @@
+Quick-Consecutive-Independently
+conjure solve --number-of-solutions=all --solutions-in-one-file --output-format=jsonstream --unnamed-symmetry-breaking=Quick-Consecutive-Independently model.essence
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([quickPermutationOrder(tuple (i),
+                                   [permutation((q1, succ(q1))); int(1)])
+                 | q1 : e, q1 < 4])
+Generating models for model.essence
+conjure: This should never happen, sorry!
+
+However, it did happen, so it must be a bug. Please report it to us!
+
+Conjure is actively maintained, we will get back to you as soon as possible.
+You can help us by providing a minimal failing example.
+
+Also include the repository version for this build: d4f80ef16 (2024-10-24 10:19:25 +0100)
+
+Issue tracker: http://github.com/conjure-cp/conjure/issues
+
+
+symmetryOrdering, no OpIndexing:
+    MkOpTransform (OpTransform (AbstractLiteral (AbsLitPermutation [[Reference (MachineName "q" 1 []) (Just (DeclHasRepr Quantified (MachineName "q" 1 []) (DomainInt (TagUnnamed "e") [RangeBounded (Constant (ConstantInt (TagUnnamed "e") 1)) (Constant (ConstantInt (TagUnnamed "e") 4))]))),Op (MkOpSucc (OpSucc (Reference (MachineName "q" 1 []) (Just (DeclHasRepr Quantified (MachineName "q" 1 []) (DomainInt (TagUnnamed "e") [RangeBounded (Constant (ConstantInt (TagUnnamed "e") 1)) (Constant (ConstantInt (TagUnnamed "e") 4))]))))))]])) (Reference (Name "i") (Just (DeclHasRepr Find (Name "i") (DomainSet Set_Occurrence (SetAttr SizeAttr_None) (DomainInt (TagUnnamed "e") [RangeBounded (Constant (ConstantInt (TagUnnamed "e") 1)) (Constant (ConstantInt (TagUnnamed "e") 4))]))))))
+
+CallStack (from HasCallStack):
+  error, called at src/Conjure/Bug.hs:17:15 in conjure-cp-2.5.1-IwIj6VKKx9G42E8IkwFva2:Conjure.Bug
+  bug, called at src/Conjure/Representations.hs:207:22 in conjure-cp-2.5.1-IwIj6VKKx9G42E8IkwFva2:Conjure.Representations

@@ -127,7 +127,7 @@ such that
                         relation((false, 5, 4), (true, 4, 3), (false, 5, 4), (true, 4, 3),
                                  (true, 5, 2))))} --> ((2, 3, false, 5), mset(0, 1, 3), (true, true),
                                                        false >= true)[2]),
-    [l_1 | l_1 : int(5, 2..5)] <=lex
+    [l_1 | l_1 : int(5, 2..5)] .<=
     [l_2 | l_2 : int(1..2, 2), and(([] : `matrix indexed by [int] of bool`))],
     allDiff([partition({(mset() : `mset of partition from bool`),
                         mset(partition({true}, {true, false, true, true, false}, {true, true, false},
@@ -157,7 +157,7 @@ such that
                                        {false, false, false}, {true, true, false, false}, {true, true}),
                              partition({true, true, true}, {true, false, false, true}))}),
              (partition() : `partition from mset of partition from bool`); int(3, 4, 2..2)]),
-    [l_3 | l_3 : int(2, 0), false] <lex
+    [l_3 | l_3 : int(2, 0), false] .<
     [l_5 | l_4 : int(3, 4..4), l_5 : int(5, 2..4),
            image(function(relation((false, l_5, l_4, true)) --> !true,
                           relation((false, l_5, l_5, true), (false, l_5, l_5, true)) --> true = true,

@@ -36,21 +36,21 @@ such that
          var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_NumParts[q6] =
          var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_NumParts[q6 + 1]
          /\
-         (var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_WhichPart[q6, ..] <lex
+         (var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_WhichPart[q6, ..] .<
           var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_WhichPart[q6 + 1, ..]
           \/
           and([var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_WhichPart[q6, q20] =
                var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_WhichPart[q6 + 1, q20]
                    | q20 : bool])
           /\
-          (var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_PartSizes[q6, ..] <lex
+          (var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_PartSizes[q6, ..] .<
            var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_PartSizes[q6 + 1, ..]
            \/
            and([var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_PartSizes[q6, q22] =
                 var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_PartSizes[q6 + 1, q22]
                     | q22 : int(1..2)])
            /\
-           var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_FirstIndex[q6, ..] <lex
+           var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_FirstIndex[q6, ..] .<
            var4_ExplicitVarSizeWithMarkerR18_Values_PartitionOccurrence_FirstIndex[q6 + 1, ..]))
              | q6 : int(1..15)]),
     and([q7 > var4_ExplicitVarSizeWithMarkerR18_Marker ->

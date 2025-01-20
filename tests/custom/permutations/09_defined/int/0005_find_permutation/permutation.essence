@@ -1,0 +1,7 @@
+letting n be 4
+
+find p : permutation of int(1..n)
+find s : set of int(1..n)
+
+such that s = defined(p)
+

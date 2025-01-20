@@ -25,7 +25,7 @@ import Data.Text qualified as T
 import Data.Text.Lazy qualified as L
 import Text.Megaparsec
 
-newtype ParserError = ParserError (Doc)
+newtype ParserError = ParserError Doc
   deriving (Show)
 
 runASTParser :: (HighLevelTree a) => Parser a -> ETokenStream -> Either ParserError a
@@ -281,6 +281,7 @@ parseLiteral =
       parseMSetLiteral,
       parseFunctionLiteral,
       parseSequenceLiteral,
+      parsePermutationLiteral,
       parseRelationLiteral,
       parsePartitionLiteral
     ]
@@ -295,7 +296,12 @@ parseShortTupleLiteral = try $ do
   return $ TupleLiteralNodeShort $ ShortTuple (ListNode lOpen exprs lClose)
 
 parseIntLiteral :: Parser LiteralNode
-parseIntLiteral = IntLiteral . StrictToken [] <$> intLiteral
+parseIntLiteral = do
+  lit <- intLiteral
+  maybe_tag <- optional $ do
+    _ <- want L_Colon
+    identifier
+  return $ IntLiteral (StrictToken [] lit) maybe_tag
 
 parseBoolLiteral :: Parser LiteralNode
 parseBoolLiteral = BoolLiteral <$> (need L_true <|> need L_false)
@@ -358,6 +364,12 @@ parseSequenceLiteral = do
   members <- parenList (commaList parseExpression)
   return $ SequenceLiteral lSeq members
 
+parsePermutationLiteral :: Parser LiteralNode
+parsePermutationLiteral = do
+  lPer <- need L_permutation
+  members <- parenList (commaList parsePermutationElem)
+  return $ PermutationLiteral lPer members
+
 parseRelationLiteral :: Parser LiteralNode
 parseRelationLiteral = do
   lRel <- need L_relation
@@ -379,6 +391,15 @@ parsePartitionLiteral = do
   lPartition <- need L_partition
   members <- parenList (commaList parsePartitionElem)
   return $ PartitionLiteral lPartition members
+
+parsePermutationElem :: Parser PermutationElemNode
+parsePermutationElem = try $ do
+  lOpen <- needWeak L_OpenParen
+  exprs <- commaList parseExpression
+  let Seq xs = exprs
+  guard (length xs >= 2)
+  lClose <- want L_CloseParen
+  return $ PermutationElemNode $ ListNode lOpen exprs lClose
 
 parsePartitionElem :: Parser PartitionElemNode
 parsePartitionElem = PartitionElemNode <$> parseList L_OpenCurly L_CloseCurly (commaList parseExpression)
@@ -590,6 +611,7 @@ parseDomain =
         parseMSet,
         parseFunctionDomain,
         parseSequenceDomain,
+        parsePermutationDomain,
         parseRelation,
         parsePartition,
         parseEnumDomain,
@@ -609,14 +631,16 @@ parseSpecialCase = do
         exp1 <- parseExpression
         lAt <- need L_At
         (decsl, p2) <- manyTill_ parseTopLevel (need L_CloseCurly)
-
         return $ ExprWithDecls p1 exp1 lAt decsl p2
 
 parseIntDomain :: Parser DomainNode
 parseIntDomain = do
   lInt <- need L_int
+  maybe_tag <- optional $ do
+    _ <- want L_Colon
+    identifier
   ranges <- optional $ parenListStrict $ commaList parseRange
-  return $ RangedIntDomainNode lInt ranges
+  return $ RangedIntDomainNode lInt ranges maybe_tag
 
 parseTuple :: Parser DomainNode
 parseTuple = do
@@ -698,6 +722,14 @@ parseSequenceDomain = do
   lOf <- want L_of
   domain <- parseDomain
   return $ SequenceDomainNode lSequence attributes lOf domain
+
+parsePermutationDomain :: Parser DomainNode
+parsePermutationDomain = do
+  lPermutation <- need L_permutation
+  attributes <- optional parseAttributes
+  lOf <- want L_of
+  domain <- parseDomain
+  return $ PermutationDomainNode lPermutation attributes lOf domain
 
 parseRelation :: Parser DomainNode
 parseRelation = do

@@ -1,0 +1,3 @@
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([(x, y) .<= transform([q1], (x, y)) | q1 : permutation of A])

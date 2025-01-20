@@ -1,5 +1,5 @@
 letting R be domain record { a : int(1..4), b : int(1..4) }
 find m : R 
 find f : function (total, bijective) int(1..4) --> int(1..4)
-such that m = transform(f, record { a = 3, b = 2 })
+such that m = transform([f], record { a = 3, b = 2 })
 

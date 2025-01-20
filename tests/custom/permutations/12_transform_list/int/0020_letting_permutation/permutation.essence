@@ -1,0 +1,7 @@
+letting n be 4
+
+letting p be permutation((1,3,4))
+find b : int(1..50) 
+
+such that b = sum([i | i <- transform([p], [4,4,4,4])])
+

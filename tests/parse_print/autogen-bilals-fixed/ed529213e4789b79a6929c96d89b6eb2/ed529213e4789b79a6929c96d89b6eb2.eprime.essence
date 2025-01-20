@@ -24,7 +24,7 @@ such that
          >= 1
              | q17 : int(1..16)]),
     and([q7 + 1 <= var3_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
-         var3_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Occurrence[q7, ..] <lex
+         var3_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Occurrence[q7, ..] .<
          var3_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Occurrence[q7 + 1, ..]
              | q7 : int(1..15)]),
     and([q8 > var3_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->

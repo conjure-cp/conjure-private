@@ -61,5 +61,5 @@ such that
               function((5, false, 4, 4) --> mset(0, 5, 0), (5, true, 4, 0) --> mset(5),
                        (0, false, 5, 5) --> mset(2, 0, 4), (2, true, 0, 1) --> (mset() : `mset of int`)))),
     or([l_2 | l_1 : bool, l_2 : bool, l_2, l_2]),
-    [l_4 | l_3 : int(3, 5), l_4 : int(1..2, 3)] <lex [l_5 | l_5 : int(0..5, 2..5), l_6 : int(3..5, 5)],
+    [l_4 | l_3 : int(3, 5), l_4 : int(1..2, 3)] .< [l_5 | l_5 : int(0..5, 2..5), l_6 : int(3..5, 5)],
     2 <= max({2, 2, 5})

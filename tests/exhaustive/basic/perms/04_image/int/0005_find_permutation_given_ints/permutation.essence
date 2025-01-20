@@ -1,0 +1,12 @@
+given i : int(0..10)
+
+find p : permutation of int(1..4)
+
+given j : int(0..10)
+
+such that
+  j = image(p, i) /\ sum([toInt(l!=r)|(l,r)<-p])= 3 
+
+
+
+

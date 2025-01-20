@@ -1,0 +1,6 @@
+Error:
+    In a 'such that' statement: x = t % 4
+    Error:
+        When type checking: t % 4
+        Types do not unify: int:A
+cat: conjure-output/*.solution: No such file or directory

@@ -66,7 +66,7 @@ such that
                                           mset(true)},
                                          {(mset() : `mset of bool`), mset(true, false), mset(false)}))),
              flatten([mset(true), mset(true), mset(false); int(2..3, 6)])
-                 --> relation(([false, true, false, false, true; int(3, 7..10)] <=lex [false; int(2)],
+                 --> relation(([false, true, false, false, true; int(3, 7..10)] .<= [false; int(2)],
                                partition({relation(tuple (false), tuple (false), tuple (true)),
                                           relation(tuple (true), tuple (false), tuple (false)),
                                           relation(tuple (false))},

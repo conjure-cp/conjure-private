@@ -193,7 +193,7 @@ testSingleDir (TestTimeLimit timeLimitMin timeLimitMax) srOptions t@TestDirFiles
                 then validateSolutionNoParam    step t expectedSols
                 else validateSolutionWithParams step t [ ( p
                                                          , [ s | s <- expectedSols
-                                                               , dropExtension p `isInfixOf` dropExtension s
+                                                               , (dropExtension p ++ "-solution") `isInfixOf` dropExtension s
                                                                ]
                                                          )
                                                        | p <- paramFiles

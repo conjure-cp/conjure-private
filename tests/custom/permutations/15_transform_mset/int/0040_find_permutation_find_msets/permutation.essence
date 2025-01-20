@@ -1,0 +1,11 @@
+letting n be 4
+
+find p : permutation of int(1..4)
+
+find s : mset (size 4) of int(1..n)
+
+find sn : mset (size 4) of int(1..n)
+
+
+such that sn = transform([p],s) /\ 3 = |p| 
+

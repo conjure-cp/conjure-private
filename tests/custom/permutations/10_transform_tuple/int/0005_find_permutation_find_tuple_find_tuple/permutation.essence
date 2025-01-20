@@ -1,0 +1,10 @@
+letting n be 5
+
+find p : permutation of int(1..n)
+find t : (int(1..n), int(1..n), int(1..n)) 
+find q : (int(1..n), int(1..n), int(1..n)) 
+
+
+
+such that (q = transform([p], t)) /\ (4 = sum([toInt(l != r) | (l,r) <- p])) 
+

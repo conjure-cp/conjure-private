@@ -122,12 +122,14 @@ mkFinite d@DomainMatrix{}    = mkFiniteOutermost d
 mkFinite d@DomainSet{}       = mkFiniteOutermost d
 mkFinite d@DomainMSet{}      = mkFiniteOutermost d
 mkFinite d@DomainSequence{}  = mkFiniteOutermost d
+mkFinite d@DomainPermutation{} = mkFiniteOutermost d
 mkFinite d@DomainFunction{}  = mkFiniteOutermost d
 mkFinite d@DomainRelation{}  = mkFiniteOutermost d
 mkFinite d@DomainPartition{} = mkFiniteOutermost d
 mkFinite d = return (d, [], const (return []))
 
 
+-- TODO add permutation support
 mkFiniteOutermost ::
     MonadFailDoc m =>
     MonadState Int m =>
@@ -359,6 +361,7 @@ mkFiniteOutermost (DomainPartition () (PartitionAttr _ _ isRegularAttr) inner) =
 mkFiniteOutermost d = return (d, [], const (return []))
 
 
+-- TODO add permutation support
 mkFiniteInner ::
     MonadFailDoc m =>
     MonadState Int m =>

@@ -27,12 +27,12 @@ find var3_RelationAsSetR15_ExplicitVarSizeWithMarkerR15_Values_1_RelationAsMatri
 such that
     false,
     and([q6 + 1 <= var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Marker ->
-         var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_1_Explicit[q6, ..] <lex
+         var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_1_Explicit[q6, ..] .<
          var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_1_Explicit[q6 + 1, ..]
          \/
          (var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_2_ExplicitVarSizeWithFlags_Flags
               [q6, ..]
-          <lex
+          .<
           var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_2_ExplicitVarSizeWithFlags_Flags
               [q6 + 1, ..]
           \/
@@ -45,7 +45,7 @@ such that
           /\
           var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_2_ExplicitVarSizeWithFlags_Values
               [q6, ..]
-          <lex
+          .<
           var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_2_ExplicitVarSizeWithFlags_Values
               [q6 + 1, ..])
              | q6 : int(1..3)]),
@@ -100,7 +100,7 @@ such that
     and([q36 <= var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Marker /\
          q37 <= var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Marker
          ->
-         (var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_1_Explicit[q36, ..] <lex
+         (var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_1_Explicit[q36, ..] .<
           var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_1_Explicit[q37, ..]
           ->
           or([var1_FunctionAsRelationR3R4_RelationAsSetR3R4_ExplicitVarSizeWithMarkerR3R4_Values_2_ExplicitVarSizeWithFlags_Flags

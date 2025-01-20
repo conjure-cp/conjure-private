@@ -31,6 +31,7 @@ data AbstractLiteral x
     | AbsLitSequence [x]
     | AbsLitRelation [[x]]
     | AbsLitPartition [[x]]
+    | AbsLitPermutation [[x]]
     deriving (Eq, Ord, Show, Data, Functor, Traversable, Foldable, Typeable, Generic)
 
 instance Serialize x => Serialize (AbstractLiteral x)
@@ -62,6 +63,7 @@ instance (SimpleJSON x, Pretty x, ExpressionLike x) => SimpleJSON (AbstractLiter
             AbsLitFunction xs -> toSimpleJSON (AsDictionary xs)
             AbsLitRelation xs -> toSimpleJSON xs
             AbsLitPartition xs -> toSimpleJSON xs
+            AbsLitPermutation xs -> toSimpleJSON xs
     fromSimpleJSON = noFromSimpleJSON "AbstractLiteral"
 
 instance (ToFromMiniZinc x, Pretty x, ExpressionLike x) => ToFromMiniZinc (AbstractLiteral x) where
@@ -99,6 +101,7 @@ instance Pretty a => Pretty (AbstractLiteral a) where
     pretty (AbsLitSequence  xs ) = "sequence"  <> prettyList prParens "," xs
     pretty (AbsLitRelation  xss) = "relation"  <> prettyListDoc prParens "," [ pretty (AbsLitTuple xs)         | xs <- xss   ]
     pretty (AbsLitPartition xss) = "partition" <> prettyListDoc prParens "," [ prettyList prBraces "," xs      | xs <- xss   ]
+    pretty (AbsLitPermutation xss) = "permutation" <> prettyListDoc prParens "," [ prettyList prParens "," xs | xs <- xss ]
 
 instance (VarSymBreakingDescription x, ExpressionLike x) => VarSymBreakingDescription (AbstractLiteral x) where
     varSymBreakingDescription (AbsLitTuple xs) = JSON.Object $ KM.fromList
@@ -147,6 +150,11 @@ instance (VarSymBreakingDescription x, ExpressionLike x) => VarSymBreakingDescri
         , ("children", JSON.Array $ V.fromList $ map (varSymBreakingDescription . AbsLitSet) xs)
         , ("symmetricChildren", JSON.Bool True)
         ]
+    varSymBreakingDescription (AbsLitPermutation xs) = JSON.Object $ KM.fromList
+        [ ("type", JSON.String "AbsLitPermutation")
+        , ("children", JSON.Array $ V.fromList $ map (varSymBreakingDescription . AbsLitSequence) xs)
+        , ("symmetricChildren", JSON.Bool True)
+        ]
 
 instance (TypeOf a, Pretty a) => TypeOf (AbstractLiteral a) where
 
@@ -186,6 +194,8 @@ instance (TypeOf a, Pretty a) => TypeOf (AbstractLiteral a) where
 
     typeOf   (AbsLitPartition   [] ) = return (TypePartition TypeAny)
     typeOf p@(AbsLitPartition   xss) = TypePartition <$> (homoType (pretty p) =<< mapM typeOf (concat xss))
+    typeOf   (AbsLitPermutation [] ) = return (TypePermutation TypeAny)
+    typeOf p@(AbsLitPermutation xss) = TypePermutation <$> (homoType (pretty p) =<< mapM typeOf (concat xss))
 
 
 normaliseAbsLit :: (Ord c, ExpressionLike c) => (c -> c) -> AbstractLiteral c -> AbstractLiteral c
@@ -199,6 +209,7 @@ normaliseAbsLit norm (AbsLitFunction  xs ) = AbsLitFunction              $ sortN
 normaliseAbsLit norm (AbsLitSequence  xs ) = AbsLitSequence              $           map norm xs
 normaliseAbsLit norm (AbsLitRelation  xss) = AbsLitRelation              $ sortNub $ map (map norm) xss
 normaliseAbsLit norm (AbsLitPartition xss) = AbsLitPartition             $ sortNub $ map (sortNub . map norm) xss
+normaliseAbsLit norm (AbsLitPermutation xss) = AbsLitPermutation $ map (map norm) xss 
 
 emptyCollectionAbsLit :: AbstractLiteral c -> Bool
 emptyCollectionAbsLit AbsLitTuple{} = False
@@ -211,3 +222,4 @@ emptyCollectionAbsLit (AbsLitFunction xs) = null xs
 emptyCollectionAbsLit (AbsLitSequence xs) = null xs
 emptyCollectionAbsLit (AbsLitRelation xs) = null xs
 emptyCollectionAbsLit (AbsLitPartition xs) = null xs
+emptyCollectionAbsLit (AbsLitPermutation xs) = null xs

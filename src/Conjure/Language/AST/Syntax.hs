@@ -205,7 +205,7 @@ type MAttributes = Maybe (ListNode AttributeNode)
 data DomainNode
     = ParenDomainNode SToken DomainNode LToken
     | BoolDomainNode SToken
-    | RangedIntDomainNode SToken (Maybe (ListNode RangeNode))
+    | RangedIntDomainNode SToken (Maybe (ListNode RangeNode)) (Maybe ETok) -- the IntTag
     | RangedEnumNode NameNodeS (Maybe (ListNode RangeNode))
     | MetaVarDomain SToken
     | ShortTupleDomainNode (ListNode DomainNode)
@@ -217,6 +217,7 @@ data DomainNode
     | MSetDomainNode SToken MAttributes LToken DomainNode
     | FunctionDomainNode SToken MAttributes DomainNode LToken DomainNode
     | SequenceDomainNode SToken MAttributes LToken DomainNode
+    | PermutationDomainNode SToken MAttributes LToken DomainNode
     | RelationDomainNode SToken MAttributes LToken (ListNode DomainNode)
     | PartitionDomainNode SToken MAttributes LToken DomainNode
     | MissingDomainNode LToken
@@ -226,7 +227,8 @@ instance Pretty DomainNode where
     pretty x = case x of
         ParenDomainNode op dom cl -> pretty op <> pretty dom <> pretty cl
         BoolDomainNode lt -> pretty lt
-        RangedIntDomainNode lt m_ln -> pretty lt <> pretty m_ln
+        RangedIntDomainNode lt m_ln Nothing -> pretty lt <> pretty m_ln
+        RangedIntDomainNode lt m_ln (Just tag) -> pretty lt <> ":" <> pretty tag <> pretty m_ln
         RangedEnumNode nn m_ln -> pretty nn <> pretty m_ln
         MetaVarDomain lt -> pretty lt
         ShortTupleDomainNode ln -> pretty ln
@@ -243,6 +245,7 @@ instance Pretty DomainNode where
         MSetDomainNode lt m_ln lt' dn -> pretty lt <+> pretty m_ln <+> pretty lt' <+> pretty dn
         FunctionDomainNode lt m_ln dn lt' dn' -> pretty lt <+> pretty m_ln <+> pretty dn <+> pretty lt' <+> pretty dn'
         SequenceDomainNode lt m_ln lt' dn -> pretty lt <+> pretty m_ln <+> pretty lt' <+> pretty dn
+        PermutationDomainNode lt m_ln lt' dn -> pretty lt <+> pretty m_ln <+> pretty lt' <+> pretty dn
         RelationDomainNode lt m_ln lt' ln -> pretty lt <+> pretty m_ln <+> pretty lt' <+> pretty ln
         PartitionDomainNode lt m_ln lt' dn -> pretty lt <+> pretty m_ln <+> pretty lt' <+> pretty dn
         MissingDomainNode _ -> emptyDoc
@@ -380,7 +383,7 @@ instance Null LongTuple where
 
 -- Literals
 data LiteralNode
-    = IntLiteral SToken
+    = IntLiteral SToken (Maybe ETok) -- the IntTag
     | BoolLiteral SToken
     | MatrixLiteral MatrixLiteralNode
     | TupleLiteralNode LongTuple
@@ -391,13 +394,15 @@ data LiteralNode
     | MSetLiteral SToken (ListNode ExpressionNode)
     | FunctionLiteral SToken (ListNode ArrowPairNode)
     | SequenceLiteral SToken (ListNode ExpressionNode)
+    | PermutationLiteral SToken (ListNode PermutationElemNode)
     | RelationLiteral SToken (ListNode RelationElemNode)
     | PartitionLiteral SToken (ListNode PartitionElemNode)
     deriving (Show, Data)
 
 instance Pretty LiteralNode where
     pretty l = case l of
-        IntLiteral lt -> pretty lt
+        IntLiteral lt Nothing -> pretty lt
+        IntLiteral lt (Just tag) -> pretty lt <> ":" <> pretty tag
         BoolLiteral lt -> pretty lt
         MatrixLiteral mln -> pretty mln
         TupleLiteralNode lt -> pretty lt
@@ -408,6 +413,7 @@ instance Pretty LiteralNode where
         MSetLiteral lt ln -> pretty lt <> pretty ln
         FunctionLiteral lt ln -> pretty lt <> pretty ln
         SequenceLiteral lt ln -> pretty lt <> pretty ln
+        PermutationLiteral lt ln  -> pretty lt <> pretty ln
         RelationLiteral lt ln -> pretty lt <> pretty ln
         PartitionLiteral lt ln -> pretty lt <> pretty ln
 
@@ -464,6 +470,13 @@ instance Pretty RelationElemNode where
 instance Null RelationElemNode where
     isMissing (RelationElemNodeLabeled lt) = isMissing lt
     isMissing (RelationElemNodeShort st) = isMissing st
+
+newtype PermutationElemNode = PermutationElemNode (ListNode ExpressionNode)
+    deriving (Show, Data)
+instance Pretty PermutationElemNode where
+    pretty (PermutationElemNode l) = pretty l
+instance Null PermutationElemNode where
+    isMissing (PermutationElemNode l) = isMissing l
 
 newtype PartitionElemNode = PartitionElemNode (ListNode ExpressionNode)
     deriving (Show, Data)
@@ -587,6 +600,7 @@ instance Pretty PostfixOpNode where
 data IndexerNode
     = Indexer
     deriving (Show, Data)
+
 data ListNode itemType = ListNode
     { lOpBracket :: LToken
     , items :: Sequence itemType
@@ -594,13 +608,6 @@ data ListNode itemType = ListNode
     }
     deriving (Show, Data)
 
--- prettyList :: Pretty a => ListNode a > Doc
--- prettyList (ListNode start es end) = group $ align $ cat $
---         [
---             pretty start ,
---             flatAlt (indent 4 $ pretty es) (pretty es) ,
---             pretty end
---         ]
 instance Pretty a => Pretty (ListNode a) where
     pretty (ListNode start es end) =
         group $
@@ -613,6 +620,7 @@ instance Pretty a => Pretty (ListNode a) where
 
 instance (Null a) => Null (ListNode a) where
     isMissing (ListNode l1 s l2) = isMissing l1 && isMissing s && isMissing l2
+
 newtype Sequence itemType = Seq
     { elems :: [SeqElem itemType]
     }

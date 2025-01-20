@@ -1,0 +1,11 @@
+letting n be new type enum {E1,E2,E3,E4} 
+
+letting p be permutation((E1,E3,E4))
+find s : set of (n,n)
+
+such that 
+  and([e in s | e <- p])
+
+
+
+

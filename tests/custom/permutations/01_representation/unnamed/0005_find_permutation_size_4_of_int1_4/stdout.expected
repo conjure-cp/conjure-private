@@ -1,0 +1,51 @@
+Generating models for permutation.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: permutation-000001.solution
+Copying solution to: permutation-000002.solution
+Copying solution to: permutation-000003.solution
+Copying solution to: permutation-000004.solution
+Copying solution to: permutation-000005.solution
+Copying solution to: permutation-000006.solution
+Copying solution to: permutation-000007.solution
+Copying solution to: permutation-000008.solution
+Copying solution to: permutation-000009.solution
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2), (n_3, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2, n_3, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2, n_4, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3, n_4, n_2))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3), (n_2, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3, n_2, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4, n_3, n_2))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4, n_2, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4), (n_2, n_3))

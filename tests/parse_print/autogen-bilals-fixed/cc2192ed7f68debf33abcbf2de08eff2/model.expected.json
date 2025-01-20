@@ -166,7 +166,7 @@
                             {"ConstantAbstract":
                                  {"AbsLitFunction": [[{"ConstantBool": true}, {"ConstantBool": false}]]}}},
                        {"Op":
-                            {"MkOpLexLeq":
+                            {"MkOpDotLeq":
                                  [{"Reference": [{"Name": "var1"}, null]},
                                   {"Constant":
                                        {"ConstantAbstract":

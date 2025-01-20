@@ -38,7 +38,7 @@
       {"SuchThat":
            [{"Constant": {"ConstantBool": false}}, {"Constant": {"ConstantBool": true}},
             {"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Comprehension":
                             [{"Op":
                                   {"MkOpMinus":

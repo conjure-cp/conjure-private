@@ -1,0 +1,5 @@
+letting n be new type of size 4 
+find a : partition from n 
+find b : partition from n 
+find p : permutation (numMoved 3) of n
+such that b = transform([p],a) /\ a != b
