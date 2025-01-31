@@ -1,0 +1,9 @@
+letting n be new type enum {E1,E2,E3,E4,E5} 
+
+letting p be permutation((E1,E3,E4))
+given t : (n,n,n,n)
+find q :  (n,n,n,n)
+
+
+such that q = transform([p],t) 
+

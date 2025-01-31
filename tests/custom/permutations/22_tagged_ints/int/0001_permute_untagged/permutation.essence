@@ -1,0 +1,5 @@
+find t : (int:A(1..6), int(1..6))
+find x : (int:A(1..6), int(1..6))
+such that x = transform([permutation((1,2,3,4,5,6))],t)
+
+

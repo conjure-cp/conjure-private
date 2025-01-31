@@ -57,7 +57,7 @@ such that
          /\
          flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Occurrence
                      [q5, .., ..])
-         <lex
+         .<
          flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Occurrence
                      [q5 + 1, .., ..])
              | q5 : int(1..15)]),
@@ -73,7 +73,7 @@ such that
          and([q8 + 1 <= var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q7] ->
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Occurrence
                   [q7, q8, ..]
-              <lex
+              .<
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Occurrence
                   [q7, q8 + 1, ..]
                   | q8 : int(1..3)])
@@ -103,7 +103,7 @@ such that
          var4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q16] =
          var4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q16 + 1]
          /\
-         var4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q16, ..] <lex
+         var4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q16, ..] .<
          var4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q16 + 1, ..]
              | q16 : int(1..3)]),
     and([q17 > var4_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->

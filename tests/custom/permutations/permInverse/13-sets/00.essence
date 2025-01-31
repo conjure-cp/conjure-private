@@ -1,0 +1,17 @@
+letting A be new type of size 3
+find x : set of A
+
+find p : permutation (numMoved 3) of A
+$ such that x .<= transform([p], x)
+
+$ the above rule, Oz thinks can be written recursively for all types
+$ produce aux for the rhs
+$ forAll, forAll, forAll
+$ membership constraints
+
+$ find x' : ...
+$ such that forAll i in x . transform([p], i) in x'
+$ such that forAll i in x' . transform([permInverse(p)], i) in x
+
+such that x .<= toSet([ transform([p], i) | i <- x])
+

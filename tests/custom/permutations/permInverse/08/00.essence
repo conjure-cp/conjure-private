@@ -1,0 +1,6 @@
+letting A be new type of size 3
+find x : matrix [int(1..2)] of A
+find y : matrix [int(1..3)] of A
+
+find p : permutation of A
+such that (x, y) .<= transform([p], (x, y))

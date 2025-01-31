@@ -6,7 +6,7 @@ find var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Oc
 find var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2: matrix indexed by [int(1..3)] of bool
 such that
     and([q1 + 1 <= var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->
-         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1, ..] <lex
+         var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1, ..] .<
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1 + 1, ..]
          \/
          and([var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_Occurrence[q1, q14] ->

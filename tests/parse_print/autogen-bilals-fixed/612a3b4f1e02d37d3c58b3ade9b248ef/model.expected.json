@@ -35,7 +35,7 @@
                                        [{"ConstantBool": true}, {"ConstantInt": [{"TagInt": []}, 4]}],
                                        [{"ConstantBool": true}, {"ConstantInt": [{"TagInt": []}, 0]}]]}}}]}},
             {"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Constant":
                             {"ConstantAbstract":
                                  {"AbsLitMatrix":

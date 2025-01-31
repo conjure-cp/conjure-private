@@ -1,0 +1,8 @@
+letting n be new type enum {e_5,e_6,e_7,e_8}
+
+find p : permutation of n
+given s : matrix indexed by [int(1..4)] of n
+find  t : matrix indexed by [int(1..4)] of n
+
+such that e_8 = transform([p],s)[2] /\ t = transform([p],s)
+

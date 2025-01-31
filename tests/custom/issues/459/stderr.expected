@@ -1,5 +1,5 @@
 Error:
     In a letting statement: letting s be domain int(S)
     Error:
-        Expected an integer, but got: set of direction
+        Expected an integer, but got: set of enum:direction
         In domain: int(S)

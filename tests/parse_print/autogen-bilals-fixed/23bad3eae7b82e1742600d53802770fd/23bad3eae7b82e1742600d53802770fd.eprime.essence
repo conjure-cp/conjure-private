@@ -85,7 +85,7 @@ such that
     1 <= var1_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
     and([var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Flags[1,
                                                                                                       q9, ..]
-         <lex
+         .<
          var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Flags[1,
                                                                                                       q9 + 1, ..]
          \/
@@ -98,7 +98,7 @@ such that
          /\
          var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Values[1,
                                                                                                        q9, ..]
-         <lex
+         .<
          var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Values[1,
                                                                                                        q9 + 1, ..]
              | q9 : int(1..3)]),

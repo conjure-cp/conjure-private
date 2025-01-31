@@ -1,0 +1,6 @@
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4, n_5, n_6, n_7}
+letting i be n_5
+letting j be n_6
+letting p be permutation((n_2, n_5, n_6))

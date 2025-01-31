@@ -1,0 +1,6 @@
+- ignore: {name: Use camelCase}
+- ignore: {name: Reduce duplication}
+- ignore: {name: Use &&}
+- ignore: {name: Use ++}
+- ignore: {name: Redundant return}
+- ignore: {name: Monad law, left identity}

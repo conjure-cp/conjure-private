@@ -19,7 +19,7 @@ such that
          sum([var3_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Occurrence[q19, q20] | q20 : int(2..4, 1)]) >= 1
              | q19 : int(1..16)]),
     and([q9 + 1 <= var3_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
-         var3_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Occurrence[q9, ..] <lex
+         var3_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Occurrence[q9, ..] .<
          var3_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Occurrence[q9 + 1, ..]
              | q9 : int(1..15)]),
     and([q10 > var3_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->

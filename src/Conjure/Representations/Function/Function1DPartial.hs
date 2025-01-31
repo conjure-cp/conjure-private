@@ -164,8 +164,12 @@ function1DPartial = Representation chck downD structuralCons downC up symmetryOr
                       valsOut
                   )
                 ]
-        downC _ = na "{downC} Function1DPartial"
-
+        downC (name, domain, constant) = na $ vcat [ "{downC} Function1DPartial"
+                                                   , "name:" <+> pretty name
+                                                   , "domain:" <+> pretty domain
+                                                   , "constant:" <+> pretty constant
+                                                   ]
+ 
         up :: TypeOf_Up m
         up ctxt (name, domain@(DomainFunction Function_1DPartial
                                 (FunctionAttr _ PartialityAttr_Partial _)

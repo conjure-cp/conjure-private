@@ -7,7 +7,7 @@ such that
     function(false --> false, false --> true, false --> true, true --> false) supset
     (function() : `function bool --> bool`),
     var2,
-    [1, 3 / 5; int(4, 0..0)] <lex
+    [1, 3 / 5; int(4, 0..0)] .<
     [factorial(l_2)
          | l_1 : int(1..2, 1..1), l_2 : int(2..4, 1), 5 >= l_2, false <= false],
     apart({false},

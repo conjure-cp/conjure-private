@@ -283,7 +283,7 @@
                                                                                               1]}}]]}}}}]}},
                                                   {"Constant": {"ConstantInt": [{"TagInt": []}, 0]}}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":

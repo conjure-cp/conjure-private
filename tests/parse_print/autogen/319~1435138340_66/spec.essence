@@ -3,7 +3,7 @@ language Essence 1.3
 find var1: function (minSize 5 , maxSize 5, bijective) bool --> bool
 find var2: (bool, bool, bool)
 such that
-    [false; int(0..0)] <=lex [false, false; int(0..1)] <->
+    [false; int(0..0)] .<= [false, false; int(0..1)] <->
     ({} : `set of bool`) subsetEq {false, false, true},
     (mset(true, false, false) supset (mset() : `mset of bool`)) > !(true < false),
     (partition() : `partition from bool`) -

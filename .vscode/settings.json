@@ -1,0 +1,5 @@
+{
+    "haskell.plugin.hlint.config.flags": [
+        "--hint=.hlint.yaml"
+    ],
+}

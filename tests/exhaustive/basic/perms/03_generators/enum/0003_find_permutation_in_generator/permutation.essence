@@ -1,0 +1,10 @@
+letting n be new type enum {E1,E2,E3,E4}
+find p : permutation (numMoved 3) of n 
+find s : set (size 3) of (n,n) 
+
+such that 
+  and([e in s | e <- p])
+
+
+
+

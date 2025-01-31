@@ -144,7 +144,7 @@
                                         {"TypeSet": {"TypeInt": {"TagInt": []}}},
                                         {"TypeMatrix": [{"TypeInt": {"TagInt": []}}, {"TypeBool": []}]}]}}]}]}},
             {"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Constant":
                             {"ConstantAbstract":
                                  {"AbsLitMatrix":
@@ -319,7 +319,7 @@
                                                     {"ConstantInt": [{"TagInt": []}, 1]},
                                                     {"ConstantInt": [{"TagInt": []}, 3]}]]}}}]]}}]}},
             {"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Comprehension":
                             [{"Reference": [{"Name": "l_2"}, null]},
                              [{"Generator":

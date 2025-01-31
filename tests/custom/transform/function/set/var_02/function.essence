@@ -1,4 +1,4 @@
 
 find s : set (size 3) of int(1..4)
 find f : function (total, bijective) int(1..4) --> int(1..4)
-such that transform(f, [ i < 4 | i <- s])
+such that transform([f], [ i < 4 | i <- s])

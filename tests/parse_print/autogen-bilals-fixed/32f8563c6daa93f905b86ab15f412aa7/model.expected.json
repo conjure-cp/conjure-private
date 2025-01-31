@@ -16,7 +16,7 @@
                               {"Constant": {"ConstantInt": [{"TagInt": []}, 5]}}]}]]}]}},
       {"SuchThat":
            [{"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Op":
                             {"MkOpSlicing":
                                  [{"Op":

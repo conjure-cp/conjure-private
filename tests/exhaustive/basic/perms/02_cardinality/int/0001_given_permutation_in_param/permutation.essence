@@ -1,0 +1,11 @@
+letting n be 4
+
+given p : permutation of int(1..n)
+
+find i : int(0..10)
+
+such that i = |p| 
+
+
+
+

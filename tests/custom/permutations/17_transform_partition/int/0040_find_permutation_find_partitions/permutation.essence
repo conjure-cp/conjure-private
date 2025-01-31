@@ -1,0 +1,11 @@
+letting n be 4
+
+find p : permutation of int(1..4)
+
+find s : partition from int(1..n)
+
+find sn : partition from int(1..n)
+
+
+such that sn = transform([p],s) /\ 3 = |p| 
+

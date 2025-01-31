@@ -1,0 +1,4 @@
+letting s be permutation((3, 4))
+letting sn be permutation((1, 4), (2, 3))
+find b : bool
+such that b = (s = sn)

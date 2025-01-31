@@ -1,0 +1,11 @@
+letting n be new type of size 4 
+
+find p : permutation of n 
+
+find s : mset (size 4) of n 
+
+find sn : mset (size 4) of n 
+
+
+such that sn = transform([p],s) /\ (3 = sum([ toInt(l != r) | (l, r) <- p])) 
+

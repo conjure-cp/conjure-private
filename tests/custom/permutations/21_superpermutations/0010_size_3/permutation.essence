@@ -1,0 +1,13 @@
+given s : set of permutation of int(1..3)
+given q : sequence (size 3) of int(1..3)
+
+find qs : set of sequence (size 3) of int(1..3)
+such that |qs| = |s| /\ and([ transform([p],q) in qs | p <- s])
+
+find superperm : sequence (maxSize 100) of int(1..3)
+
+such that
+  and([ z substring superperm | z <- qs ])
+
+minimising |superperm|
+

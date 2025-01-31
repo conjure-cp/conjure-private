@@ -1,0 +1,7 @@
+letting n be new type of size 4 
+
+find p : permutation of n
+find s : set of n
+
+such that s = defined(p)
+

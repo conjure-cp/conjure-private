@@ -23,9 +23,10 @@ instance (Pretty x, TypeOf x) => TypeOf (OpDefined x) where
     typeOf p@(OpDefined x) = do
         ty <- typeOf x
         case ty of
-            TypeFunction a _ -> return (TypeSet a)
-            TypeSequence _   -> return (TypeSet (TypeInt TagInt))
-            _                -> raiseTypeError p
+            TypeFunction a _  -> return (TypeSet a)
+            TypePermutation a -> return (TypeSet a)
+            TypeSequence _    -> return (TypeSet (TypeInt TagInt))
+            _                 -> raiseTypeError p
 
 instance SimplifyOp OpDefined x where
     simplifyOp _ = na "simplifyOp{OpDefined}"

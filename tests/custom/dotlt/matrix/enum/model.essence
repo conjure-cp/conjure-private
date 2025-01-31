@@ -1,0 +1,9 @@
+letting e be new type enum {e1,e2,e3}
+
+find i: matrix indexed by [int(1..2)] of e
+find j: matrix indexed by [int(1..2)] of e
+
+such that
+
+i .<= j
+

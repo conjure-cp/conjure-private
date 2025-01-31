@@ -1,0 +1,8 @@
+language ESSENCE' 1.0
+
+given p_PermutationAsFunction_PermutationFunction_forwards_Function1D: matrix indexed by [int(1..4)] of int(1..4)
+given p_PermutationAsFunction_PermutationFunction_backwards_Function1D: matrix indexed by [int(1..4)] of int(1..4)
+find i: int(0..10)
+branching on [i]
+such that i = sum([toInt(q1 != p_PermutationAsFunction_PermutationFunction_forwards_Function1D[q1]) | q1 : int(1..4)])
+

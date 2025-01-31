@@ -4,5 +4,5 @@ find var1: mset (minSize factorial(3), maxOccur 5 - 2) of mset (size 0, minOccur
 find var2:
         partition (maxNumParts 2, minPartSize 4, maxPartSize 5, regular) from matrix indexed by [int(2, 5)] of int(5, 5)
 such that
-    [l_1 | l_1 : bool] <lex [l_2 | l_2 : bool],
+    [l_1 | l_1 : bool] .< [l_2 | l_2 : bool],
     false

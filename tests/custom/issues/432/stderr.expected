@@ -1,6 +1,7 @@
 Error:
     The value is not a member of the domain.
-    Value : relation((1, 2))
-    Domain: relation {RelationAsSet[Explicit]} (size 1, irreflexive, symmetric) of (int(1..2) * int(1..2))
+    Value : relation((1:countries, 2:countries))
+    Domain: relation {RelationAsSet[Explicit]} (size 1, irreflexive, symmetric) of
+                (int:countries(1:countries..2) * int:countries(1:countries..2))
     Reason: Domain attributes are not satisfied.
     Specifically: symmetric

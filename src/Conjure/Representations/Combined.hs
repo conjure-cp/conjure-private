@@ -36,6 +36,7 @@ import Conjure.Representations.Function.FunctionNDPartial
 import Conjure.Representations.Function.FunctionNDPartialDummy
 import Conjure.Representations.Function.FunctionAsRelation
 import Conjure.Representations.Sequence.ExplicitBounded
+import Conjure.Representations.Permutation.PermutationAsFunction
 import Conjure.Representations.Relation.RelationAsMatrix
 import Conjure.Representations.Relation.RelationAsSet
 import Conjure.Representations.Partition.Occurrence
@@ -218,6 +219,9 @@ dispatch domain = do
                                                     (bug "reprOptions inside dispatch")
                                                     (bug "useLevels inside dispatch")
             _ -> nope
+        DomainPermutation r _ _ -> case r of
+            Permutation_AsFunction            -> permutationAsFunction dispatch
+            _ -> nope
         _ -> nope
 
 
@@ -253,6 +257,7 @@ reprsStandardOrder =
       , relationAsMatrix
       , partitionAsSet     dispatch (reprOptions reprsStandardOrder) True
       , partitionOccurrence
+      , permutationAsFunction dispatch
       ]
     , [ functionAsRelation dispatch (reprOptions reprsStandardOrder)
       , relationAsSet      dispatch (reprOptions reprsStandardOrder) True
@@ -288,6 +293,7 @@ reprsSparseOrder = map return
     , partitionAsSet     dispatch (reprOptions reprsSparseOrder) False
 
     , partitionOccurrence                                     -- redundant
+    , permutationAsFunction dispatch
     ]
 
 

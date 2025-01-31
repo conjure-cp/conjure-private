@@ -1,0 +1,11 @@
+letting n be 4
+
+letting p be permutation((1,3,4))
+
+find s : mset (size 4) of int(1..n)
+
+find sn : mset (size 4) of int(1..n)
+
+
+such that sn = transform([p],s) 
+

@@ -1,4 +1,4 @@
 language ESSENCE' 1.0
 
 find var1: int(2, 3..5)
-such that [[true; int(3, 11)], [true, true; int(0, 5)]; int(1..2)][var1, ..] <=lex [true; int(1)]
+such that [[true; int(3, 11)], [true, true; int(0, 5)]; int(1..2)][var1, ..] .<= [true; int(1)]

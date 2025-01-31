@@ -9,17 +9,16 @@ find var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Ex
         matrix indexed by [int(1..2), int(1..0)] of bool
 such that
     2 <= var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->
-    var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[1, ..] <lex
+    var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[1, ..] .<
     var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[2, ..]
     \/
     var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[1, 3] =
     var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[2, 3]
     /\
-    (var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Flags[1, ..] <lex
+    (var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Flags[1, ..] .<
      var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Flags[2, ..]
      \/
-     var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Values[1, ..]
-     <lex
+     var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Values[1, ..] .<
      var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_ExplicitVarSizeWithFlags_Values[2, ..]),
     and([q2 > var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->
          var1_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q2, 3] = false

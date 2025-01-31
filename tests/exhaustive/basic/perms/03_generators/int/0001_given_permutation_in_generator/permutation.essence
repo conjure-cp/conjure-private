@@ -1,0 +1,11 @@
+letting n be 4
+
+given p : permutation of int(1..n)
+find s : set (size 3) of (int(1..4),int(1..4))
+
+such that 
+  and([e in s | e <- p])
+
+
+
+

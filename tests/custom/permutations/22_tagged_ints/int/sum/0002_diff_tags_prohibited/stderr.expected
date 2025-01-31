@@ -1,0 +1,7 @@
+Error:
+    In a 'such that' statement: x = t + 4
+    Error:
+        Not uniformly typed: [t, 4; int(1..2)]
+        Involved types are: int:A
+                            int
+cat: conjure-output/*.solution: No such file or directory

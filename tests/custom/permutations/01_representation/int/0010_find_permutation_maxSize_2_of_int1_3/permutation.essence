@@ -1,0 +1,5 @@
+letting n be 3
+
+find p : permutation (maxNumMoved 2) of int(1..n)
+
+such that true

@@ -5,5 +5,5 @@ such that
     [ [true , false, false, true; int(1..4)]
     , [true , true , true , true; int(1..4)]
     ; int(1..2)
-    ][var1, ..] >=lex
+    ][var1, ..] .>=
       [true , true , true , true ; int(1..4)]

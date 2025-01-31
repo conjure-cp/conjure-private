@@ -8,6 +8,6 @@ find var5: set of set (minSize 5, maxSize 5) of bool
 such that
     true,
     together({true}, partition({true, false, true, true, false})),
-    [var3; int(0..0)] <lex [var3, var4, var4, false; int(5..8)],
+    [var3; int(0..0)] .< [var3, var4, var4, false; int(5..8)],
     apart({true}, partition({false, false, false, true}, {true, true, true})),
     var4

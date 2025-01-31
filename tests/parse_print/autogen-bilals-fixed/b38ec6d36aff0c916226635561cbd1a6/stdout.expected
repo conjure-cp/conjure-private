@@ -11,7 +11,7 @@ find var3:
 such that
     false,
     image(function(false --> tuple (mset(false, false)), false --> tuple (mset(true, false, false))),
-          [4 | l_1 : int(5, 3), l_2 : int(3, 4)] <=lex [3, 4, 1, 0; int(1, 6..8)])
+          [4 | l_1 : int(5, 3), l_2 : int(3, 4)] .<= [3, 4, 1, 0; int(1, 6..8)])
         [1]
     supsetEq mset(true),
     (function() : `function relation of (mset of bool *

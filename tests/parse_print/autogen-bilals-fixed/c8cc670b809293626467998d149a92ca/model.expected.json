@@ -78,7 +78,7 @@
                       [{"Reference": [{"Name": "var4"}, null]}, {"Constant": {"ConstantInt": [{"TagInt": []}, 5]}}]}},
             {"Op": {"MkOpNeq": [{"Reference": [{"Name": "var1"}, null]}, {"Reference": [{"Name": "var1"}, null]}]}},
             {"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Constant":
                             {"ConstantAbstract":
                                  {"AbsLitMatrix":

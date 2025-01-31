@@ -1,0 +1,9 @@
+letting n be new type enum {e_5,e_6,e_7,e_8}
+
+given p : permutation of int(11..14)
+given s : matrix indexed by [int(11..14)] of n
+find sn : matrix indexed by [int(11..14)] of n 
+
+
+such that sn = transform([p],s)
+

@@ -19,14 +19,14 @@ such that
                q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values : matrix indexed by [int(1..4),
                                                                                                   bool] of int(5..5),
                and([q1 + 1 <= q_4_ExplicitVarSizeWithMarker_Marker ->
-                    q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1, ..] <lex
+                    q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1, ..] .<
                     q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1 + 1, ..]
                     \/
                     and([q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1, q9] =
                          q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1 + 1, q9]
                              | q9 : bool])
                     /\
-                    q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q1, ..] <lex
+                    q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q1, ..] .<
                     q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q1 + 1, ..]
                         | q1 : int(1..3)]),
                and([q1 > q_4_ExplicitVarSizeWithMarker_Marker ->
@@ -71,7 +71,7 @@ such that
          /\
          var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q3,
                                                                                                ..]
-         <lex
+         .<
          var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q3
                                                                                                + 1,
                                                                                                ..]
@@ -104,14 +104,14 @@ such that
               = 0 | q4 : int(1..3)])
              | q3 : int(1..8)]),
     and([q5 + 1 <= var2_ExplicitVarSizeWithMarker_Marker ->
-         var2_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q5, ..] <lex
+         var2_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q5, ..] .<
          var2_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q5 + 1, ..]
          \/
          and([var2_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q5, q10] =
               var2_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q5 + 1, q10]
                   | q10 : bool])
          /\
-         var2_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q5, ..] <lex
+         var2_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q5, ..] .<
          var2_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q5 + 1, ..]
              | q5 : int(1..3)]),
     and([q5 > var2_ExplicitVarSizeWithMarker_Marker ->

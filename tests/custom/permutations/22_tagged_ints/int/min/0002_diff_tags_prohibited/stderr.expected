@@ -1,0 +1,10 @@
+Error:
+    In a 'such that' statement: x = min(t)
+    Error:
+        When type checking: x = min(t)
+        Cannot unify the types of the following.
+        lhs        : x
+        type of lhs: int
+        rhs        : min(t)
+        type of rhs: int:A
+cat: conjure-output/*.solution: No such file or directory

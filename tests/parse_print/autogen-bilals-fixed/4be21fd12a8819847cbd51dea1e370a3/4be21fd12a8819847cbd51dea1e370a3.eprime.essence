@@ -21,21 +21,21 @@ such that
          ->
          var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithFlags_Flags[q4,
                                                                                                                  ..]
-         <lex
+         .<
          var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithFlags_Flags[q4
                                                                                                                  + 1,
                                                                                                                  ..]
          \/
          var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithFlags_Values[q4,
                                                                                                                   ..]
-         <lex
+         .<
          var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithFlags_Values[q4
                                                                                                                   + 1,
                                                                                                                   ..]
          \/
          flatten(var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_RelationAsMatrix[q4,
                                                                                                            .., ..])
-         <lex
+         .<
          flatten(var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_RelationAsMatrix[q4
                                                                                                            + 1,
                                                                                                            .., ..])

@@ -1,0 +1,20 @@
+language ESSENCE' 1.0
+
+find f_Function1DPartial_Flags: matrix indexed by [int(1..3)] of bool
+find f_Function1DPartial_Values: matrix indexed by [int(1..3)] of int(1..3)
+find conjure_aux1_Explicit: matrix indexed by [int(1..2)] of int(1..3)
+find conjure_aux2_Explicit: matrix indexed by [int(1..3)] of int(1..3)
+branching on [f_Function1DPartial_Flags, f_Function1DPartial_Values]
+such that
+    [conjure_aux1_Explicit[1]; int(1)] <lex [conjure_aux1_Explicit[2]; int(1)],
+    and([f_Function1DPartial_Flags[q8] ->
+         or([conjure_aux1_Explicit[q10] = f_Function1DPartial_Values[q8] | q10 : int(1..2)])
+             | q8 : int(1..3)]),
+    and([or([f_Function1DPartial_Flags[q12] /\ f_Function1DPartial_Values[q12] = conjure_aux1_Explicit[q11]
+                 | q12 : int(1..3)])
+             | q11 : int(1..2)]),
+    and([[conjure_aux2_Explicit[q15]; int(1)] <lex [conjure_aux2_Explicit[q15 + 1]; int(1)] | q15 : int(1..2)]),
+    and([f_Function1DPartial_Flags[q17] -> or([conjure_aux2_Explicit[q19] = q17 | q19 : int(1..3)]) | q17 : int(1..3)]),
+    and([or([f_Function1DPartial_Flags[q21] /\ q21 = conjure_aux2_Explicit[q20] | q21 : int(1..3)]) | q20 : int(1..3)]),
+    and([f_Function1DPartial_Flags[q1] = false -> f_Function1DPartial_Values[q1] = 1 | q1 : int(1..3)])
+

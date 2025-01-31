@@ -81,7 +81,7 @@ such that
          >= 1
              | q34 : int(1..4)]),
     and([q7 + 1 <= var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR2_Marker ->
-         var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR2_Values_Occurrence[q7, ..] <lex
+         var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR2_Values_Occurrence[q7, ..] .<
          var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR2_Values_Occurrence[q7 + 1, ..]
              | q7 : int(1..3)]),
     and([q8 > var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR2_Marker ->
@@ -99,14 +99,14 @@ such that
     and([var4_1_ExplicitWithFlags_Flags[q15] = 0 \/ var4_1_ExplicitWithFlags_Flags[q15] >= 0 | q15 : int(1..3)]),
     3 = sum([var4_1_ExplicitWithFlags_Flags[q16] | q16 : int(1..3)]),
     and([var5_ExplicitWithFlagsR10_Flags[q18 + 1] > 0 ->
-         var5_ExplicitWithFlagsR10_Values_Function1DPartial_Flags[q18, ..] <lex
+         var5_ExplicitWithFlagsR10_Values_Function1DPartial_Flags[q18, ..] .<
          var5_ExplicitWithFlagsR10_Values_Function1DPartial_Flags[q18 + 1, ..]
          \/
          and([var5_ExplicitWithFlagsR10_Values_Function1DPartial_Flags[q18, q29] =
               var5_ExplicitWithFlagsR10_Values_Function1DPartial_Flags[q18 + 1, q29]
                   | q29 : bool])
          /\
-         var5_ExplicitWithFlagsR10_Values_Function1DPartial_Values[q18, ..] <lex
+         var5_ExplicitWithFlagsR10_Values_Function1DPartial_Values[q18, ..] .<
          var5_ExplicitWithFlagsR10_Values_Function1DPartial_Values[q18 + 1, ..]
              | q18 : int(1..63)]),
     and([var5_ExplicitWithFlagsR10_Flags[q19] = 0 ->

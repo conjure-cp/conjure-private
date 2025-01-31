@@ -1,0 +1,12 @@
+letting n be 4
+
+given p : permutation of int(1..n)
+letting q be permutation((1,2,4))
+
+find b : bool
+
+such that b = (q = p) 
+
+
+
+

@@ -1,0 +1,8 @@
+letting n be new type of size 4 
+
+find p : permutation of n 
+find f : sequence (size 4) of n
+find g : sequence (size 4) of n
+
+such that g = transform([p],f) /\ f != g 
+

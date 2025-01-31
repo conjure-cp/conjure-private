@@ -1,4 +1,4 @@
 language Essence 1.3
 
 find unused: bool
-such that [[true; int(1)]; int(1)][2] <lex [false | l_1 : bool, l_2 : bool]
+such that [[true; int(1)]; int(1)][2] .< [false | l_1 : bool, l_2 : bool]

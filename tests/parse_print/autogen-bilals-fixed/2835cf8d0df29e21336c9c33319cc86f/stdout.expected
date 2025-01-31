@@ -1,4 +1,4 @@
 language Essence 1.3
 
 find unused: bool
-such that [5; int(1)] <=lex image(function(relation((false, 1)) --> [0; int(1)]), relation((false, 4)))
+such that [5; int(1)] .<= image(function(relation((false, 1)) --> [0; int(1)]), relation((false, 4)))

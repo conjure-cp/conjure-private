@@ -1,0 +1,10 @@
+letting n be 5
+
+given p : permutation of int(1..n)
+find t : (int(1..n), int(1..n), int(1..n)) 
+find q : (int(1..n), int(1..n), int(1..n)) 
+
+
+
+such that q = transform([p], t) 
+

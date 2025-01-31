@@ -1,0 +1,11 @@
+letting n be new type enum {E1,E2,E3,E4} 
+
+given p : permutation of n
+letting q be permutation((E1,E2,E4))
+given i : n
+given j : n
+
+find b : bool
+
+such that b = (j = image(compose(p,q),i)) 
+

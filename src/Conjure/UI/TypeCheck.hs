@@ -185,10 +185,10 @@ typeCheckModel model1 = do
     -- DomainInt [RangeSingle x] from DomainIntE x, if x has type int
     let
         domainIntERecover :: forall m . MonadFailDoc m => Domain () Expression -> m (Domain () Expression)
-        domainIntERecover d@(DomainIntE x) = do
+        domainIntERecover d@(DomainIntE maybe_tag x) = do
             ty <- runExceptT $ typeOf x
             return $ case ty of
-                Right (TypeInt t) -> DomainInt t [RangeSingle x]
+                Right (TypeInt _) -> DomainInt maybe_tag [RangeSingle x]
                 _ -> d
         domainIntERecover d = return d
     statements4 <- transformBiM domainIntERecover statements3

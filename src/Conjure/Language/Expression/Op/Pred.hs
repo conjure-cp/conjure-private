@@ -25,6 +25,7 @@ instance (TypeOf x, Pretty x) => TypeOf (OpPred x) where
         case ty of
             TypeBool{} -> return ty
             TypeInt TagInt  -> return ty
+            TypeInt TaggedInt{} -> return ty
             TypeInt (TagEnum _)  -> return ty
             TypeEnum{} -> return ty
             _ -> raiseTypeError p

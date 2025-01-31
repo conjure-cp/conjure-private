@@ -2,6 +2,6 @@ letting R be domain variant { a : int(1..4), b : bool }
 find m : R 
 find n : R 
 find f : function (total, bijective) int(1..4) --> int(1..4)
-such that m = transform(f,n)
+such that m = transform([f],n)
 such that active(m,a)
 such that m != n

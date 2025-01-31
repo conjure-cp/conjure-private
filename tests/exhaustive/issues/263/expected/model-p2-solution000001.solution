@@ -1,4 +1,0 @@
-language Essence 1.3
-
-letting O be new type enum {O_1, O_2}
-letting f be function(O_1 --> O_1, O_2 --> O_2)

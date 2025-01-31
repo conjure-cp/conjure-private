@@ -1,0 +1,6 @@
+language ESSENCE' 1.0
+
+find i: int(0..10)
+branching on [i]
+such that i = 3
+

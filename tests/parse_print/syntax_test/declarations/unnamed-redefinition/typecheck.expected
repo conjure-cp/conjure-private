@@ -1,4 +1,4 @@
 Error:
     Redefinition of name: y2
-    When trying to define it as an alias for `int(1..4)`
-    It was already defined as an alias for `int(1..2)`
+    When trying to define it as an alias for `int:y2(1..4)`
+    It was already defined as an alias for `int:y2(1..2)`

@@ -108,6 +108,7 @@ instance (DomainOf x, TypeOf x, Pretty x, ExpressionLike x, Domain () x :< x, Do
     domainOf (MkOpAllDiffExcept x) = domainOf x
     domainOf (MkOpAnd x) = domainOf x
     domainOf (MkOpApart x) = domainOf x
+    domainOf (MkOpCompose x) = domainOf x
     domainOf (MkOpAtLeast x) = domainOf x
     domainOf (MkOpAtMost x) = domainOf x
     domainOf (MkOpAttributeAsConstraint x) = domainOf x
@@ -149,6 +150,7 @@ instance (DomainOf x, TypeOf x, Pretty x, ExpressionLike x, Domain () x :< x, Do
     domainOf (MkOpParticipants x) = domainOf x
     domainOf (MkOpParts x) = domainOf x
     domainOf (MkOpParty x) = domainOf x
+    domainOf (MkOpPermInverse x) = domainOf x
     domainOf (MkOpPow x) = domainOf x
     domainOf (MkOpPowerSet x) = domainOf x
     domainOf (MkOpPred x) = domainOf x
@@ -179,12 +181,14 @@ instance (DomainOf x, TypeOf x, Pretty x, ExpressionLike x, Domain () x :< x, Do
     domainOf (MkOpTwoBars x) = domainOf x
     domainOf (MkOpUnion x) = domainOf x
     domainOf (MkOpXor x) = domainOf x
+    domainOf (MkOpQuickPermutationOrder x) = domainOf x
 
     indexDomainsOf (MkOpActive x) = indexDomainsOf x
     indexDomainsOf (MkOpAllDiff x) = indexDomainsOf x
     indexDomainsOf (MkOpAllDiffExcept x) = indexDomainsOf x
     indexDomainsOf (MkOpAnd x) = indexDomainsOf x
     indexDomainsOf (MkOpApart x) = indexDomainsOf x
+    indexDomainsOf (MkOpCompose x) = indexDomainsOf x
     indexDomainsOf (MkOpAtLeast x) = indexDomainsOf x
     indexDomainsOf (MkOpAtMost x) = indexDomainsOf x
     indexDomainsOf (MkOpAttributeAsConstraint x) = indexDomainsOf x
@@ -226,6 +230,7 @@ instance (DomainOf x, TypeOf x, Pretty x, ExpressionLike x, Domain () x :< x, Do
     indexDomainsOf (MkOpParticipants x) = indexDomainsOf x
     indexDomainsOf (MkOpParts x) = indexDomainsOf x
     indexDomainsOf (MkOpParty x) = indexDomainsOf x
+    indexDomainsOf (MkOpPermInverse x) = indexDomainsOf x
     indexDomainsOf (MkOpPow x) = indexDomainsOf x
     indexDomainsOf (MkOpPowerSet x) = indexDomainsOf x
     indexDomainsOf (MkOpPred x) = indexDomainsOf x
@@ -256,6 +261,7 @@ instance (DomainOf x, TypeOf x, Pretty x, ExpressionLike x, Domain () x :< x, Do
     indexDomainsOf (MkOpTwoBars x) = indexDomainsOf x
     indexDomainsOf (MkOpUnion x) = indexDomainsOf x
     indexDomainsOf (MkOpXor x) = indexDomainsOf x
+    indexDomainsOf (MkOpQuickPermutationOrder x) = indexDomainsOf x
 
 instance DomainOf Constant where
     domainOf ConstantBool{}             = return DomainBool
@@ -330,9 +336,11 @@ instance DomainOf (AbstractLiteral Expression) where
         where attr = PartitionAttr (SizeAttr_MaxSize (fromInt $ genericLength xss))
                                    (SizeAttr_MaxSize (fromInt $ maximum [genericLength xs | xs <- xss]))
                                    False
-
+    domainOf (AbsLitPermutation [] ) = return $ DomainPermutation def (PermutationAttr SizeAttr_None) (DomainAny "domainOf-AbsLitPermutation-[]" TypeAny)
+    domainOf (AbsLitPermutation xss) = DomainPermutation def (PermutationAttr SizeAttr_None) <$> (domainUnions =<< mapM domainOf (concat xss))
     indexDomainsOf (AbsLitMatrix ind inn) = (ind :) <$> (mapM domainUnions =<< mapM indexDomainsOf inn)
     indexDomainsOf _ = return []
+
 
 
 
@@ -420,7 +428,8 @@ instance (Pretty x, TypeOf x, DomainOf x) => DomainOf (OpImage x) where
         case fDomain of
             DomainFunction _ _ _ to -> return to
             DomainSequence _ _ to -> return to
-            _ -> failDoc "domainOf, OpImage, not a function or sequence"
+            DomainPermutation _ _ ov -> return ov
+            _ -> failDoc "domainOf, OpImage, not a function, sequence or permutation"
 
 instance (Pretty x, TypeOf x) => DomainOf (OpImageSet x) where
     domainOf op = mkDomainAny ("OpImageSet:" <++> pretty op) <$> typeOf op
@@ -549,6 +558,12 @@ instance DomainOf x => DomainOf (OpParts x) where
 
 instance (Pretty x, TypeOf x) => DomainOf (OpParty x) where
     domainOf op = mkDomainAny ("OpParty:" <++> pretty op) <$> typeOf op
+
+instance (Pretty x, TypeOf x) => DomainOf (OpPermInverse x) where
+    domainOf op = mkDomainAny ("OpPermInverse:" <++> pretty op) <$> typeOf op
+
+instance (Pretty x, TypeOf x) => DomainOf (OpCompose x) where
+    domainOf op = mkDomainAny ("OpCompose:" <++> pretty op) <$> typeOf op
 
 instance (Pretty x, TypeOf x) => DomainOf (OpPow x) where
     domainOf op = mkDomainAny ("OpPow:" <++> pretty op) <$> typeOf op
@@ -682,3 +697,5 @@ instance (Pretty x, TypeOf x, Domain () x :< x) => DomainOf (OpTwoBars x) where
 instance (Pretty x, TypeOf x) => DomainOf (OpUnion x) where
     domainOf op = mkDomainAny ("OpUnion:" <++> pretty op) <$> typeOf op
 
+instance DomainOf (OpQuickPermutationOrder x) where
+    domainOf _ = return DomainBool

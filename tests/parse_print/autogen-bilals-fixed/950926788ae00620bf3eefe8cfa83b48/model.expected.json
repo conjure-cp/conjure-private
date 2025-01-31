@@ -117,7 +117,7 @@
                              {"DomainBool": []}]}]}]}},
       {"SuchThat":
            [{"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"AbstractLiteral":
                             {"AbsLitMatrix":
                                  [{"DomainInt":
@@ -177,7 +177,7 @@
                                                                               {"ConstantInt":
                                                                                    [{"TagInt": []}, 2]}}]}]]},
                                                             [{"Op":
-                                                                  {"MkOpLexLt":
+                                                                  {"MkOpDotLt":
                                                                        [{"Op":
                                                                              {"MkOpSlicing":
                                                                                   [{"Op":
@@ -323,7 +323,7 @@
                                                                                                                                             []},
                                                                                                                                        5]}}]}]]}]}}]]}}},
                                                                                    {"Op":
-                                                                                        {"MkOpLexLt":
+                                                                                        {"MkOpDotLt":
                                                                                              [{"Op":
                                                                                                    {"MkOpSlicing":
                                                                                                         [{"Op":

@@ -151,7 +151,7 @@
                                                                                                                     []},
                                                                                                                2]}}]}}]}},
                                                                               {"Op":
-                                                                                   {"MkOpLexLt":
+                                                                                   {"MkOpDotLt":
                                                                                         [{"Op":
                                                                                               {"MkOpSlicing":
                                                                                                    [{"Op":
@@ -490,7 +490,7 @@
                                                                                                     [{"TagInt": []},
                                                                                                      2]}}]}]]},
                                                                              [{"Op":
-                                                                                   {"MkOpLexLt":
+                                                                                   {"MkOpDotLt":
                                                                                         [{"Op":
                                                                                               {"MkOpSlicing":
                                                                                                    [{"Op":
@@ -520,7 +520,7 @@
                                                                                                                           2]}}]}},
                                                                                                     null, null]}}]}},
                                                                               {"Op":
-                                                                                   {"MkOpLexLt":
+                                                                                   {"MkOpDotLt":
                                                                                         [{"Op":
                                                                                               {"MkOpSlicing":
                                                                                                    [{"Op":

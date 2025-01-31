@@ -85,7 +85,7 @@ such that
          >= 1
              | q56 : int(1..4)]),
     and([q7 + 1 <= var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Marker ->
-         var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Values_ExplicitVarSizeWithDummy[q7, ..] <lex
+         var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Values_ExplicitVarSizeWithDummy[q7, ..] .<
          var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Values_ExplicitVarSizeWithDummy[q7 + 1, ..]
              | q7 : int(1..3)]),
     and([q8 > var2_1_PartitionAsSet_ExplicitVarSizeWithMarkerR6_Marker ->
@@ -123,14 +123,14 @@ such that
              | q17 : int(1..9)]),
     3 = var4_1_ExplicitWithRepetition_Flag,
     and([q24 + 1 <= var5_ExplicitWithRepetitionR10_Flag ->
-         var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q24, ..] <lex
+         var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q24, ..] .<
          var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q24 + 1, ..]
          \/
          and([var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q24, q34] =
               var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q24 + 1, q34]
                   | q34 : bool])
          /\
-         var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Values[q24, ..] <=lex
+         var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Values[q24, ..] .<=
          var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Values[q24 + 1, ..]
              | q24 : int(1..255)]),
     and([q25 > var5_ExplicitWithRepetitionR10_Flag ->

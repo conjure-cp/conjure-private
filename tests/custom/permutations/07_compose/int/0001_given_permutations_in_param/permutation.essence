@@ -1,0 +1,11 @@
+letting n be 4
+
+given p : permutation of int(1..n)
+given q : permutation of int(1..n)
+given i : int(0..5)
+given j : int(0..5)
+
+find b : bool
+
+such that b = (j = image(compose(p,q),i))
+

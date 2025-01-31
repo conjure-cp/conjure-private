@@ -28,7 +28,7 @@
                                       [{"ConstantBool": false}, {"ConstantBool": true}, {"ConstantBool": true}]}}}]}},
             {"Constant": {"ConstantBool": true}},
             {"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Constant":
                             {"ConstantAbstract":
                                  {"AbsLitMatrix":

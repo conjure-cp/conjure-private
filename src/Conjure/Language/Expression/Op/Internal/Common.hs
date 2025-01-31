@@ -15,6 +15,7 @@ module Conjure.Language.Expression.Op.Internal.Common
 
     , intToInt
     , intToIntToInt
+    , intToIntToIntStrict
     , boolToBoolToBool
     , sameToSameToBool
     , sameToSameToSame
@@ -107,6 +108,35 @@ intToIntToInt p a b = do
             [ "When type checking:" <+> pretty p
             , "Second argument expected to be an int, but it is:" <++> pretty tyb
             ]
+
+intToIntToIntStrict :: (MonadFailDoc m, TypeOf a, Pretty p, ?typeCheckerMode :: TypeCheckerMode) => p -> a -> a -> m Type
+intToIntToIntStrict p a b = do
+    tya <- typeOf a
+    tyb <- typeOf b
+    case (tya, tyb) of
+        (TypeInt TagInt, TypeInt TagInt) ->
+            if typeUnify tya tyb
+                then return $ mostDefined [tya, tyb]
+                else failDoc $ vcat
+                        [ "When type checking:" <+> pretty p
+                        , "Types do not unify:" <++> pretty tya 
+                        ]
+        (TypeInt TaggedInt{}, TypeInt TaggedInt{}) ->
+            if typeUnify tya tyb
+                then return $ mostDefined [tya, tyb]
+                else failDoc $ vcat
+                        [ "When type checking:" <+> pretty p
+                        , "Types do not unify:" <++> pretty tya 
+                        ]
+        (_, TypeInt{})         -> failDoc $ vcat
+            [ "When type checking:" <+> pretty p
+            ,  "First argument expected to be an int, but it is:" <++> pretty tya
+            ]
+        _                      -> failDoc $ vcat
+            [ "When type checking:" <+> pretty p
+            , "Second argument expected to be an int, but it is:" <++> pretty tyb
+            ]
+
 
 
 boolToBoolToBool :: (MonadFailDoc m, TypeOf a, Pretty p, ?typeCheckerMode :: TypeCheckerMode) => p -> a -> a -> m Type
@@ -257,10 +287,12 @@ functionals =
     , L_max
     , L_allDiff
     , L_alldifferent_except
+    , L_compose
     , L_gcc
     , L_atleast
     , L_atmost
     , L_catchUndef
+    , L_quickPermutationOrder
     , L_dontCare
     , L_hist
     , L_factorial
@@ -278,8 +310,10 @@ functionals =
     , L_together
     , L_apart
     , L_party
+    , L_permInverse
     , L_participants
     , L_parts
+    , L_image
     , L_freq
     , L_toInt
     , L_flatten

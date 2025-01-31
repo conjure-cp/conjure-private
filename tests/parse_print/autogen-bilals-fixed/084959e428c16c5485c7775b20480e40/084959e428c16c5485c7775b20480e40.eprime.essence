@@ -11,7 +11,7 @@ find var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSi
 such that
     false,
     and([q1 + 1 <= var1_ExplicitVarSizeWithMarker_Marker ->
-         var1_ExplicitVarSizeWithMarker_Values_Function1D[q1, ..] <lex
+         var1_ExplicitVarSizeWithMarker_Values_Function1D[q1, ..] .<
          var1_ExplicitVarSizeWithMarker_Values_Function1D[q1 + 1, ..]
              | q1 : int(1..63)]),
     and([q2 > var1_ExplicitVarSizeWithMarker_Marker ->
@@ -64,7 +64,7 @@ such that
     and([q10 + 1 <= var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Flags[q10,
                                                                                                               .., ..])
-         <lex
+         .<
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Flags[q10
                                                                                                               + 1,
                                                                                                               .., ..])
@@ -79,7 +79,7 @@ such that
          /\
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Values[q10,
                                                                                                                .., ..])
-         <lex
+         .<
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithFlags_Values[q10
                                                                                                                + 1,
                                                                                                                .., ..])

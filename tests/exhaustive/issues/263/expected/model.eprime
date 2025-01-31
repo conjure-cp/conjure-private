@@ -1,7 +1,0 @@
-language ESSENCE' 1.0
-
-given v: int(1..20)
-find f_Function1D: matrix indexed by [int(1..v)] of int(1..v)
-branching on [f_Function1D]
-such that and([f_Function1D[shadow2] = shadow2 | shadow2 : int(1..v)])
-

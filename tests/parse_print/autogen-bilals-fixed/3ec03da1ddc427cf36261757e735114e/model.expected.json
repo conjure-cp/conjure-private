@@ -397,7 +397,7 @@
                                                              "var2_PartitionAsSet_ExplicitVarSizeWithMarkerR2_Marker"},
                                                         null]}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":

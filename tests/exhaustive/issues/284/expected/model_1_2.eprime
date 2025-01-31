@@ -1,0 +1,18 @@
+language ESSENCE' 1.0
+
+find f_Function1DPartial_Flags: matrix indexed by [int(1..3)] of bool
+find f_Function1DPartial_Values: matrix indexed by [int(1..3)] of int(1..3)
+find conjure_aux1_Occurrence: matrix indexed by [int(1..3)] of bool
+find conjure_aux2_Explicit: matrix indexed by [int(1..3)] of int(1..3)
+branching on [f_Function1DPartial_Flags, f_Function1DPartial_Values]
+such that
+    2 = sum([toInt(conjure_aux1_Occurrence[q6]) | q6 : int(1..3)]),
+    and([f_Function1DPartial_Flags[q7] -> conjure_aux1_Occurrence[f_Function1DPartial_Values[q7]] | q7 : int(1..3)]),
+    and([conjure_aux1_Occurrence[q4] ->
+         or([f_Function1DPartial_Flags[q8] /\ f_Function1DPartial_Values[q8] = q4 | q8 : int(1..3)])
+             | q4 : int(1..3)]),
+    and([[conjure_aux2_Explicit[q11]; int(1)] <lex [conjure_aux2_Explicit[q11 + 1]; int(1)] | q11 : int(1..2)]),
+    and([f_Function1DPartial_Flags[q13] -> or([conjure_aux2_Explicit[q15] = q13 | q15 : int(1..3)]) | q13 : int(1..3)]),
+    and([or([f_Function1DPartial_Flags[q17] /\ q17 = conjure_aux2_Explicit[q16] | q17 : int(1..3)]) | q16 : int(1..3)]),
+    and([f_Function1DPartial_Flags[q1] = false -> f_Function1DPartial_Values[q1] = 1 | q1 : int(1..3)])
+

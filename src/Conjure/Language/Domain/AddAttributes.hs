@@ -84,6 +84,7 @@ addAttributeToDomain d@DomainMatrix{}    = const $ const $ return d
 addAttributeToDomain d@DomainOp{}        = const $ const $ return d
 addAttributeToDomain d@DomainReference{} = const $ const $ return d
 addAttributeToDomain d@DomainMetaVar{}   = const $ const $ return d
+addAttributeToDomain d@DomainPermutation{} = const $ const $ return d
 
 addAttributeToDomain domain@(DomainSet r (SetAttr sizeAttr) inner) = updater where
     updater attr (Just val) = case attr of

@@ -1,0 +1,8 @@
+letting n be new type enum {E1,E2,E3,E4} 
+
+find p : permutation of n 
+letting f be sequence(E1,E2,E3,E4) 
+letting g be sequence (E4,E3,E2,E1) 
+
+such that g = transform([p],f) 
+

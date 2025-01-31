@@ -1,0 +1,7 @@
+letting n be new type enum {E1,E2,E3,E4} 
+
+given p : permutation of n 
+find s : set of n
+
+such that s = defined(p)
+

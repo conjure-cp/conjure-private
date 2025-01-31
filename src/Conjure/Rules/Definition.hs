@@ -7,6 +7,7 @@ module Conjure.Rules.Definition
     , LogOrModel, LogOr
     , Driver, Strategy(..), viewAuto, parseStrategy
     , Config(..)
+    , UnnamedSymmetryBreaking(..), USBQuickOrComplete(..), USBScope(..), USBIndependentlyOrAltogether(..)
     , ModelZipper, mkModelZipper, fromModelZipper
     , ModelWIP(..), modelWIPOut, updateModelWIPInfo
     , isAtomic
@@ -106,6 +107,7 @@ data Config = Config
     , outputDirectory            :: FilePath
     , channelling                :: Bool
     , representationLevels       :: Bool
+    , unnamedSymmetryBreaking    :: Maybe UnnamedSymmetryBreaking
     , limitModels                :: Maybe Int
     , numberingStart             :: Int
     , smartFilenames             :: Bool
@@ -138,6 +140,7 @@ instance Default Config where
         , outputDirectory            = "conjure-output"
         , channelling                = True
         , representationLevels       = True
+        , unnamedSymmetryBreaking    = Nothing
         , limitModels                = Nothing
         , numberingStart             = 1
         , smartFilenames             = False
@@ -147,6 +150,31 @@ instance Default Config where
         , generateStreamliners       = Nothing
         , estimateNumberOfModels     = False
         }
+
+
+-- 1. Quick/Complete. Quick is x .<= p(x)
+--                    Complete is x .<= y /\ y = p(x)
+-- 2. Scope.          Consecutive
+--                    AllPairs
+--                    AllPermutations
+-- 3. Independently/Altogether
+-- in addition, we have
+--      none
+--      fast: Quick-Consecutive-Independently
+--      full: Complete-AllPermutations-Altogether
+data UnnamedSymmetryBreaking =
+        UnnamedSymmetryBreaking
+            USBQuickOrComplete
+            USBScope
+            USBIndependentlyOrAltogether
+    deriving (Eq, Ord, Show, Read, Data, Typeable)
+data USBQuickOrComplete = USBQuick | USBComplete
+    deriving (Eq, Ord, Show, Read, Data, Typeable)
+data USBScope = USBConsecutive | USBAllPairs | USBAllPermutations
+    deriving (Eq, Ord, Show, Read, Data, Typeable)
+data USBIndependentlyOrAltogether = USBIndependently | USBAltogether
+    deriving (Eq, Ord, Show, Read, Data, Typeable)
+
 
 data RuleResult m = RuleResult
     { ruleResultDescr :: Doc                        -- describe this transformation

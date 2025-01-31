@@ -481,7 +481,6 @@ rule_Matrix_Leq_Decompose = "matrix-Leq-tuple" `namedRule` theRule where
             , return $ decomposeLexLeq p xs ys
             )
 
-
 rule_Comprehension_SingletonDomain :: Rule
 rule_Comprehension_SingletonDomain = "matrix-comprehension-singleton-domain" `namedRule` theRule where
     theRule (Comprehension body gensOrConds) = do

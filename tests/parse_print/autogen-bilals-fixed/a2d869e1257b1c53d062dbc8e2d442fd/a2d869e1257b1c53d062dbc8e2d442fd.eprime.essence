@@ -11,7 +11,7 @@ find var3: bool
 such that
     var3,
     and([q8 + 1 <= var2_ExplicitVarSizeWithMarker_Marker ->
-         flatten(var2_ExplicitVarSizeWithMarker_Values_RelationAsMatrix[q8, .., ..]) <lex
+         flatten(var2_ExplicitVarSizeWithMarker_Values_RelationAsMatrix[q8, .., ..]) .<
          flatten(var2_ExplicitVarSizeWithMarker_Values_RelationAsMatrix[q8 + 1, .., ..])
              | q8 : int(1..15)]),
     and([q9 > var2_ExplicitVarSizeWithMarker_Marker ->

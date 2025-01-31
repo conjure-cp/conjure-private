@@ -1,0 +1,5 @@
+letting n be new type enum {E1,E2,E3} 
+
+find p : permutation (maxNumMoved 2) of n 
+
+such that true

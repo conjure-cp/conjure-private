@@ -5,6 +5,6 @@ find var2: partition (minNumParts 0 , maxNumParts 3, minPartSize 2 - 4) from set
 such that
     false,
     true,
-    [l_1 - l_1 | l_1 : int(4, 0), true, false] <=lex
+    [l_1 - l_1 | l_1 : int(4, 0), true, false] .<=
     [l_3 | l_2 : int(2, 4..4), l_3 : int(3, 3), true >= false, true > false],
     false

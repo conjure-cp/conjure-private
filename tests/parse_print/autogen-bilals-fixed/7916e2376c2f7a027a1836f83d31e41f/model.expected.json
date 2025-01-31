@@ -260,7 +260,7 @@
                                                                    null]},
                                                              {"Constant": {"ConstantInt": [{"TagInt": []}, 1]}}]}}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":

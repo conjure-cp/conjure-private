@@ -1050,7 +1050,7 @@
                                        [{"Constant": {"ConstantAbstract": {"AbsLitMSet": []}}},
                                         {"TypeMSet": {"TypeBool": []}}]}]}}]}},
             {"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Comprehension":
                             [{"Reference": [{"Name": "l_4"}, null]},
                              [{"Generator": {"GenDomainNoRepr": [{"Single": {"Name": "l_3"}}, {"DomainBool": []}]}},

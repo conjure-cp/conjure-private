@@ -1,0 +1,14 @@
+letting n be new type enum {E0,E1,E2,E3,E4} 
+
+find i : n 
+
+find p : permutation of n 
+
+find j : n 
+
+such that
+  j = image(p, i) /\ sum([toInt(l!=r)|(l,r)<-p]) = 3 
+
+
+
+

@@ -1,0 +1,79 @@
+Quick-Consecutive-Independently
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([quickPermutationOrder((i, j),
+                                   [permutation((q1, succ(q1))); int(1)])
+                 | q1 : e, q1 < 4]),
+        and([quickPermutationOrder((i, j),
+                                   [permutation((q2, succ(q2))); int(1)])
+                 | q2 : f, q2 < 4])
+Generating models for model.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: model.solutions
+Copying solution to: model.solutions.json
+{"e": ["e_1", "e_2", "e_3", "e_4"], "f": ["f_1", "f_2", "f_3", "f_4"], "i": "e_1", "j": "f_1"}
+Quick-Consecutive-Altogether
+Adding the following unnamed symmetry breaking constraints:
+    such that
+        and([and([quickPermutationOrder((i, j),
+                                        [permutation((q2, succ(q2))), permutation((q1, succ(q1)));
+                                             int(1..2)])
+                      | q2 : f, q2 < 4])
+                 | q1 : e, q1 < 4])
+Generating models for model.essence
+conjure: This should never happen, sorry!
+
+However, it did happen, so it must be a bug. Please report it to us!
+
+Conjure is actively maintained, we will get back to you as soon as possible.
+You can help us by providing a minimal failing example.
+
+Also include the repository version for this build: d4f80ef16 (2024-10-24 10:19:25 +0100)
+
+Issue tracker: http://github.com/conjure-cp/conjure/issues
+
+
+
+Not refined: (i,
+              j) AbstractLiteral (AbsLitTuple [Reference (Name "i") (Just (DeclHasRepr Find (Name "i") (DomainInt (TagUnnamed "e") [RangeBounded (Constant (ConstantInt (TagUnnamed "e") 1)) (Constant (ConstantInt (TagUnnamed "e") 4))]))),Reference (Name "j") (Just (DeclHasRepr Find (Name "j") (DomainInt (TagUnnamed "f") [RangeBounded (Constant (ConstantInt (TagUnnamed "f") 1)) (Constant (ConstantInt (TagUnnamed "f") 4))])))])
+    Context #1: quickPermutationOrder((i, j), [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+    Context #2: [quickPermutationOrder((i, j), [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+                     | q2 : int(1..4), q2 < 4]
+    Context #3: and([quickPermutationOrder((i, j),
+                                           [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+                         | q2 : int(1..4), q2 < 4])
+    Context #4: [and([quickPermutationOrder((i, j),
+                                            [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+                          | q2 : int(1..4), q2 < 4])
+                     | q1 : int(1..4), q1 < 4]
+    Context #5: and([and([quickPermutationOrder((i, j),
+                                                [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+                              | q2 : int(1..4), q2 < 4])
+                         | q1 : int(1..4), q1 < 4])
+Not refined: permutation((q2,
+                          succ(q2))) AbstractLiteral (AbsLitPermutation [[Reference (MachineName "q" 2 []) (Just (DeclHasRepr Quantified (MachineName "q" 2 []) (DomainInt (TagUnnamed "f") [RangeBounded (Constant (ConstantInt (TagUnnamed "f") 1)) (Constant (ConstantInt (TagUnnamed "f") 4))]))),Op (MkOpSucc (OpSucc (Reference (MachineName "q" 2 []) (Just (DeclHasRepr Quantified (MachineName "q" 2 []) (DomainInt (TagUnnamed "f") [RangeBounded (Constant (ConstantInt (TagUnnamed "f") 1)) (Constant (ConstantInt (TagUnnamed "f") 4))]))))))]])
+    Context #1: [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)]
+    Context #2: quickPermutationOrder((i, j), [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+    Context #3: [quickPermutationOrder((i, j), [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+                     | q2 : int(1..4), q2 < 4]
+    Context #4: and([quickPermutationOrder((i, j),
+                                           [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+                         | q2 : int(1..4), q2 < 4])
+    Context #5: [and([quickPermutationOrder((i, j),
+                                            [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+                          | q2 : int(1..4), q2 < 4])
+                     | q1 : int(1..4), q1 < 4]
+    Context #6: and([and([quickPermutationOrder((i, j),
+                                                [permutation((q2, succ(q2))), permutation((q1, succ(q1))); int(1..2)])
+                              | q2 : int(1..4), q2 < 4])
+                         | q1 : int(1..4), q1 < 4])
+Not refined: permutation((q1,
+                          succ(q1))) AbstractLiteral (AbsLitPermutation [[Reference (MachineName "q" 1 []) (Just (DeclHasRepr Quantified (MachineName "q" 1 []) (DomainInt (TagUnnamed "e") [RangeBounded (Constant (ConstantInt (TagUnnamed "e") 1)) (Constant (ConstantInt (TagUnnamed "e") 4))]))),Op (MkOpSucc (OpSucc (Reference (MachineName "q" 1 []) (Just (DeclHasRepr Quantified (MachineName "q" 1 []) (DomainInt (TagUnnamed "e") [RangeBounded (Constant (ConstantInt (TagUnnamed "e") 1)) (Constant (ConstantInt (TagUnnamed "e") 4))]))))))]])
+
+CallStack (from HasCallStack):
+  error, called at src/Conjure/Bug.hs:17:15 in conjure-cp-2.5.1-IwIj6VKKx9G42E8IkwFva2:Conjure.Bug
+  bug, called at src/Conjure/UI/Model.hs:1041:26 in conjure-cp-2.5.1-IwIj6VKKx9G42E8IkwFva2:Conjure.UI.Model

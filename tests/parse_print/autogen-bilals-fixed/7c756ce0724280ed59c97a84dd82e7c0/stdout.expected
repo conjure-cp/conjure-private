@@ -7,4 +7,4 @@ find var3:
          partition (maxNumParts 0, maxPartSize 2) from int(1, 5), matrix indexed by [int(5, 5)] of bool)
 find var4: set (minSize -3) of partition (maxNumParts 0, minPartSize 4) from int(2, 2)
 find var5: set (minSize 5, maxSize 5) of tuple (int(2, 4))
-such that tuple (false)[1] > ([l_2 | l_1 : int(4, 2), l_2 : int(2, 5), true] <lex [l_3 | l_3 : int(4..5, 4)])
+such that tuple (false)[1] > ([l_2 | l_1 : int(4, 2), l_2 : int(2, 5), true] .< [l_3 | l_3 : int(4..5, 4)])

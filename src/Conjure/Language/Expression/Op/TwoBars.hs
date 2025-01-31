@@ -36,6 +36,7 @@ instance (TypeOf x, Pretty x, Domain () x :< x) => TypeOf (OpTwoBars x) where
                     TypeSequence{}  -> return ()
                     TypeRelation{}  -> return ()
                     TypePartition{} -> return ()
+                    TypePermutation{} -> return ()
                     _               -> raiseTypeError $ vcat [ pretty p
                                                              , "Expected an integer or a collection."
                                                              , "But got:" <+> pretty ty

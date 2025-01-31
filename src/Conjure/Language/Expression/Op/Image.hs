@@ -22,19 +22,20 @@ instance FromJSON  x => FromJSON  (OpImage x) where parseJSON = genericParseJSON
 instance (TypeOf x, Pretty x) => TypeOf (OpImage x) where
     typeOf p@(OpImage f x) = do
         tyF <- typeOf f
+        tyX <- typeOf x
         (from, to) <- case tyF of
             TypeFunction from to -> return (from, to)
             TypeSequence      to -> return (TypeInt TagInt, to)
+            TypePermutation _    -> return (tyX, tyX)
             _ -> raiseTypeError $ "(function application)" <+> pretty p
-        xTy <- typeOf x
-        if typesUnify [xTy, from]
+        if typesUnify [tyX, from]
             then return to
             else raiseTypeError $ vcat
                 [ pretty p
                 , "function     :" <+> pretty f
                 , "function type:" <+> pretty (TypeFunction from to)
                 , "argument     :" <+> pretty x
-                , "argument type:" <+> pretty xTy
+                , "argument type:" <+> pretty tyX
                 ]
 
 instance SimplifyOp OpImage x where

@@ -142,33 +142,71 @@ symmetryOrdering ::
     EnumerateDomain m =>
     (?typeCheckerMode :: TypeCheckerMode) =>
     Expression -> m Expression
-symmetryOrdering inp =
-    case inp of
-        -- Constant x -> so_onConstant x
-        -- AbstractLiteral x
-        Reference _ (Just refTo) -> do
-            case refTo of
-                Alias x                        -> symmetryOrdering x
-                InComprehension{}              -> bug ("symmetryOrdering.InComprehension:" <++> pretty (show inp))
-                DeclNoRepr{}                   -> bug ("symmetryOrdering.DeclNoRepr:"      <++> pretty (show inp))
-                DeclHasRepr _forg _name domain -> symmetryOrderingDispatch downX1 inp domain
-                RecordField{}                  -> bug ("symmetryOrdering.RecordField:"     <++> pretty (show inp))
-                VariantField{}                 -> bug ("symmetryOrdering.VariantField:"    <++> pretty (show inp))
-        Op op -> case op of
-            MkOpIndexing (OpIndexing m _) -> do
-                ty <- typeOf m
-                case ty of
-                    TypeMatrix{} -> return ()
-                    TypeList{}   -> return ()
-                    _ -> bug $ "[symmetryOrdering.onOp, not a TypeMatrix or TypeList]" <+> vcat [pretty ty, pretty op]
-                mDom <- domainOfR m
-                case mDom of
-                    DomainMatrix _ domainInner -> symmetryOrderingDispatch downX1 inp domainInner
-                    _ -> bug ("symmetryOrdering, not DomainMatrix:" <++> pretty (show op))
-            _ -> bug ("symmetryOrdering, unhandled Op:" <++> pretty (show op))
-        -- Comprehension body stmts -> do
-        --     xs <- downX1 body
-        --     return [Comprehension x stmts | x <- xs]
-        -- x@WithLocals{} -> bug ("downX1:" <++> pretty (show x))
-        _ -> bug ("symmetryOrdering:" <++> pretty (show inp))
+symmetryOrdering inp' = do
+   let constBool (ConstantBool True) = ConstantInt TagInt 1
+       constBool (ConstantBool False) = ConstantInt TagInt 0
+       constBool x = x
+       inp = transformBi constBool inp'
+   ta <- typeOf inp
+   case ta of
+     TypeBool -> return [essence| [-toInt(&inp)] |]
+     TypeInt{} -> return [essence| [&inp] |]
+     TypeList TypeInt{} -> return inp
+     TypeMatrix TypeInt{} TypeInt{} -> return inp
+     _ ->
+       case inp of
+            -- Constant x -> so_onConstant x
+            -- AbstractLiteral _ -> return inp
 
+            Constant ConstantBool{} -> return [essence| -toInt(&inp) |]
+
+            Constant (ConstantAbstract x) -> do
+                case x of
+                    AbsLitTuple xs -> do
+                        soVals <- mapM symmetryOrdering (Constant <$> xs)
+                        return $ fromList soVals
+                    AbsLitMatrix _ xs -> do
+                        soVals <- mapM symmetryOrdering (Constant <$> xs)
+                        return $ fromList soVals
+                    _ -> na ("symmetryOrdering: AbstractLiteral:" <++> pretty (show inp) <++> pretty inp)
+
+            AbstractLiteral x -> do
+                case x of
+                    AbsLitTuple xs -> do
+                        soVals <- mapM symmetryOrdering xs
+                        return $ AbstractLiteral $ AbsLitTuple soVals
+                    AbsLitMatrix d xs -> do
+                        soVals <- mapM symmetryOrdering xs
+                        return $ AbstractLiteral $ AbsLitMatrix d soVals
+                    _ -> na ("symmetryOrdering: AbstractLiteral:" <++> pretty (show inp) <++> pretty inp)
+
+            Reference _ (Just refTo) -> do
+                case refTo of
+                    Alias x                        -> symmetryOrdering x
+                    InComprehension{}              -> na ("symmetryOrdering.InComprehension:" <++> pretty (show inp))
+                    DeclNoRepr{}                   -> na ("symmetryOrdering.DeclNoRepr:"      <++> pretty (show inp))
+                    DeclHasRepr _forg _name domain -> symmetryOrderingDispatch downX1 inp domain
+                    RecordField{}                  -> na ("symmetryOrdering.RecordField:"     <++> pretty (show inp))
+                    VariantField{}                 -> na ("symmetryOrdering.VariantField:"    <++> pretty (show inp))
+
+            Op op -> case op of
+                MkOpIndexing (OpIndexing m _) -> do
+                    ty <- typeOf m
+                    case ty of
+                        TypeMatrix{} -> return ()
+                        TypeList{}   -> return ()
+                        _ -> na $ "[symmetryOrdering.onOp, not a TypeMatrix or TypeList]" <+> vcat [pretty ty, pretty op]
+                    mDom <- domainOfR m
+                    case mDom of
+                        DomainMatrix _ domainInner -> symmetryOrderingDispatch downX1 inp domainInner
+                        _ -> na ("symmetryOrdering, not DomainMatrix:" <++> pretty (show op))
+                MkOpImage (OpImage p x) -> do
+                    so <- symmetryOrdering x
+                    return [essence| image(&p, &so) |]
+                _ -> na ("symmetryOrdering, no OpIndexing:" <++> pretty (show op))
+
+            Comprehension body stmts -> do
+                xs <- symmetryOrdering body
+                return $ make opFlatten $ Comprehension xs stmts
+
+            _ -> na ("symmetryOrdering:" <++> pretty (show inp) <++> pretty inp)

@@ -50,7 +50,7 @@
                                       [[{"ConstantBool": true}, {"ConstantBool": false}, {"ConstantBool": true},
                                         {"ConstantBool": true}, {"ConstantBool": false}]]}}}]}},
             {"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"AbstractLiteral":
                             {"AbsLitMatrix":
                                  [{"DomainInt":

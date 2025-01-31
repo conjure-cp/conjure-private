@@ -1,0 +1,17 @@
+Generating models for permutation.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime permutation2.essence
+Running minion for domain filtering.
+Running solver: minion
+Savile Row: conjure-output/model000001.eprime permutation.param
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: permutation-permutation.solution
+Copying solution to: permutation-permutation2.solution
+language Essence 1.3
+
+letting i be E1
+language Essence 1.3
+
+letting i be E6

@@ -1,0 +1,11 @@
+letting n be 4
+
+letting p be permutation((1,3,4))
+
+find s : partition from int(1..n)
+
+find sn : partition from int(1..n)
+
+
+such that sn = transform([p],s) 
+

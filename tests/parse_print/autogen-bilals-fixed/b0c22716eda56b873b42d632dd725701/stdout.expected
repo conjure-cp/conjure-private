@@ -78,7 +78,7 @@ such that
          /\
          (flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags
                       [q5, .., ..])
-          <lex
+          .<
           flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags
                       [q5 + 1, .., ..])
           \/
@@ -92,7 +92,7 @@ such that
           /\
           flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values
                       [q5, .., ..])
-          <lex
+          .<
           flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values
                       [q5 + 1, .., ..]))
              | q5 : int(1..65535)]),
@@ -113,7 +113,7 @@ such that
          and([q8 + 1 <= var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q7] ->
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags
                   [q7, q8, ..]
-              <lex
+              .<
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags
                   [q7, q8 + 1, ..]
               \/
@@ -126,7 +126,7 @@ such that
               /\
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values
                   [q7, q8, ..]
-              <lex
+              .<
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values
                   [q7, q8 + 1, ..]
                   | q8 : int(1..15)])

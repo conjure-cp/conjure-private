@@ -44,7 +44,7 @@ such that
          flatten(var1_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1D[q4,
                                                                                                                     ..,
                                                                                                                     ..])
-         <lex
+         .<
          flatten(var1_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1D[q4
                                                                                                                     + 1,
                                                                                                                     ..,
@@ -67,7 +67,7 @@ such that
               ->
               var1_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1D[q6,
                                                                                                                  q7, ..]
-              <lex
+              .<
               var1_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1D[q6,
                                                                                                                  q7 + 1,
                                                                                                                  ..]

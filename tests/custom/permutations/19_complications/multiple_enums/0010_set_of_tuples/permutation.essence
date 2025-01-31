@@ -1,0 +1,10 @@
+letting e be new type enum {e_1,e_2,e_3,e_4} 
+letting n be new type enum {n_1,n_2,n_3,n_4} 
+
+find p : permutation (numMoved 3) of n
+letting s be {(e_1,n_3),(e_2,n_4)}
+find t : set of (e,n)
+
+
+such that t = transform([p],s)
+

@@ -358,7 +358,7 @@
                                                                                                                                      []},
                                                                                                                                 2]}}]}]]},
                                                                                                         [{"Op":
-                                                                                                              {"MkOpLexLt":
+                                                                                                              {"MkOpDotLt":
                                                                                                                    [{"Op":
                                                                                                                          {"MkOpFlatten":
                                                                                                                               [null,
@@ -425,7 +425,7 @@
                                                                                                                                           null,
                                                                                                                                           null]}}]}}]}},
                                                                                                          {"Op":
-                                                                                                              {"MkOpLexLt":
+                                                                                                              {"MkOpDotLt":
                                                                                                                    [{"Op":
                                                                                                                          {"MkOpFlatten":
                                                                                                                               [null,

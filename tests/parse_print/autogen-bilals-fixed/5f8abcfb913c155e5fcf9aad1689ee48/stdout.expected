@@ -33,7 +33,7 @@ such that
          var1_ExplicitVarSizeWithMarkerR8_Values_ExplicitWithRepetition_Flag[q1] =
          var1_ExplicitVarSizeWithMarkerR8_Values_ExplicitWithRepetition_Flag[q1 + 1]
          /\
-         var1_ExplicitVarSizeWithMarkerR8_Values_ExplicitWithRepetition_Values[q1, ..] <lex
+         var1_ExplicitVarSizeWithMarkerR8_Values_ExplicitWithRepetition_Values[q1, ..] .<
          var1_ExplicitVarSizeWithMarkerR8_Values_ExplicitWithRepetition_Values[q1 + 1, ..]
              | q1 : int(1..4)]),
     and([q2 > var1_ExplicitVarSizeWithMarkerR8_Marker ->
@@ -78,7 +78,7 @@ such that
          var3_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Marker[q17] =
          var3_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Marker[q17 + 1]
          /\
-         var3_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values_1[q17, ..] <lex
+         var3_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values_1[q17, ..] .<
          var3_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Values_ExplicitVarSizeWithMarker_Values_1[q17 + 1, ..]
              | q17 : int(1..3)]),
     and([q18 > var3_PartitionAsSet_ExplicitVarSizeWithMarkerR5_Marker ->

@@ -25,6 +25,7 @@ instance (TypeOf x, Pretty x) => TypeOf (OpAllDiffExcept x) where
         tyN <- typeOf n
         case tyN of
             TypeInt TagInt -> return ()
+            TypeInt TaggedInt{} -> return ()
             TypeInt (TagEnum _) -> return ()
             _ -> raiseTypeError p
         case tyX of

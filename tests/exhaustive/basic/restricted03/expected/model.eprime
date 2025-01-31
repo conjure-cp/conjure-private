@@ -1,0 +1,15 @@
+language ESSENCE' 1.0
+
+find x_Function1DPartial_Flags: matrix indexed by [int(1..4)] of bool
+find x_Function1DPartial_Values: matrix indexed by [int(1..4)] of int(1..4)
+branching on [x_Function1DPartial_Flags, x_Function1DPartial_Values]
+such that
+    and([x_Function1DPartial_Flags[q8] -> x_Function1DPartial_Values[q8] % 2 = 0 /\ x_Function1DPartial_Flags[q8]
+             | q8 : int(1..4), or([q7 = q8 | q7 : int(1..2)])]),
+    and([x_Function1DPartial_Flags[q11] -> x_Function1DPartial_Values[q11] % 2 = 1 /\ x_Function1DPartial_Flags[q11]
+             | q11 : int(1..4), or([q10 = q11 | q10 : int(3..4)])]),
+    and([x_Function1DPartial_Flags[q1] /\ x_Function1DPartial_Flags[q2] ->
+         x_Function1DPartial_Values[q1] != x_Function1DPartial_Values[q2]
+             | q1 : int(1..4), q2 : int(1..4), [q1; int(1)] <lex [q2; int(1)]]),
+    and([x_Function1DPartial_Flags[q3] = false -> x_Function1DPartial_Values[q3] = 1 | q3 : int(1..4)])
+

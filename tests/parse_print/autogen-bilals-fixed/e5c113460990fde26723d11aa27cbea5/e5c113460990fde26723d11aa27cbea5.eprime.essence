@@ -50,7 +50,7 @@ such that
          flatten(var1_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1D[q4,
                                                                                                                     ..,
                                                                                                                     ..])
-         <lex
+         .<
          flatten(var1_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1D[q4
                                                                                                                     + 1,
                                                                                                                     ..,
@@ -73,7 +73,7 @@ such that
               ->
               var1_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1D[q6,
                                                                                                                  q7, ..]
-              <lex
+              .<
               var1_1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_Function1D[q6,
                                                                                                                  q7 + 1,
                                                                                                                  ..]
@@ -107,14 +107,14 @@ such that
                   | q9 : int(1..4)])
              | q6 : int(1..65536)]),
     and([var1_2_ExplicitVarSizeWithFlags_Flags[q11 + 1] > 0 ->
-         var1_2_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q11, ..] <lex
+         var1_2_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q11, ..] .<
          var1_2_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q11 + 1, ..]
          \/
          and([var1_2_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q11, q36] =
               var1_2_ExplicitVarSizeWithFlags_Values_Function1DPartial_Flags[q11 + 1, q36]
                   | q36 : bool])
          /\
-         var1_2_ExplicitVarSizeWithFlags_Values_Function1DPartial_Values[q11, ..] <lex
+         var1_2_ExplicitVarSizeWithFlags_Values_Function1DPartial_Values[q11, ..] .<
          var1_2_ExplicitVarSizeWithFlags_Values_Function1DPartial_Values[q11 + 1, ..]
              | q11 : int(1..4)]),
     and([var1_2_ExplicitVarSizeWithFlags_Flags[q12] = 0 ->

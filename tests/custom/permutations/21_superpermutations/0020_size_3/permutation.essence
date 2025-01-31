@@ -1,0 +1,8 @@
+given s : set of permutation of int(1..3)
+find superperm : sequence (maxSize 100) of int(1..3)
+
+such that
+  and([ transform([z],sequence(1,2,3)) substring superperm | z <- s ])
+
+minimising |superperm|
+

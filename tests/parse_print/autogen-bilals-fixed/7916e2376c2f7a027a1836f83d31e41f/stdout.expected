@@ -17,7 +17,7 @@ such that
              | q1_Function1D : matrix indexed by [bool] of int(3..5, 4), allDiff(q1_Function1D), false, true]),
     var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[1] >= 1,
     and([q6 + 1 <= var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[1] ->
-         var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1, q6, ..] <lex
+         var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1, q6, ..] .<
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1, q6 + 1, ..]
              | q6 : int(1..255)]),
     and([q7 > var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[1] ->

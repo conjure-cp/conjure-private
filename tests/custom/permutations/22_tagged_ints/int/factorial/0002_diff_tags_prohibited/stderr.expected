@@ -1,0 +1,10 @@
+Error:
+    In a 'such that' statement: factorial(x) = 6
+    Error:
+        When type checking: factorial(x) = 6
+        Cannot unify the types of the following.
+        lhs        : factorial(x)
+        type of lhs: int:A
+        rhs        : 6
+        type of rhs: int
+cat: conjure-output/*.solution: No such file or directory

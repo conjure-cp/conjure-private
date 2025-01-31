@@ -12,4 +12,4 @@ such that
     relation(tuple (false), tuple (false), tuple (false), tuple (false), tuple (true)),
     image(var4, 5),
     var1 != var1,
-    [0; int(0)] <=lex [3, 1, 1, 5, 3; int(10, 1, 0, 15, 12)]
+    [0; int(0)] .<= [3, 1, 1, 5, 3; int(10, 1, 0, 15, 12)]

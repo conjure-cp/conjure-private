@@ -27,6 +27,7 @@ instance ( TypeOf x, Pretty x
         ty <- typeOfDomain dom
         case ty of
             TypeInt TagInt -> return ty
+            TypeInt TaggedInt{} -> return ty
             TypeInt (TagEnum _) -> return ty
             TypeEnum{} -> return ty
             _ -> raiseTypeError $ vcat [ pretty p
@@ -44,6 +45,7 @@ instance ( TypeOf x, Pretty x
                                        ]
         case tyInner of
             TypeInt TagInt -> return ()
+            TypeInt TaggedInt{} -> return () 
             TypeInt (TagEnum _) -> return ()
             _ -> raiseTypeError $ vcat [ pretty p
                                        , "Unexpected type inside min:" <+> pretty ty

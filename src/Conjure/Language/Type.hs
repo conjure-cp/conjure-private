@@ -44,6 +44,7 @@ data Type
     | TypeSequence Type
     | TypeRelation [Type]
     | TypePartition Type
+    | TypePermutation Type
     deriving (Eq, Ord, Show, Data, Typeable, Generic)
 
 
@@ -55,9 +56,10 @@ instance FromJSON  Type where parseJSON = genericParseJSON jsonOptions
 instance Pretty Type where
     pretty TypeAny = "?"
     pretty TypeBool = "bool"
-    pretty (TypeInt (TagEnum n)) = pretty n
-    pretty (TypeInt (TagUnnamed n)) = pretty n
-    pretty TypeInt{} = "int"
+    pretty (TypeInt TagInt        ) = "int"
+    pretty (TypeInt (TaggedInt t) ) = stringToDoc ("int:"     ++ textToString t)
+    pretty (TypeInt (TagEnum t)   ) = stringToDoc ("enum:"    ++ textToString t)
+    pretty (TypeInt (TagUnnamed t)) = stringToDoc ("unnamed:" ++ textToString t)
     pretty (TypeEnum nm ) = pretty nm
     pretty (TypeUnnamed nm) = pretty nm
     pretty (TypeTuple xs) = (if length xs <= 1 then "tuple" else prEmpty)
@@ -82,9 +84,11 @@ instance Pretty Type where
     pretty (TypeSequence x) = "sequence of" <+> pretty x
     pretty (TypePartition x) = "partition from" <+> pretty x
     pretty (TypeRelation xs) = "relation of" <+> prettyList prParens " *" xs
+    pretty (TypePermutation x) = "permutation of" <+> pretty x
 
 
 data IntTag = TagInt                    -- was an integer in the input
+            | TaggedInt Text            -- was an integer in the input with user specified tag
             | TagEnum Text              -- was an enum in the input
             | TagUnnamed Text           -- was an unnamed in the input
     deriving (Eq, Ord, Show, Data, Typeable, Generic)
@@ -96,6 +100,12 @@ instance FromJSON  IntTag where parseJSON = genericParseJSON jsonOptions
 
 reTag :: Data a => IntTag -> a -> a
 reTag t = transformBi (const t)
+
+instance Pretty IntTag where
+    pretty TagInt = ""
+    pretty (TaggedInt t) = ":" <> pretty t
+    pretty (TagEnum t) = ":" <> pretty t
+    pretty (TagUnnamed t) = ":" <> pretty t
 
 
 -- This parameter will decide the mode of the type checker.
@@ -125,6 +135,8 @@ typeUnify (TypeInt t1) (TypeInt t2) = case ?typeCheckerMode of
                                          RelaxedIntegerTags -> True
 typeUnify (TypeEnum a) (TypeEnum b) = a == b
 typeUnify (TypeUnnamed a) (TypeUnnamed b) = a == b
+typeUnify (TypeUnnamed (Name a)) (TypeInt (TagUnnamed b)) = a == b
+typeUnify (TypeInt (TagUnnamed b)) (TypeUnnamed (Name a)) = a == b
 typeUnify (TypeTuple [TypeAny]) TypeTuple{} = True
 typeUnify TypeTuple{} (TypeTuple [TypeAny]) = True
 typeUnify (TypeTuple as) (TypeTuple bs) = (length as == length bs) && and (zipWith typeUnify as bs)
@@ -169,6 +181,7 @@ typeUnify (TypeRelation [TypeAny]) TypeRelation{} = True                -- hack 
 typeUnify TypeRelation{} (TypeRelation [TypeAny]) = True
 typeUnify (TypeRelation as) (TypeRelation bs) = (length as == length bs) && and (zipWith typeUnify as bs)
 typeUnify (TypePartition a) (TypePartition b) = typeUnify a b
+typeUnify (TypePermutation a) (TypePermutation b) = typeUnify a b
 typeUnify _ _ = False
 
 -- | Check whether a given list of types unify with each other or not.
@@ -221,6 +234,7 @@ mostDefined = foldr f TypeAny
         f x (TypeRelation [TypeAny]) = x
         f (TypeRelation as) (TypeRelation bs) | length as == length bs = TypeRelation (zipWith f as bs)
         f (TypePartition a) (TypePartition b) = TypePartition (f a b)
+        f (TypePermutation a) (TypePermutation b) = TypePermutation (f a b)
         f _ _ = TypeAny
 
 matrixNumDims :: Type -> Int
@@ -249,6 +263,7 @@ innerTypeOf (TypeFunction a b) = return (TypeTuple [a,b])
 innerTypeOf (TypeSequence t) = return (TypeTuple [TypeInt TagInt,t])
 innerTypeOf (TypeRelation ts) = return (TypeTuple ts)
 innerTypeOf (TypePartition t) = return (TypeSet t)
+innerTypeOf (TypePermutation t) = return (TypeTuple [t,t])
 innerTypeOf t = failDoc ("innerTypeOf:" <+> pretty (show t))
 
 isPrimitiveType :: Type -> Bool
@@ -307,4 +322,5 @@ morphing :: (?typeCheckerMode :: TypeCheckerMode)
          => Type -> m Type
 morphing (TypeFunction a _) = return a
 morphing (TypeSequence a)   = return a 
+morphing (TypePermutation a) = return a
 morphing t = failDoc ("morphing:" <+> pretty (show t))

@@ -177,7 +177,7 @@
                                          {"TypeMSet": {"TypeMSet": {"TypeInt": {"TagInt": []}}}}]},
                                    {"Constant": {"ConstantAbstract": {"AbsLitMSet": [{"ConstantBool": true}]}}}]]}}]}},
             {"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Op":
                             {"MkOpImage":
                                  [{"Constant":

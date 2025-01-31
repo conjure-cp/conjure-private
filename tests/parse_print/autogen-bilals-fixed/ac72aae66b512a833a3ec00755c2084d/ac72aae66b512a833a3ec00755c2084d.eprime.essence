@@ -21,7 +21,7 @@ such that
          ->
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Explicit[1, q8,
                                                                                 ..]
-         <lex
+         .<
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Explicit[1,
                                                                                 q8 + 1, ..]
              | q8 : int(1..4)]),
@@ -44,7 +44,7 @@ such that
     and([var2_ExplicitVarSizeWithFlags_Flags[q13 + 1] > 0 ->
          flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q13, .., .., ..,
                                                                        ..])
-         <lex
+         .<
          flatten(var2_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q13 + 1, .., ..,
                                                                        .., ..])
              | q13 : int(1..0 / 0 - 1)]),

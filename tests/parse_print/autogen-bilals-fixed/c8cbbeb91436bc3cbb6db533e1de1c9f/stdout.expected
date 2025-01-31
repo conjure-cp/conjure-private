@@ -8,7 +8,7 @@ find var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_Occurrence:
 such that
     false,
     and([q1 + 1 <= var1_ExplicitVarSizeWithMarker_Marker ->
-         var1_ExplicitVarSizeWithMarker_Values_Function1D[q1, ..] <lex
+         var1_ExplicitVarSizeWithMarker_Values_Function1D[q1, ..] .<
          var1_ExplicitVarSizeWithMarker_Values_Function1D[q1 + 1, ..]
              | q1 : int(1..63)]),
     and([q2 > var1_ExplicitVarSizeWithMarker_Marker ->
@@ -43,7 +43,7 @@ such that
                         | q18 : int(1..4)]),
                sum([q7_ExplicitVarSizeWithFlags_Flags[q19] | q19 : int(1..5)]) <= 5]),
     and([q10 + 1 <= var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
-         flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_Occurrence[q10, .., ..]) <lex
+         flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_Occurrence[q10, .., ..]) .<
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_Occurrence[q10 + 1, .., ..])
              | q10 : int(1..3)]),
     and([q11 > var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->

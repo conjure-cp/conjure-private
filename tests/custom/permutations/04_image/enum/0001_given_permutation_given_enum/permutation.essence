@@ -1,0 +1,13 @@
+letting n be new type enum {E0, E1, E2, E3, E4, E5, E6}
+
+given i : n 
+
+given p : permutation of n 
+
+find j : n 
+
+such that j = image(p, i) 
+
+
+
+

@@ -2,7 +2,5 @@ language ESSENCE' 1.0
 
 find var1: int(1..2)
 branching on [var1]
-such that
-    [true, true, true, true; int(1..4)] <=lex
-    [[true, false, false, true; int(1..4)], [true, true, true, true; int(1..4)]; int(1..2)][var1, ..]
+such that [1, 1, 1, 1; int(1..4)] <=lex [[1, 0, 0, 1; int(1..4)], [1, 1, 1, 1; int(1..4)]; int(1..2)][var1, ..]
 

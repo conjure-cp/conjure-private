@@ -9,14 +9,14 @@ such that
                q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values : matrix indexed by [int(1..4),
                                                                                                   bool] of int(5..5),
                and([q1 + 1 <= q_4_ExplicitVarSizeWithMarker_Marker ->
-                    q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1, ..] <lex
+                    q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1, ..] .<
                     q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1 + 1, ..]
                     \/
                     and([q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1, q7] =
                          q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Flags[q1 + 1, q7]
                              | q7 : bool])
                     /\
-                    q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q1, ..] <lex
+                    q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q1, ..] .<
                     q_4_ExplicitVarSizeWithMarker_Values_Function1DPartial_Values[q1 + 1, ..]
                         | q1 : int(1..3)]),
                and([q2 > q_4_ExplicitVarSizeWithMarker_Marker ->

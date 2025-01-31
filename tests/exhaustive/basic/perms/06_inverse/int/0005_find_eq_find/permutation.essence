@@ -1,0 +1,4 @@
+find p : permutation of int(1..4) 
+find q : permutation of int(1..4)
+
+such that inverse(p,q)

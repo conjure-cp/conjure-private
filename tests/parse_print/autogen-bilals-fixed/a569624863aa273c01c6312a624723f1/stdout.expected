@@ -49,7 +49,7 @@ such that
          var3_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q3] =
          var3_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q3 + 1]
          /\
-         var3_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q3, ..] <lex
+         var3_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q3, ..] .<
          var3_2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q3 + 1, ..]
              | q3 : int(1..3)]),
     and([q3 > var3_2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
@@ -84,7 +84,7 @@ such that
          var3_4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q3] =
          var3_4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q3 + 1]
          /\
-         var3_4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q3, ..] <lex
+         var3_4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q3, ..] .<
          var3_4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q3 + 1, ..]
              | q3 : int(1..3)]),
     and([q3 > var3_4_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->

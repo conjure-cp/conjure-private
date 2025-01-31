@@ -6,8 +6,8 @@ import Conjure.Prelude
 import Conjure.Language.Constant
 import Conjure.Language.Definition
 import Conjure.Language.Domain
-import Conjure.Language.Type
 import Conjure.Language.Pretty 
+import Conjure.Language.Type
 import Conjure.Language.Instantiate ( instantiateExpression )
 import Conjure.Process.AttributeAsConstraints ( mkAttributeToConstraint )
 import Conjure.Process.Enumerate ( EnumerateDomain, enumerateDomain )
@@ -246,7 +246,10 @@ validateConstantForDomain name
     c@(viewConstantPartition -> Just valss)
     d@(DomainPartition _ _ dInner) = nested c d $
         mapM_ (\ val -> validateConstantForDomain name val dInner ) (concat valss)
-
+validateConstantForDomain name
+    c@(viewConstantPermutation -> Just valss)
+    d@(DomainPermutation _ _ dInner) = nested c d $
+        mapM_ (\ val -> validateConstantForDomain name val dInner ) (concat valss)
 validateConstantForDomain name c@(TypedConstant c' _) d = nested c d $ validateConstantForDomain name c' d
 
 validateConstantForDomain name c d = constantNotInDomain name c d

@@ -320,7 +320,7 @@
                                                                    null]},
                                                              {"Constant": {"ConstantInt": [{"TagInt": []}, 1]}}]}}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":
@@ -504,7 +504,7 @@
                                  [{"Constant": {"ConstantInt": [{"TagInt": []}, 2]}},
                                   {"Reference": [{"Name": "var3_ExplicitVarSizeWithMarker_Marker"}, null]}]}},
                        {"Op":
-                            {"MkOpLexLt":
+                            {"MkOpDotLt":
                                  [{"Op":
                                        {"MkOpFlatten":
                                             [null,

@@ -1,0 +1,150 @@
+Generating models for permutation.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: permutation-000001.solution
+Copying solution to: permutation-000002.solution
+Copying solution to: permutation-000003.solution
+Copying solution to: permutation-000004.solution
+Copying solution to: permutation-000005.solution
+Copying solution to: permutation-000006.solution
+Copying solution to: permutation-000007.solution
+Copying solution to: permutation-000008.solution
+Copying solution to: permutation-000009.solution
+Copying solution to: permutation-000010.solution
+Copying solution to: permutation-000011.solution
+Copying solution to: permutation-000012.solution
+Copying solution to: permutation-000013.solution
+Copying solution to: permutation-000014.solution
+Copying solution to: permutation-000015.solution
+Copying solution to: permutation-000016.solution
+Copying solution to: permutation-000017.solution
+Copying solution to: permutation-000018.solution
+Copying solution to: permutation-000019.solution
+Copying solution to: permutation-000020.solution
+Copying solution to: permutation-000021.solution
+Copying solution to: permutation-000022.solution
+Copying solution to: permutation-000023.solution
+Copying solution to: permutation-000024.solution
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2), (n_3, n_4))
+letting q be permutation((n_1, n_3), (n_2, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2), (n_3, n_4))
+letting q be permutation((n_1, n_3, n_2, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2), (n_3, n_4))
+letting q be permutation((n_1, n_4, n_2, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2), (n_3, n_4))
+letting q be permutation((n_1, n_4), (n_2, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2, n_3, n_4))
+letting q be permutation((n_1, n_3), (n_2, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2, n_3, n_4))
+letting q be permutation((n_1, n_4, n_3, n_2))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2, n_4, n_3))
+letting q be permutation((n_1, n_3, n_4, n_2))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_2, n_4, n_3))
+letting q be permutation((n_1, n_4), (n_2, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3, n_4, n_2))
+letting q be permutation((n_1, n_2, n_4, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3, n_4, n_2))
+letting q be permutation((n_1, n_4), (n_2, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3), (n_2, n_4))
+letting q be permutation((n_1, n_2), (n_3, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3), (n_2, n_4))
+letting q be permutation((n_1, n_2, n_3, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3), (n_2, n_4))
+letting q be permutation((n_1, n_4, n_3, n_2))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3), (n_2, n_4))
+letting q be permutation((n_1, n_4), (n_2, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3, n_2, n_4))
+letting q be permutation((n_1, n_2), (n_3, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_3, n_2, n_4))
+letting q be permutation((n_1, n_4, n_2, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4, n_3, n_2))
+letting q be permutation((n_1, n_2, n_3, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4, n_3, n_2))
+letting q be permutation((n_1, n_3), (n_2, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4, n_2, n_3))
+letting q be permutation((n_1, n_2), (n_3, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4, n_2, n_3))
+letting q be permutation((n_1, n_3, n_2, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4), (n_2, n_3))
+letting q be permutation((n_1, n_2), (n_3, n_4))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4), (n_2, n_3))
+letting q be permutation((n_1, n_2, n_4, n_3))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4), (n_2, n_3))
+letting q be permutation((n_1, n_3, n_4, n_2))
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_1, n_4), (n_2, n_3))
+letting q be permutation((n_1, n_3), (n_2, n_4))

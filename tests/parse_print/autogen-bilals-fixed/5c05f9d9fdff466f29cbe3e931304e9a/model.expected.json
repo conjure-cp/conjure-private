@@ -79,7 +79,7 @@
                         {"RangeSingle": {"Constant": {"ConstantInt": [{"TagInt": []}, 4]}}}]]}]}},
       {"SuchThat":
            [{"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Constant":
                             {"ConstantAbstract":
                                  {"AbsLitMatrix":

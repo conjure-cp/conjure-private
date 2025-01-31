@@ -23,7 +23,7 @@ such that
              | q1_Function1D : matrix indexed by [bool] of int(3..5, 4), allDiff(q1_Function1D), false, true]),
     var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[1] >= 1,
     and([q6 + 1 <= var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[1] ->
-         var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1, q6, ..] <lex
+         var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1, q6, ..] .<
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1, q6 + 1, ..]
              | q6 : int(1..255)]),
     and([q7 > var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[1] ->
@@ -34,7 +34,7 @@ such that
              | q8 : int(1..256)]),
     and([q8 <= var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[1] -> false | q8 : int(1..256)]),
     var3_ExplicitVarSizeWithFlags_Flags[2] ->
-    flatten(var3_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[1, .., .., .., ..]) <lex
+    flatten(var3_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[1, .., .., .., ..]) .<
     flatten(var3_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[2, .., .., .., ..]),
     and([var3_ExplicitVarSizeWithFlags_Flags[q11] = false ->
          and([and([and([and([var3_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[q11, q39, q40, q41, q42] = false

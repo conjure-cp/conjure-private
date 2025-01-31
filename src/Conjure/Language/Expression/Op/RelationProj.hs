@@ -32,8 +32,8 @@ instance (TypeOf x, Pretty x) => TypeOf (OpRelationProj x) where
                                 tyI <- typeOf i
                                 if typesUnify [tyI,t]
                                     then loop is ts
-                                    else raiseTypeError $ "(relation projection)" <+> pretty p
-                            loop _ _ = raiseTypeError $ "(relation projection)" <+> pretty p
+                                    else raiseTypeError $ "(relation projection 1)" <+> pretty p
+                            loop _ _ = raiseTypeError $ "(relation projection 2)" <+> pretty p
                         loop xs' ts'
                     else do
                         let loop [] [] = return []
@@ -42,10 +42,10 @@ instance (TypeOf x, Pretty x) => TypeOf (OpRelationProj x) where
                                 tyI <- typeOf i
                                 if typesUnify [tyI,t]
                                     then loop is ts
-                                    else raiseTypeError $ "(relation projection)" <+> pretty p
-                            loop _ _ = raiseTypeError $ "(relation projection)" <+> pretty p
+                                    else raiseTypeError $ "(relation projection 3)" <+> pretty p
+                            loop _ _ = raiseTypeError $ "(relation projection 4)" <+> pretty p
                         TypeRelation <$> loop xs ts'
-            _ -> raiseTypeError $ "(relation projection)" <+> vcat [pretty p, pretty tyR]
+            _ -> raiseTypeError $ "(relation projection 5)" <+> vcat [pretty p, pretty tyR]
 
 instance SimplifyOp OpRelationProj x where
     simplifyOp _ = na "simplifyOp{OpRelationProj}"

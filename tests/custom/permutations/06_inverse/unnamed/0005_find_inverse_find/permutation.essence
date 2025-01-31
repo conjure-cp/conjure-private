@@ -1,0 +1,8 @@
+letting n be new type of size 4 
+
+find p : permutation of n 
+find q : permutation of n 
+
+such that inverse(q, p)
+
+

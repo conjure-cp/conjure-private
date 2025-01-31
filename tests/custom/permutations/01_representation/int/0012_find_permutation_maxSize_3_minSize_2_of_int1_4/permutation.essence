@@ -1,0 +1,5 @@
+letting n be 4
+
+find p : permutation (minNumMoved 2, maxNumMoved 3) of int(1..n)
+
+such that true

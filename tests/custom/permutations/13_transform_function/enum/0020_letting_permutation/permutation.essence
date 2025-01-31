@@ -1,0 +1,8 @@
+letting n be new type enum {E1,E2,E3,E4} 
+
+letting p be permutation((E2,E3))
+letting f be function(E1-->E2, E2-->E4)
+find g : function n --> n 
+
+such that g = transform([p],f) 
+

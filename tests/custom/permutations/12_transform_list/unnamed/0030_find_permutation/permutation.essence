@@ -1,0 +1,8 @@
+letting n be new type of size 4 
+
+find p : permutation of n
+find b : n
+find c : n
+
+such that and([i = b | i <- transform([p], [c,c,c,c])]) /\ b != c 
+

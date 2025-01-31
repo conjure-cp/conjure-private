@@ -1,0 +1,7 @@
+letting n be 4
+
+find p : permutation of int(1..n)
+letting s be [5,6,7,8] 
+
+such that 8 = transform([p],s)[2]
+

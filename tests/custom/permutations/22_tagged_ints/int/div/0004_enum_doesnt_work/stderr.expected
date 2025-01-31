@@ -1,0 +1,6 @@
+Error:
+    In a 'such that' statement: x = 6:X / 3:X
+    Error:
+        When type checking: 6:X / 3:X
+        First argument expected to be an int, but it is: enum:X
+cat: conjure-output/*.solution: No such file or directory

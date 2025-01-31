@@ -24,7 +24,7 @@ such that
               var2_RelationAsSetR9_ExplicitVarSizeWithMarkerR9_Values_1[q11, q12] =
               var2_RelationAsSetR9_ExplicitVarSizeWithMarkerR9_Values_1[q11, q12 + 1]
               /\
-              var2_RelationAsSetR9_ExplicitVarSizeWithMarkerR9_Values_2_Function1D[q11, q12, ..] <lex
+              var2_RelationAsSetR9_ExplicitVarSizeWithMarkerR9_Values_2_Function1D[q11, q12, ..] .<
               var2_RelationAsSetR9_ExplicitVarSizeWithMarkerR9_Values_2_Function1D[q11, q12 + 1, ..]
                   | q12 : int(1..3)])
              | q11 : int(5..5, 4)]),

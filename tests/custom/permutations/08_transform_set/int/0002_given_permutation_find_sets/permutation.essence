@@ -1,0 +1,11 @@
+letting n be 4
+
+given p : permutation of int(1..n)
+
+find s : set of int(1..n)
+
+find sn : set of int(1..n)
+
+
+such that sn = transform([p],s) 
+

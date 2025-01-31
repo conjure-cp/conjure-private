@@ -2,7 +2,7 @@ language Essence 1.3
 
 find var1: bool
 such that
-    [l_2 | l_1 : bool, l_2 : bool, l_2] <lex
+    [l_2 | l_1 : bool, l_2 : bool, l_2] .<
     [l_4 | l_3 : bool, l_4 : bool, l_3 != l_3, l_4],
     together({var1 <= var1, var1 <= true, var1},
              partition({false, false, false}, {false, true, true, true},

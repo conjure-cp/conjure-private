@@ -1,0 +1,4 @@
+language ESSENCE' 1.0
+
+letting p_PermutationAsFunction_PermutationFunction_forwards_Function1D be [3, 4, 1, 2; int(1..4)]
+letting p_PermutationAsFunction_PermutationFunction_backwards_Function1D be [3, 4, 1, 2; int(1..4)]

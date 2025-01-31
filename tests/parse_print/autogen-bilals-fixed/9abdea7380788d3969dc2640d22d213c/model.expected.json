@@ -61,7 +61,7 @@
                        {"Op":
                             {"MkOpLt":
                                  [{"Op":
-                                       {"MkOpLexLt":
+                                       {"MkOpDotLt":
                                             [{"Constant":
                                                   {"ConstantAbstract":
                                                        {"AbsLitMatrix":
@@ -253,7 +253,7 @@
                                                                {"ConstantBool": true}]]}}]]}}}]]}}}},
             {"Constant": {"ConstantBool": true}},
             {"Op":
-                 {"MkOpLexLt":
+                 {"MkOpDotLt":
                       [{"Op":
                             {"MkOpIndexing":
                                  [{"Constant":

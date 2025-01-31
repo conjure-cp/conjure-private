@@ -9,6 +9,7 @@
 module Conjure.Prelude
     ( module X
     , stringToDoc
+    , textToDoc
     , padRight, padLeft, padCenter
     , pairWithContents
     , withRest, withAfter, withBefore
@@ -123,6 +124,7 @@ import Data.List         as X ( (\\), intercalate, intersperse, minimumBy, nub, 
                               , inits, tails
                               , findIndex
                               , filter, partition
+                              , cycle
                               )
 import Data.List.Split   as X ( splitOn, chunksOf )
 import Data.Maybe        as X ( Maybe(..), catMaybes, listToMaybe, fromMaybe, maybe, maybeToList, mapMaybe
@@ -170,6 +172,7 @@ import Data.Generics.Uniplate.Data as X
     , transformM, transformBiM
     , descend, descendM
     , descendBi, descendBiM
+    , rewriteBi
     , universe, universeBi
     , children, childrenBi
     , uniplate
@@ -256,6 +259,9 @@ textToString = T.unpack
 
 stringToDoc :: String -> Doc
 stringToDoc = Pr.text
+
+textToDoc :: T.Text -> Doc
+textToDoc = stringToDoc . textToString
 
 padRight :: Int -> Char -> String -> String
 padRight n ch s = s ++ replicate (n - length s) ch

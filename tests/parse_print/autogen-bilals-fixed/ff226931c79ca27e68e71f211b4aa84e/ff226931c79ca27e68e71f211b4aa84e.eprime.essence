@@ -9,7 +9,7 @@ such that
     and([var1_ExplicitVarSizeWithFlags_Flags[q1 + 1] ->
          flatten(var1_ExplicitVarSizeWithFlags_Values_RelationAsSet_Explicit_1_RelationAsSet_Explicit_1[q1,
                                                                                                         .., ..])
-         <lex
+         .<
          flatten(var1_ExplicitVarSizeWithFlags_Values_RelationAsSet_Explicit_1_RelationAsSet_Explicit_1[q1
                                                                                                         + 1,
                                                                                                         .., ..])
@@ -25,7 +25,7 @@ such that
          flatten(var1_ExplicitVarSizeWithFlags_Values_RelationAsSet_Explicit_1_RelationAsSet_Explicit_2_Explicit[q1,
                                                                                                                  .., ..,
                                                                                                                  ..])
-         <lex
+         .<
          flatten(var1_ExplicitVarSizeWithFlags_Values_RelationAsSet_Explicit_1_RelationAsSet_Explicit_2_Explicit[q1
                                                                                                                  + 1,
                                                                                                                  .., ..,
@@ -52,7 +52,7 @@ such that
     and([var1_ExplicitVarSizeWithFlags_Flags[q5] ->
          and([var1_ExplicitVarSizeWithFlags_Values_RelationAsSet_Explicit_1_RelationAsSet_Explicit_1[q5,
                                                                                                      q6, ..]
-              <lex
+              .<
               var1_ExplicitVarSizeWithFlags_Values_RelationAsSet_Explicit_1_RelationAsSet_Explicit_1[q5,
                                                                                                      q6 + 1, ..]
               \/
@@ -66,7 +66,7 @@ such that
                                                                                                                       q6,
                                                                                                                       ..,
                                                                                                                       ..])
-              <lex
+              .<
               flatten(var1_ExplicitVarSizeWithFlags_Values_RelationAsSet_Explicit_1_RelationAsSet_Explicit_2_Explicit[q5,
                                                                                                                       q6
                                                                                                                       +

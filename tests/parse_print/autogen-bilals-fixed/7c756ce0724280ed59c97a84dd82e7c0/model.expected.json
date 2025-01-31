@@ -107,7 +107,7 @@
                                  [{"Constant": {"ConstantAbstract": {"AbsLitTuple": [{"ConstantBool": false}]}}},
                                   {"Constant": {"ConstantInt": [{"TagInt": []}, 1]}}]}},
                        {"Op":
-                            {"MkOpLexLt":
+                            {"MkOpDotLt":
                                  [{"Comprehension":
                                        [{"Reference": [{"Name": "l_2"}, null]},
                                         [{"Generator":

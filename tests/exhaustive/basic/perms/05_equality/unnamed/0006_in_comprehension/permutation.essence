@@ -1,0 +1,7 @@
+letting n be new type of size 4 
+find p : permutation (numMoved 4) of n 
+find q : permutation (numMoved 4) of n 
+
+such that 
+  and([pt != qt | pt <- p, qt <- q])
+

@@ -1,0 +1,4 @@
+find p : permutation of int:A(1..4)
+letting f be sequence(1:A, 2:A, 3:A, 4:A) 
+letting g be sequence(4:A, 3:A, 2:A, 1:A)
+such that g = transform([p],f)

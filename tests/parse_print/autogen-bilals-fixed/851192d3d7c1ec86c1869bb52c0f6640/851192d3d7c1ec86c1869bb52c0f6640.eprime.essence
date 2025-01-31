@@ -18,7 +18,7 @@ such that
          (flatten(var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q1,
                                                                                                                        ..,
                                                                                                                        ..])
-          <lex
+          .<
           flatten(var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q1
                                                                                                                        +
                                                                                                                        1,
@@ -38,7 +38,7 @@ such that
           flatten(var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q1,
                                                                                                                         ..,
                                                                                                                         ..])
-          <lex
+          .<
           flatten(var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q1
                                                                                                                         +
                                                                                                                         1,
@@ -70,7 +70,7 @@ such that
               var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q5,
                                                                                                                    q6,
                                                                                                                    ..]
-              <lex
+              .<
               var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q5,
                                                                                                                    q6 +
                                                                                                                    1,
@@ -88,7 +88,7 @@ such that
               var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q5,
                                                                                                                     q6,
                                                                                                                     ..]
-              <lex
+              .<
               var1_ExplicitVarSizeWithFlags_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q5,
                                                                                                                     q6 +
                                                                                                                     1,

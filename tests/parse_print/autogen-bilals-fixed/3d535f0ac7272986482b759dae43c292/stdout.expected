@@ -40,7 +40,7 @@ such that
                         | q14 : int(1..4)]),
                sum([q1_ExplicitVarSizeWithFlags_Flags[q15] | q15 : int(1..5)]) <= 5]),
     and([q4 + 1 <= var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker ->
-         var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithMarker_Marker[q4, ..] <lex
+         var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithMarker_Marker[q4, ..] .<
          var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithMarker_Marker[q4 + 1, ..]
          \/
          var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithMarker_Marker[q4, 1] =
@@ -48,7 +48,7 @@ such that
          /\
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithMarker_Values
                      [q4, .., ..])
-         <lex
+         .<
          flatten(var2_PartitionAsSet_ExplicitVarSizeWithMarker_Values_Explicit_ExplicitVarSizeWithMarker_Values
                      [q4 + 1, .., ..])
              | q4 : int(1..3)]),

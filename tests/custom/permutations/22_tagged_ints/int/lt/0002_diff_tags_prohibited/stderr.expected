@@ -1,0 +1,10 @@
+Error:
+    In a 'such that' statement: x < y
+    Error:
+        When type checking: x < y
+        Cannot unify the types of the following.
+        lhs        : x
+        type of lhs: int:A
+        rhs        : y
+        type of rhs: int
+cat: conjure-output/*.solution: No such file or directory

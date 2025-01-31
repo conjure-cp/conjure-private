@@ -21,7 +21,7 @@ such that
          /\
          (var1_ExplicitVarSizeWithFlags_Values_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q1,
                                                                                                                                 ..]
-          <lex
+          .<
           var1_ExplicitVarSizeWithFlags_Values_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Marker[q1
                                                                                                                                 +
                                                                                                                                 1,
@@ -30,7 +30,7 @@ such that
           flatten(var1_ExplicitVarSizeWithFlags_Values_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q1,
                                                                                                                                         ..,
                                                                                                                                         ..])
-          <lex
+          .<
           flatten(var1_ExplicitVarSizeWithFlags_Values_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q1
                                                                                                                                         +
                                                                                                                                         1,

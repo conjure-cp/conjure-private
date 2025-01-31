@@ -16,13 +16,16 @@ setOccurrence = Representation chck downD structuralCons downC up symmetryOrderi
 
     where
 
+        -- | We can only represent Set of Int as occurrence
         chck :: TypeOf_ReprCheck m
-        chck f (DomainSet _ attrs innerDomain@DomainInt{}) = map (DomainSet Set_Occurrence attrs) <$> f innerDomain
+        chck f (DomainSet _ attrs innerDomain@DomainInt{}) =
+          map (DomainSet Set_Occurrence attrs) <$> f innerDomain
         chck _ _ = return []
 
         outName :: Domain HasRepresentation x -> Name -> Name
         outName = mkOutName Nothing
 
+        -- | Matrix of Bool indexed by inner domain of set (which must be an int domain)
         downD :: TypeOf_DownD m
         downD (name, domain@(DomainSet Set_Occurrence _attrs innerDomain@DomainInt{})) = return $ Just
             [ ( outName domain name
@@ -31,6 +34,7 @@ setOccurrence = Representation chck downD structuralCons downC up symmetryOrderi
             ]
         downD _ = na "{downD} Occurrence"
 
+        -- | Constrain number of trues in matrix to be congruent with cardinality constraint
         structuralCons :: TypeOf_Structural m
         structuralCons _ downX1 (DomainSet Set_Occurrence (SetAttr attrs) innerDomain@DomainInt{}) =
             return $ \ set -> do
@@ -43,6 +47,7 @@ setOccurrence = Representation chck downD structuralCons downC up symmetryOrderi
                     _ -> na "{structuralCons} Occurrence"
         structuralCons _ _ _ = na "{structuralCons} Occurrence"
 
+        -- | If value is in the set then that value's index maps to a bool
         downC :: TypeOf_DownC m
         downC ( name
               , domain@(DomainSet Set_Occurrence _attrs innerDomain@(DomainInt t intRanges))
@@ -61,6 +66,7 @@ setOccurrence = Representation chck downD structuralCons downC up symmetryOrderi
                     ]
         downC _ = na "{downC} Occurrence"
 
+        -- | Reversal of downC - if innerDom value zips with matrix true then it's in
         up :: TypeOf_Up m
         up ctxt (name, domain@(DomainSet _ _ (DomainInt t intRanges)))=
             case lookup (outName domain name) ctxt of

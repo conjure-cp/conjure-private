@@ -10,18 +10,18 @@ find var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Re
 such that
     and([q1 + 1 <= var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->
          var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithFlags_Flags[q1, ..]
-         <lex
+         .<
          var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithFlags_Flags
              [q1 + 1, ..]
          \/
          var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithFlags_Values
              [q1, ..]
-         <lex
+         .<
          var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_1_ExplicitVarSizeWithFlags_Values
              [q1 + 1, ..]
          \/
          flatten(var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_RelationAsMatrix[q1, .., ..])
-         <lex
+         .<
          flatten(var2_FunctionAsRelation_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_RelationAsMatrix
                      [q1 + 1, .., ..])
              | q1 : int(1..2)]),

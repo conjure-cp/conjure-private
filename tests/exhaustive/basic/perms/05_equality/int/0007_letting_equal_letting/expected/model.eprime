@@ -1,0 +1,6 @@
+language ESSENCE' 1.0
+
+find b: bool
+branching on [b]
+such that b = false
+

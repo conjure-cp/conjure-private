@@ -19,6 +19,8 @@ module Conjure.Language.Constant
     , viewConstantSequence
     , viewConstantRelation
     , viewConstantPartition
+    , viewConstantPermutation
+    , reDomConst
     ) where
 
 -- conjure
@@ -263,7 +265,7 @@ instance TypeOf Constant where
 
 instance DomainSizeOf Constant Integer where
     domainSizeOf DomainBool{} = return 2
-    domainSizeOf (DomainIntE x) = bug ("not implemented, domainSizeOf DomainIntE" <+> pretty (show x))
+    domainSizeOf (DomainIntE _ x) = bug ("not implemented, domainSizeOf DomainIntE" <+> pretty (show x))
     domainSizeOf (DomainInt _ rs) = domainSizeOfRanges rs
     domainSizeOf DomainEnum{} = failDoc  "domainSizeOf: Unknown for given enum."
     domainSizeOf (DomainTuple ds) = product <$> mapM domainSizeOf ds
@@ -336,7 +338,7 @@ instance Pretty Constant where
 
     pretty (ConstantBool False)          = "false"
     pretty (ConstantBool True )          = "true"
-    pretty (ConstantInt _ x   )          = pretty x
+    pretty (ConstantInt t x)             = pretty x <> pretty t
     pretty (ConstantEnum _ _ x)          = pretty x
     pretty (ConstantField n _)           = pretty n
     pretty (ConstantAbstract x)          = pretty x
@@ -520,4 +522,15 @@ viewConstantPartition :: MonadFailDoc m => Constant -> m [[Constant]]
 viewConstantPartition (ConstantAbstract (AbsLitPartition xs)) = return xs
 viewConstantPartition (TypedConstant c _) = viewConstantPartition c
 viewConstantPartition constant = failDoc ("Expecting a partition, but got:" <++> pretty constant)
+
+viewConstantPermutation :: MonadFailDoc m => Constant -> m [[Constant]]
+viewConstantPermutation (ConstantAbstract (AbsLitPermutation xs)) = return xs
+viewConstantPermutation (TypedConstant c _) = viewConstantPermutation c
+viewConstantPermutation constant = failDoc ("Expecting a permutation, but got:" <++> pretty constant)
+
+
+reDomConst :: Domain () Constant -> Domain () Constant 
+reDomConst cns = case cns of
+                   DomainInt t _ -> reTag t cns
+                   _ -> cns
 

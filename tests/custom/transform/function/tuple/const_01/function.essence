@@ -1,5 +1,5 @@
 
 find m : (int(1..4), int(1..4))
 find f : function (total, bijective) int(1..4) --> int(1..4)
-such that m = transform(f,(3,4))
+such that m = transform([f],(3,4))
 

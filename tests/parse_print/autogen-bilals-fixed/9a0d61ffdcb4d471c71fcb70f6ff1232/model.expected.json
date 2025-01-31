@@ -22,7 +22,7 @@
                                    {"Constant": {"ConstantBool": false}}]]}},
                        {"Op": {"MkOpToInt": {"Reference": [{"Name": "var1"}, null]}}}]}},
             {"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Constant":
                             {"ConstantAbstract":
                                  {"AbsLitMatrix":

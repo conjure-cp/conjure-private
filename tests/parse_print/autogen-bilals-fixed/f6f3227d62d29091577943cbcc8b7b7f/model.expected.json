@@ -94,7 +94,7 @@
                                                   {"Reference":
                                                        [{"Name": "var1_ExplicitVarSizeWithMarker_Marker"}, null]}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":
@@ -725,7 +725,7 @@
                                                              "var2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker"},
                                                         null]}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpFlatten":
                                                             [null,

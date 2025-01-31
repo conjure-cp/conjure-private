@@ -23,11 +23,11 @@ such that
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[q4] =
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[q4 + 1]
          /\
-         flatten(var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q4, .., ..]) <lex
+         flatten(var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q4, .., ..]) .<
          flatten(var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q4 + 1, .., ..])
              | q4 : int(1..4)]),
     and([and([q6 + 1 <= var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Marker[q5] ->
-              var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q5, q6, ..] <lex
+              var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q5, q6, ..] .<
               var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[q5, q6 + 1, ..]
                   | q6 : int(1..5)])
              | q5 : int(1..5)]),

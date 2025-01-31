@@ -122,4 +122,3 @@ variant = Representation chck downD structuralCons downC up symmetryOrdering
             let xsDoms = map snd xsDoms'
             soValues <- sequence [ innerSO downX1 x xDom | (x, xDom) <- zip xs xsDoms ]
             return (fromList soValues)
-

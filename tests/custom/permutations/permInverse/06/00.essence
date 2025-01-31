@@ -1,0 +1,2 @@
+letting A be new type of size 3
+find x : matrix [A] of bool

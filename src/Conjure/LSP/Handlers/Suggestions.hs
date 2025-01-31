@@ -106,6 +106,7 @@ getCIKind (Kind ValueType {} t) = case t of
   TypeMSet _ -> CiVariable
   TypeFunction _ _ -> CiVariable
   TypeSequence _ -> CiVariable
+  TypePermutation _ -> CiVariable
   TypeRelation _ -> CiVariable
   TypePartition _ -> CiVariable
 

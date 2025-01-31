@@ -1,0 +1,4 @@
+find s : set of permutation of int(1..4)
+
+maximising |s|
+

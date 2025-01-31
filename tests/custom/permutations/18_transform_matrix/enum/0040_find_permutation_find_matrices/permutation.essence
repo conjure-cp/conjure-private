@@ -1,0 +1,9 @@
+letting n be new type enum {e_5,e_6,e_7,e_8} 
+
+find p : permutation (numMoved 3) of n
+find s : matrix indexed by [int(1..2)] of n
+find t : matrix indexed by [int(1..2)] of n
+
+
+such that t = transform([p],s) /\ allDiff(s)
+

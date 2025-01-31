@@ -1,0 +1,6 @@
+letting n be 4
+
+find p : permutation of int(1..4)
+
+such that 4 = sum([i | i <- transform([p], [4,4,4,4])])
+

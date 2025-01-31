@@ -22,8 +22,11 @@ instance FromJSON  x => FromJSON  (OpDiv x) where parseJSON = genericParseJSON j
 instance BinaryOperator (OpDiv x) where
     opLexeme _ = L_Div
 
-instance (TypeOf x, Pretty x) => TypeOf (OpDiv x) where
-    typeOf p@(OpDiv a b) = intToIntToInt p a b
+instance (TypeOf x, Pretty x, Data x) => TypeOf (OpDiv x) where
+    typeOf p@(OpDiv a b) =
+      if ?typeCheckerMode == RelaxedIntegerTags
+         then intToIntToInt p a b
+         else intToIntToIntStrict p a b
 
 instance SimplifyOp OpDiv x where
     simplifyOp _ = na "simplifyOp{OpDiv}"

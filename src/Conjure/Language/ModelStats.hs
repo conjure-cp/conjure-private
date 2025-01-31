@@ -67,6 +67,7 @@ domainNeedsRepresentation DomainFunction{}  = True
 domainNeedsRepresentation DomainSequence{}  = True
 domainNeedsRepresentation DomainRelation{}  = True
 domainNeedsRepresentation DomainPartition{} = True
+domainNeedsRepresentation DomainPermutation{} = True
 domainNeedsRepresentation (DomainReference _ (Just _)) = True
 domainNeedsRepresentation d = bug $ "domainNeedsRepresentation:" <+> pretty (show d)
 

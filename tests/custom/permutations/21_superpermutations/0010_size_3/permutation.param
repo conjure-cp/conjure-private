@@ -1,0 +1,6 @@
+
+letting s be
+        {permutation(), permutation((1, 2)), permutation((1, 2, 3)), permutation((1, 3)), permutation((1, 3, 2)),
+         permutation((2, 3))}
+
+letting q be sequence(1,2,3)

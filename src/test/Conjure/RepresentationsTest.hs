@@ -1234,4 +1234,3 @@ instance Show (Pr (Name, Constant)) where
 instance Show (Pr [(Name, Constant)]) where
     show (Pr xs) = intercalate "\n" $ map (show . Pr) xs
 
-

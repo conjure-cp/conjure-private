@@ -27,7 +27,7 @@ find var3_RelationAsSetR15_ExplicitVarSizeWithMarkerR15_Values_1_RelationAsMatri
 such that
     false,
     and([q6 + 1 <= var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Marker ->
-         var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_1_Occurrence[q6, ..] <lex
+         var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_1_Occurrence[q6, ..] .<
          var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_1_Occurrence[q6 + 1, ..]
          \/
          and([var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_1_Occurrence[q6, q19]
@@ -44,7 +44,7 @@ such that
          /\
          (var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_2_ExplicitVarSizeWithFlags_Flags
               [q6, ..]
-          <lex
+          .<
           var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_2_ExplicitVarSizeWithFlags_Flags
               [q6 + 1, ..]
           \/
@@ -57,7 +57,7 @@ such that
           /\
           var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_2_ExplicitVarSizeWithFlags_Values
               [q6, ..]
-          <lex
+          .<
           var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_2_ExplicitVarSizeWithFlags_Values
               [q6 + 1, ..])
              | q6 : int(1..3)]),
@@ -131,7 +131,7 @@ such that
     and([q30 <= var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Marker /\
          q31 <= var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Marker
          ->
-         (var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_1_Occurrence[q30, ..] <lex
+         (var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_1_Occurrence[q30, ..] .<
           var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_1_Occurrence[q31, ..]
           ->
           or([var1_FunctionAsRelationR2R4_RelationAsSetR2R4_ExplicitVarSizeWithMarkerR2R4_Values_2_ExplicitVarSizeWithFlags_Flags

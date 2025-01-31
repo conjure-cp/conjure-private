@@ -8,6 +8,6 @@ such that
     image(function((false, 1) --> [2, 0, 2, 4, 3; int(13..14, 12, 1, 9)], (true, 4) --> [0, 2, 4, 3; int(11, 6, 8, 2)],
                    (true, 5) --> ([] : `matrix indexed by [int] of int`)),
           (false <-> false, factorial(1)))
-    <=lex [4, 0, 4, 4; int(7, 2..3, 8)],
+    .<= [4, 0, 4, 4; int(7, 2..3, 8)],
     false
 maximising var1

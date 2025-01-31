@@ -418,7 +418,7 @@
                                        [{"TypeInt": {"TagInt": []}},
                                         {"TypeFunction": [{"TypeInt": {"TagInt": []}}, {"TypeBool": []}]}]}}]}]}},
             {"Op":
-                 {"MkOpLexLeq":
+                 {"MkOpDotLeq":
                       [{"Op":
                             {"MkOpImage":
                                  [{"Constant":

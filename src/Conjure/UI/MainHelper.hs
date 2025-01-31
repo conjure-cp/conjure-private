@@ -29,7 +29,10 @@ import Conjure.Language.NameGen ( NameGen, NameGenM, runNameGen )
 import Conjure.Language.Pretty 
 import qualified Conjure.Language.ParserC as ParserC ( parseModel )
 import Conjure.Language.ModelDiff ( modelDiffIO )
-import Conjure.Rules.Definition ( viewAuto, Strategy(..) )
+import Conjure.Rules.Definition ( viewAuto, Strategy(..)
+                                , UnnamedSymmetryBreaking(..)
+                                , USBQuickOrComplete(..), USBScope(..), USBIndependentlyOrAltogether(..)
+                                )
 import Conjure.Process.Enumerate ( EnumerateDomain )
 import Conjure.Process.Streamlining ( streamlining, streamliningToStdout )
 import Conjure.Language.NameResolution ( resolveNames, resolveNamesMulti )
@@ -142,7 +145,8 @@ mainWithArgs IDE{..} = do
     if
         | dumpDeclarations    -> liftIO $ putStrLn $ render lineWidth (modelDeclarationsJSON essence2)
         | dumpRepresentations -> do
-            json <- runNameGen () $ modelRepresentationsJSON essence2
+            --TODO default config here for now
+            json <- runNameGen () $ modelRepresentationsJSON def essence2
             liftIO $ putStrLn $ render lineWidth json
         | otherwise           -> writeModel lineWidth ASTJSON Nothing essence2
 -- mainWithArgs Pretty{..} | outputFormat == Plain= do
@@ -274,7 +278,7 @@ mainWithArgs config@Solve{..} = do
     when (solver `elem` ["bc_minisat_all", "nbc_minisat_all"] && nbSolutions /= "all") $
         userErr1 "The solvers bc_minisat_all and nbc_minisat_all only work with --number-of-solutions=all"
     essenceM_beforeNR <- readModelFromFile essence
-    essenceM <- prologue essenceM_beforeNR
+    essenceM <- prologue def essenceM_beforeNR
     unless (null [ () | Objective{} <- mStatements essenceM ]) $ do -- this is an optimisation problem
         when (nbSolutions == "all" || nbSolutions /= "1") $
             userErr1 ("Not supported for optimisation problems: --number-of-solutions=" <> pretty nbSolutions)
@@ -715,7 +719,55 @@ mainWithArgs_Modelling modelNamePrefix Modelling{..} portfolioSize modelHashesBe
                                                  , "But got:" <+> pretty responsesRepresentation
                                                  ]
 
-            trail <- if (followModel /= "")
+            unnamedSymmetryBreakingParsed <-
+            -- 1. Quick/Complete. Quick is x .<= p(x)
+            --                    Complete is x .<= y /\ y = p(x)
+            -- 2. Scope.          Consecutive
+            --                    AllPairs
+            --                    AllPermutations
+            -- 3. Independently/Altogether
+            -- in addition, we have
+            --      none
+            --      fast: Quick-Consecutive-Independently
+            --      full: Complete-AllPermutations-Altogether
+                case (unnamedSymmetryBreaking, splitOn "-" unnamedSymmetryBreaking) of
+                    ("none", _)  -> return Nothing
+                    ("fast", _)  -> return $ Just $ UnnamedSymmetryBreaking USBQuick USBConsecutive USBIndependently
+                    ("full", _)  -> return $ Just $ UnnamedSymmetryBreaking USBComplete USBAllPermutations USBAltogether
+                    (_, [a,b,c]) -> do
+                        a' <- case a of
+                            "Quick" -> return USBQuick
+                            "Complete" -> return USBComplete
+                            _ -> userErr1 $ vcat
+                                [ "Unrecognised value for the first component of --unnamed-symmetry-breaking"
+                                , "Expected one of: Quick / Complete"
+                                , "But got:" <+> pretty a
+                                ]
+                        b' <- case b of
+                            "Consecutive" -> return USBConsecutive
+                            "AllPairs" -> return USBAllPairs
+                            "AllPermutations" -> return USBAllPermutations
+                            _ -> userErr1 $ vcat
+                                [ "Unrecognised value for the second component of --unnamed-symmetry-breaking"
+                                , "Expected one of: Consecutive / AllPairs / AllPermutations"
+                                , "But got:" <+> pretty b
+                                ]
+                        c' <- case c of
+                            "Independently" -> return USBIndependently
+                            "Altogether" -> return USBAltogether
+                            _ -> userErr1 $ vcat
+                                [ "Unrecognised value for the third component of --unnamed-symmetry-breaking"
+                                , "Expected one of: Independently / Altogether"
+                                , "But got:" <+> pretty c
+                                ]
+                        return $ Just $ UnnamedSymmetryBreaking a' b' c'
+                    _ -> userErr1 $ vcat
+                                [ "Unrecognised value for --unnamed-symmetry-breaking"
+                                , "Maybe try one of: none / fast / full"
+                                , "Got:" <+> pretty unnamedSymmetryBreaking
+                                ]
+
+            trail <- if followModel /= ""
                         then miTrailGeneralised . mInfo <$> readModelInfoFromFile followModel
                         else return []
 
@@ -737,6 +789,7 @@ mainWithArgs_Modelling modelNamePrefix Modelling{..} portfolioSize modelHashesBe
                 , Config.representationsAuxiliaries = representationsAuxiliaries'
                 , Config.representationsQuantifieds = representationsQuantifieds'
                 , Config.representationsCuts        = representationsCuts'
+                , Config.unnamedSymmetryBreaking    = unnamedSymmetryBreakingParsed
                 , Config.channelling                = channelling
                 , Config.representationLevels       = representationLevels
                 , Config.limitModels                = if limitModels == Just 0 then Nothing else limitModels

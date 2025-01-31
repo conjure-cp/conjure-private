@@ -32,14 +32,14 @@ such that
              | q10 : int(1..9)]),
     3 <= sum([var3_2_ExplicitVarSizeWithFlags_Flags[q12] | q12 : int(1..10)]),
     and([q14 + 1 <= var4_RelationAsSet_ExplicitVarSizeWithMarker_Marker ->
-         var4_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q14, ..] <lex
+         var4_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q14, ..] .<
          var4_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q14 + 1, ..]
          \/
          and([var4_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q14, q19] =
               var4_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[q14 + 1, q19]
                   | q19 : int(4..4, 4)])
          /\
-         (var4_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Function1D[q14, ..] <lex
+         (var4_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Function1D[q14, ..] .<
           var4_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Function1D[q14 + 1, ..]
           \/
           and([var4_RelationAsSet_ExplicitVarSizeWithMarker_Values_2_Function1D[q14 + 1,

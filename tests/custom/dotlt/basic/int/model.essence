@@ -1,0 +1,7 @@
+find i: int(1..3)
+find j: int(1..3)
+
+such that
+
+i .<= j
+

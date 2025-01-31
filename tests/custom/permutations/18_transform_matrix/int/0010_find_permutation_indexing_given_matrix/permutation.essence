@@ -1,0 +1,7 @@
+letting n be 4
+
+find p : permutation of int(1..n)
+given s : matrix indexed by [int(1..4)] of int(5..8) 
+
+such that 8 = transform([p],s)[2]
+

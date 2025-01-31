@@ -1372,7 +1372,7 @@
                                                                                                                                      []},
                                                                                                                                 2]}}]}]]},
                                                                                                         [{"Op":
-                                                                                                              {"MkOpLexLt":
+                                                                                                              {"MkOpDotLt":
                                                                                                                    [{"Op":
                                                                                                                          {"MkOpFlatten":
                                                                                                                               [null,
@@ -1554,7 +1554,7 @@
                                                                                                                                                                                         []},
                                                                                                                                                                                    2]}}]}]]}]}}]]}}},
                                                                                                                                {"Op":
-                                                                                                                                    {"MkOpLexLt":
+                                                                                                                                    {"MkOpDotLt":
                                                                                                                                          [{"Op":
                                                                                                                                                {"MkOpFlatten":
                                                                                                                                                     [null,
@@ -1811,7 +1811,7 @@
                                                                                               [{"TagInt": []},
                                                                                                2]}}]}]]},
                                                                        [{"Op":
-                                                                             {"MkOpLexLt":
+                                                                             {"MkOpDotLt":
                                                                                   [{"Op":
                                                                                         {"MkOpSlicing":
                                                                                              [{"Op":
@@ -1924,7 +1924,7 @@
                                                                                                                                               []},
                                                                                                                                          2]}}}}]}}]}},
                                                                                               {"Op":
-                                                                                                   {"MkOpLexLt":
+                                                                                                   {"MkOpDotLt":
                                                                                                         [{"Op":
                                                                                                               {"MkOpSlicing":
                                                                                                                    [{"Op":

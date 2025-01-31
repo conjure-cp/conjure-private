@@ -1,0 +1,14 @@
+
+$ transform([p], x)[i] ~~> transform([p], x[transform([permInverse(p)], i)])
+
+find p : permutation (numMoved 3) of int(1..3)
+
+find x : matrix [int(1..3)] of bool
+find y : matrix [int(1..3)] of bool
+
+such that y = transform([p], x)
+
+
+
+$ keeping some of the more interesting solutions only
+such that sum([toInt(x[i]) | i : int(1..3)]) = 2

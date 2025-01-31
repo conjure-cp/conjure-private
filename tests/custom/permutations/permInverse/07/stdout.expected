@@ -1,0 +1,13 @@
+Generating models for 00.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+[
+{"A": ["A_1", "A_2", "A_3"],
+ "x": {"1": "A_1", "2": "A_1"}}
+,
+{"A": ["A_1", "A_2", "A_3"],
+ "x": {"1": "A_1", "2": "A_2"}}
+]

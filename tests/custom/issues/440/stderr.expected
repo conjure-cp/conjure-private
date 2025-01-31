@@ -3,4 +3,4 @@ Error:
     Bindings in context:
         my_function: function(E3 --> 1)
         my_enum_EnumSize: 2
-        my_enum: `int(1..2)`
+        my_enum: `int:my_enum(1:my_enum..2:my_enum)`

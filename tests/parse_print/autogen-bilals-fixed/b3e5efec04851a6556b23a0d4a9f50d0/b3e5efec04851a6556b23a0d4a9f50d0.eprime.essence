@@ -32,7 +32,7 @@ such that
          ->
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1, q6,
                                                                                   ..]
-         <lex
+         .<
          var1_PartitionAsSet_Explicit_ExplicitVarSizeWithMarker_Values_Function1D[1,
                                                                                   q6 + 1, ..]
              | q6 : int(1..255)]),
@@ -51,7 +51,7 @@ such that
     var3_ExplicitVarSizeWithFlags_Flags[2] ->
     flatten(var3_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[1, .., .., ..,
                                                                   ..])
-    <lex
+    .<
     flatten(var3_ExplicitVarSizeWithFlags_Values_RelationAsMatrix[2, .., .., ..,
                                                                   ..]),
     and([var3_ExplicitVarSizeWithFlags_Flags[q11] = false ->

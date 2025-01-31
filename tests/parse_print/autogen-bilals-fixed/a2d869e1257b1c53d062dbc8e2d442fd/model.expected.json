@@ -89,7 +89,7 @@
                                                   {"Reference":
                                                        [{"Name": "var2_ExplicitVarSizeWithMarker_Marker"}, null]}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpFlatten":
                                                             [null,

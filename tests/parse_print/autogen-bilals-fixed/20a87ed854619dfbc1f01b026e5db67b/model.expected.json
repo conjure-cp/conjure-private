@@ -469,7 +469,7 @@
                        {"AbstractLiteral":
                             {"AbsLitRelation":
                                  [[{"Op":
-                                        {"MkOpLexLeq":
+                                        {"MkOpDotLeq":
                                              [{"Comprehension":
                                                    [{"Reference": [{"Name": "l_2"}, null]},
                                                     [{"Generator":

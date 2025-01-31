@@ -19,7 +19,7 @@ such that
          var1_Explicit_ExplicitVarSizeWithMarker_Marker[q1] =
          var1_Explicit_ExplicitVarSizeWithMarker_Marker[q1 + 1]
          /\
-         var1_Explicit_ExplicitVarSizeWithMarker_Values[q1, ..] <lex
+         var1_Explicit_ExplicitVarSizeWithMarker_Values[q1, ..] .<
          var1_Explicit_ExplicitVarSizeWithMarker_Values[q1 + 1, ..]
              | q1 : int(1..23)]),
     and([2 <= var1_Explicit_ExplicitVarSizeWithMarker_Marker[q2] ->

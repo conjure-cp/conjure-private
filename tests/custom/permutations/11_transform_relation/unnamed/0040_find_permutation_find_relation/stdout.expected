@@ -1,0 +1,25 @@
+Generating models for permutation.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: conjure-output/model000001.eprime
+Running minion for domain filtering.
+Running solver: minion
+Copying solution to: permutation.solution
+language Essence 1.3
+
+letting n be new type enum {n_1, n_2, n_3, n_4}
+letting p be permutation((n_2, n_3, n_4))
+letting s be relation((n_4, n_1), (n_4, n_2), (n_4, n_3), (n_4, n_4))
+$ Visualisation for s
+$ n_4 n_1
+$ n_4 n_2
+$ n_4 n_3
+$ n_4 n_4
+
+letting sn be relation((n_2, n_1), (n_2, n_2), (n_2, n_3), (n_2, n_4))
+$ Visualisation for sn
+$ n_2 n_1
+$ n_2 n_2
+$ n_2 n_3
+$ n_2 n_4
+

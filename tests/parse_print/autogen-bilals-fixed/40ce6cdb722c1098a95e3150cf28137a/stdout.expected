@@ -96,14 +96,14 @@ such that
     and([var4_1_ExplicitWithFlags_Flags[q17] = 0 \/ var4_1_ExplicitWithFlags_Flags[q17] >= 0 | q17 : int(1..3)]),
     3 = sum([var4_1_ExplicitWithFlags_Flags[q18] | q18 : int(1..3)]),
     and([q20 + 1 <= var5_ExplicitWithRepetitionR10_Flag ->
-         var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q20, ..] <lex
+         var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q20, ..] .<
          var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q20 + 1, ..]
          \/
          and([var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q20, q30] =
               var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Flags[q20 + 1, q30]
                   | q30 : bool])
          /\
-         var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Values[q20, ..] <=lex
+         var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Values[q20, ..] .<=
          var5_ExplicitWithRepetitionR10_Values_Function1DPartial_Values[q20 + 1, ..]
              | q20 : int(1..255)]),
     and([q21 > var5_ExplicitWithRepetitionR10_Flag ->

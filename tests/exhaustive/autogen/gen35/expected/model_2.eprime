@@ -41,11 +41,10 @@ such that
              [q2]
          = 0
          /\
-         and([and([var2_FunctionAsRelationR9R17_RelationAsSetR9R17_ExplicitVarSizeWithMarkerR9R17_Values_2_RelationAsMatrix
-                       [q2, q23, q24]
-                   = false
-                       | q24 : bool])
-                  | q23 : bool])
+         and([var2_FunctionAsRelationR9R17_RelationAsSetR9R17_ExplicitVarSizeWithMarkerR9R17_Values_2_RelationAsMatrix
+                  [q2, q23, q24]
+              = false
+                  | q23 : bool, q24 : bool])
              | q2 : int(1..3)]),
     0 <= var2_FunctionAsRelationR9R17_RelationAsSetR9R17_ExplicitVarSizeWithMarkerR9R17_Marker,
     var2_FunctionAsRelationR9R17_RelationAsSetR9R17_ExplicitVarSizeWithMarkerR9R17_Marker <= 3,

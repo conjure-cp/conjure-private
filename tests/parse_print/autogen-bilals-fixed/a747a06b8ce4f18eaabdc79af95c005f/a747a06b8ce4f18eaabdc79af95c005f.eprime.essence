@@ -82,7 +82,7 @@ such that
          (flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q5,
                                                                                                                                        ..,
                                                                                                                                        ..])
-          <lex
+          .<
           flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q5
                                                                                                                                        +
                                                                                                                                        1,
@@ -104,7 +104,7 @@ such that
           flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q5,
                                                                                                                                         ..,
                                                                                                                                         ..])
-          <lex
+          .<
           flatten(var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q5
                                                                                                                                         +
                                                                                                                                         1,
@@ -134,7 +134,7 @@ such that
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q7,
                                                                                                                                    q8,
                                                                                                                                    ..]
-              <lex
+              .<
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Flags[q7,
                                                                                                                                    q8
                                                                                                                                    +
@@ -155,7 +155,7 @@ such that
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q7,
                                                                                                                                     q8,
                                                                                                                                     ..]
-              <lex
+              .<
               var1_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithFlags_Values[q7,
                                                                                                                                     q8
                                                                                                                                     +
@@ -252,7 +252,7 @@ such that
          /\
          var4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q20,
                                                                                                ..]
-         <lex
+         .<
          var4_PartitionAsSet_ExplicitVarSizeWithMarker_Values_ExplicitVarSizeWithMarker_Values[q20
                                                                                                + 1,
                                                                                                ..]

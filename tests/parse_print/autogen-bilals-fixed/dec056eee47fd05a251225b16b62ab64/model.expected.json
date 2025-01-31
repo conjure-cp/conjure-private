@@ -526,7 +526,7 @@
                                                                                                                                     []},
                                                                                                                                1]}}]]}}}}]}}]}},
                                                                         {"Op":
-                                                                             {"MkOpLexLt":
+                                                                             {"MkOpDotLt":
                                                                                   [{"Op":
                                                                                         {"MkOpFlatten":
                                                                                              [null,
@@ -642,7 +642,7 @@
                                                                              {"Reference":
                                                                                   [{"Name": "q5"}, null]}]}}]}},
                                                        {"Op":
-                                                            {"MkOpLexLt":
+                                                            {"MkOpDotLt":
                                                                  [{"Op":
                                                                        {"MkOpSlicing":
                                                                             [{"Op":
@@ -1054,7 +1054,7 @@
                                                              "var4_2_PartitionAsSet_ExplicitVarSizeWithMarker_Marker"},
                                                         null]}]}},
                                        {"Op":
-                                            {"MkOpLexLt":
+                                            {"MkOpDotLt":
                                                  [{"Op":
                                                        {"MkOpSlicing":
                                                             [{"Op":
@@ -1353,7 +1353,7 @@
                                                                                                                                     []},
                                                                                                                                1]}}]]}}}}]}}]}},
                                                                         {"Op":
-                                                                             {"MkOpLexLt":
+                                                                             {"MkOpDotLt":
                                                                                   [{"Op":
                                                                                         {"MkOpSlicing":
                                                                                              [{"Op":
